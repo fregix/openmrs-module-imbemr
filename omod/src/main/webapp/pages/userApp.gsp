@@ -1,7 +1,7 @@
 <%
     ui.decorateWith("appui", "standardEmrPage", [ title: ui.message("referenceapplication.app.userApp."+param.action[0]) ])
 
-    ui.includeJavascript("referenceapplication", "userApp.js");
+    ui.includeJavascript("imbemr", "userApp.js");
 %>
 
 <script type="text/javascript">

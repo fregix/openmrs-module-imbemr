@@ -1,9 +1,9 @@
 <%
     ui.decorateWith("appui", "standardEmrPage", [ title: ui.message("referenceapplication.app.manageApps.title") ])
 
-    ui.includeJavascript("referenceapplication", "manageApps.js");
+    ui.includeJavascript("imbemr", "manageApps.js");
 
-    ui.includeCss("referenceapplication", "manageApps.css");
+    ui.includeCss("imbemr", "manageApps.css");
 
 %>
 
@@ -18,12 +18,12 @@
 </script>
 
 <% apps.each { app -> %>
-    ${ui.includeFragment("referenceapplication", "deleteUserApp", [appId: app.id])}
+    ${ui.includeFragment("imbemr", "deleteUserApp", [appId: app.id])}
 <% } %>
 
 <h2>${ ui.message("referenceapplication.app.manageApps.heading")}</h2>
 
-<button class="confirm" onclick="location.href='${ ui.pageLink("referenceapplication", "userApp", [action: "add"]) }'">
+<button class="confirm" onclick="location.href='${ ui.pageLink("imbemr, "userApp", [action: "add"]) }'">
     ${ ui.message("referenceapplication.app.addAppDefinition") }
 </button>
 </br></br>

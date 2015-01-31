@@ -1,6 +1,6 @@
 <%
     ui.includeFragment("appui", "standardEmrIncludes")
-    ui.includeCss("referenceapplication", "login.css")
+    ui.includeCss("imbemr", "login.css")
 %>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 </script>
 
 
-${ ui.includeFragment("referenceapplication", "infoAndErrorMessages") }
+${ ui.includeFragment("imbemr", "infoAndErrorMessages") }
 
 <script type="text/javascript">
 	jQuery(document).ready(function(){
@@ -62,8 +62,8 @@ ${ ui.includeFragment("referenceapplication", "infoAndErrorMessages") }
 
 <header>
     <div class="logo">
-        <a href="${ui.pageLink("referenceapplication", "home")}">
-            <img src="${ui.resourceLink("referenceapplication", "images/openMrsLogo.png")}"/>
+        <a href="${ui.pageLink("imbemr", "home")}">
+            <img src="${ui.resourceLink("imbemr", "images/openMrsLogo.png")}"/>
         </a>
     </div>
 </header>
