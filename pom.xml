@@ -85,14 +85,13 @@
             <scope>test</scope>
         </dependency>
 
-
-
         <!-- BEGIN include openmrs-web here because we need Jackson in the API layer. When we move jackson from openmrs-web to openmrs-api, move these to omod/pom.xml  -->
         <dependency>
             <groupId>org.openmrs.web</groupId>
             <artifactId>openmrs-web</artifactId>
             <version>${openMRSVersion}</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -100,6 +99,7 @@
             <artifactId>openmrs-web</artifactId>
             <version>${openMRSVersion}</version>
             <type>test-jar</type>
+            <scope>test</scope>
         </dependency>
         <!-- END -->
 
@@ -108,6 +108,7 @@
             <artifactId>referencemetadata-api</artifactId>
             <version>${referenceMetadataVersion}</version>
             <type>jar</type>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -116,11 +117,13 @@
             <version>${appframeworkVersion}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>appframework-api</artifactId>
             <version>${appframeworkVersion}</version>
             <classifier>tests</classifier>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -229,7 +232,6 @@
             <version>${serializationxstreamVersion}</version>
             <scope>provided</scope>
         </dependency>
-
 
     </dependencies>
 
