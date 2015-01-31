@@ -153,7 +153,7 @@ public class LoginPageControllerTest {
 	public void get_shouldSetRedirectUrlInThePageModelIfAnyWasSpecifiedInTheRequest() throws Exception {
 		when(Context.isAuthenticated()).thenReturn(false);
 
-		String redirectUrl = TEST_CONTEXT_PATH + "/referenceapplication/patient.page";
+		String redirectUrl = TEST_CONTEXT_PATH + "/imbemr/patient.page";
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		request.setContextPath(TEST_CONTEXT_PATH);
 		request.addParameter(REQUEST_PARAMETER_NAME_REDIRECT_URL, redirectUrl);
@@ -175,7 +175,7 @@ public class LoginPageControllerTest {
 	public void get_shouldSetTheRefererAsTheRedirectUrlInThePageModelIfNoRedirectParamExists() throws Exception {
 		when(Context.isAuthenticated()).thenReturn(false);
 
-		String refererUrl = TEST_CONTEXT_PATH + "/referenceapplication/patient.page";
+		String refererUrl = TEST_CONTEXT_PATH + "/imbemr/patient.page";
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		request.setContextPath(TEST_CONTEXT_PATH);
 		request.addHeader("Referer", refererUrl);
@@ -197,7 +197,7 @@ public class LoginPageControllerTest {
 	public void get_shouldSetRedirectUrlInThePageModelIfAnyWasSpecifiedInTheSession() throws Exception {
 		when(Context.isAuthenticated()).thenReturn(false);
 
-		String redirectUrl = TEST_CONTEXT_PATH + "/referenceapplication/patient.page";
+		String redirectUrl = TEST_CONTEXT_PATH + "/imbemr/patient.page";
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		request.setContextPath(TEST_CONTEXT_PATH);
 		PageRequest pageRequest = createPageRequest(request, null);
@@ -221,7 +221,7 @@ public class LoginPageControllerTest {
 	public void post_shouldRedirectTheUserBackToTheRedirectUrlIfAny() throws Exception {
 		setupMocksForSuccessfulAuthentication(true);
 
-		final String redirectUrl = TEST_CONTEXT_PATH + "/referenceapplication/patient.page";
+		final String redirectUrl = TEST_CONTEXT_PATH + "/imbemr/patient.page";
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		request.addParameter(REQUEST_PARAMETER_NAME_REDIRECT_URL, redirectUrl);
 		PageRequest pageRequest = createPageRequest(request, null);
@@ -265,7 +265,7 @@ public class LoginPageControllerTest {
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		String page = new LoginPageController().post(null, null, SESSION_LOCATION_ID, locationService, uiUtils,
 		    createPageRequest(request, null), sessionContext);
-		assertEquals("redirect:" + uiUtils.pageLink("referenceapplication", "login"), page);
+		assertEquals("redirect:" + uiUtils.pageLink("imbemr", "login"), page);
 	}
 
 	/**
@@ -280,6 +280,6 @@ public class LoginPageControllerTest {
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		String page = new LoginPageController().post(USERNAME, PASSWORD, SESSION_LOCATION_ID, locationService, uiUtils,
 		    createPageRequest(request, null), sessionContext);
-		assertEquals("redirect:" + uiUtils.pageLink("referenceapplication", "login"), page);
+		assertEquals("redirect:" + uiUtils.pageLink("imbemr", "login"), page);
 	}
 }
