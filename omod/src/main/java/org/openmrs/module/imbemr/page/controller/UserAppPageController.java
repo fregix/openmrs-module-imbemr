@@ -57,22 +57,22 @@ public class UserAppPageController {
 			AppDescriptor descriptor = mapper.readValue(userApp.getJson(), AppDescriptor.class);
 			if (!userApp.getAppId().equals(descriptor.getId())) {
 				session.setAttribute(UiCommonsConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE,
-				    ui.message("referenceapplication.app.errors.IdsShouldMatch"));
+				    ui.message("imbemr.app.errors.IdsShouldMatch"));
 			} else if ("add".equals(action) && service.getUserApp(userApp.getAppId()) != null) {
 				session.setAttribute(UiCommonsConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE,
-				    ui.message("referenceapplication.app.errors.duplicateAppId"));
+				    ui.message("imbemr.app.errors.duplicateAppId"));
 			} else {
 				service.saveUserApp(userApp);
 				
 				InfoErrorMessageUtil.flashInfoMessage(session,
-				    ui.message("referenceapplication.app.userApp.save.success", userApp.getAppId()));
+				    ui.message("imbemr.app.userApp.save.success", userApp.getAppId()));
 				
-				return "redirect:/referenceapplication/manageApps.page";
+				return "redirect:/imbemr/manageApps.page";
 			}
 		}
 		catch (Exception e) {
 			session.setAttribute(UiCommonsConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE,
-			    ui.message("referenceapplication.app.userApp.save.fail", userApp.getAppId()));
+			    ui.message("imbemr.app.userApp.save.fail", userApp.getAppId()));
 		}
 		
 		model.addAttribute("userApp", userApp);
@@ -81,7 +81,7 @@ public class UserAppPageController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/referenceapplication/verifyJson")
+	@RequestMapping("/imbemr/verifyJson")
 	public SimpleObject verifyJson(@RequestParam("json") String json) {
 		SimpleObject so = new SimpleObject();
 		try {

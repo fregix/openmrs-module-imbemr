@@ -1,5 +1,5 @@
 <%
-    ui.decorateWith("appui", "standardEmrPage", [ title: ui.message("referenceapplication.home.title") ])
+    ui.decorateWith("appui", "standardEmrPage", [ title: ui.message("imbemr.home.title") ])
 
     def htmlSafeId = { extension ->
         "${ extension.id.replace(".", "-") }-${ extension.id.replace(".", "-") }-extension"
@@ -10,11 +10,11 @@
 
     <% if (authenticatedUser) { %>
         <h4>
-            ${ ui.message("referenceapplication.home.currentUser", ui.format(authenticatedUser), ui.format(sessionContext.sessionLocation)) }
+            ${ ui.message("imbemr.home.currentUser", ui.format(authenticatedUser), ui.format(sessionContext.sessionLocation)) }
         </h4>
     <% } else { %>
         <h4>
-            <a href="login.htm">${ ui.message("referenceapplication.home.logIn") }</a>
+            <a href="login.htm">${ ui.message("imbemr.home.logIn") }</a>
         </h4>
     <% } %>
 

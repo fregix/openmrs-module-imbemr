@@ -39,8 +39,8 @@ public class ManageAppsPageController {
 	public String post(PageModel model, @RequestParam("id") String id, @RequestParam("action") String action,
 	                   @SpringBean("appFrameworkService") AppFrameworkService service, HttpSession session, UiUtils ui) {
 		
-		String successMsgCode = "referenceapplication.app.manageApps." + action + ".success";
-		String failMessageCode = "referenceapplication.app.manageApps." + action + ".fail";
+		String successMsgCode = "imbemr.app.manageApps." + action + ".success";
+		String failMessageCode = "imbemr.app.manageApps." + action + ".fail";
 		try {
 			if ("enable".equals(action)) {
 				service.enableApp(id);
@@ -52,7 +52,7 @@ public class ManageAppsPageController {
 			
 			InfoErrorMessageUtil.flashInfoMessage(session, ui.message(successMsgCode, id));
 			
-			return "redirect:referenceapplication/manageApps.page";
+			return "redirect:imbemr/manageApps.page";
 		}
 		catch (Exception e) {
 			session.setAttribute(UiCommonsConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE, ui.message(failMessageCode, id));

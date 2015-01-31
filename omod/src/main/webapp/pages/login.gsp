@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>${ ui.message("referenceapplication.login.title") }</title>
+    <title>${ ui.message("imbemr.login.title") }</title>
     <link rel="shortcut icon" type="image/ico" href="/${ ui.contextPath() }/images/openmrs-favicon.ico"/>
     <link rel="icon" type="image/png\" href="/${ ui.contextPath() }/images/openmrs-favicon.png"/>
     ${ ui.resourceLinks() }
@@ -75,26 +75,26 @@ ${ ui.includeFragment("imbemr", "infoAndErrorMessages") }
 
                 <legend>
                     <i class="icon-lock small"></i>
-                    ${ ui.message("referenceapplication.login.loginHeading") }
+                    ${ ui.message("imbemr.login.loginHeading") }
                 </legend>
 
                 <p class="left">
                     <label for="username">
-                        ${ ui.message("referenceapplication.login.username") }:
+                        ${ ui.message("imbemr.login.username") }:
                     </label>
-                    <input id="username" type="text" name="username" placeholder="${ ui.message("referenceapplication.login.username.placeholder") }"/>
+                    <input id="username" type="text" name="username" placeholder="${ ui.message("imbemr.login.username.placeholder") }"/>
                 </p>
 
                 <p class="left">
                     <label for="password">
-                        ${ ui.message("referenceapplication.login.password") }:
+                        ${ ui.message("imbemr.login.password") }:
                     </label>
-                    <input id="password" type="password" name="password" placeholder="${ ui.message("referenceapplication.login.password.placeholder") }"/>
+                    <input id="password" type="password" name="password" placeholder="${ ui.message("imbemr.login.password.placeholder") }"/>
                 </p>
 
                 <p class="clear">
                     <label for="sessionLocation">
-                        ${ ui.message("referenceapplication.login.sessionLocation") }:
+                        ${ ui.message("imbemr.login.sessionLocation") }:
                     </label>
                     <ul id="sessionLocation" class="select">
                         <% locations.sort { ui.format(it) }.each { %>
@@ -108,12 +108,12 @@ ${ ui.includeFragment("imbemr", "infoAndErrorMessages") }
 
                 <p></p>
                 <p>
-                    <input id="login-button" class="confirm" type="submit" value="${ ui.message("referenceapplication.login.button") }"/>
+                    <input id="login-button" class="confirm" type="submit" value="${ ui.message("imbemr.login.button") }"/>
                 </p>
                 <p>
                     <a id="cant-login" href="javascript:void(0)">
                         <i class="icon-question-sign small"></i>
-                        ${ ui.message("referenceapplication.login.cannotLogin") }
+                        ${ ui.message("imbemr.login.cannotLogin") }
                     </a>
                 </p>
 
@@ -129,12 +129,12 @@ ${ ui.includeFragment("imbemr", "infoAndErrorMessages") }
 <div id="cannot-login-popup" class="dialog" style="display: none">
     <div class="dialog-header">
         <i class="icon-info-sign"></i>
-        <h3>${ ui.message("referenceapplication.login.cannotLogin") }</h3>
+        <h3>${ ui.message("imbemr.login.cannotLogin") }</h3>
     </div>
     <div class="dialog-content">
-        <p class="dialog-instructions">${ ui.message("referenceapplication.login.cannotLoginInstructions") }</p>
+        <p class="dialog-instructions">${ ui.message("imbemr.login.cannotLoginInstructions") }</p>
 
-        <button class="confirm">${ ui.message("referenceapplication.okay") }</button>
+        <button class="confirm">${ ui.message("imbemr.okay") }</button>
     </div>
 </div>
 

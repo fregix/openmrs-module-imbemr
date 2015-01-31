@@ -1,14 +1,14 @@
 var jq = jQuery;
 
 jq(function(){
-    jq('.referenceapplication-action').click(function(){
+    jq('.imbemr-action').click(function(){
         jq(this).parent().submit();
     });
 });
 
 function showDeleteUserAppDialog(appId){
     var deleteUserAppDialog = emr.setupConfirmationDialog({
-        selector: "#referenceapplication-delete-userApp-dialog-"+appId,
+        selector: "#imbemr-delete-userApp-dialog-"+appId,
         actions: {
             cancel: function() {
                 deleteUserAppDialog.close();

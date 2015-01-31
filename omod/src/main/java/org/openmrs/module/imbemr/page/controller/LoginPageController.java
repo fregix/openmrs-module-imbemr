@@ -185,11 +185,11 @@ public class LoginPageController {
 			
 		} else if (sessionLocation == null) {
 			pageRequest.getSession().setAttribute(ImbEmrWebConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE,
-			    ui.message("referenceapplication.login.error.locationRequired"));
+			    ui.message("imbemr.login.error.locationRequired"));
 		} else {
 			// the UI shouldn't allow this, but protect against it just in case
 			pageRequest.getSession().setAttribute(ImbEmrWebConstants.SESSION_ATTRIBUTE_ERROR_MESSAGE,
-			    ui.message("referenceapplication.login.error.invalidLocation", sessionLocation.getName()));
+			    ui.message("imbemr.login.error.invalidLocation", sessionLocation.getName()));
 		}
 		
 		if (log.isDebugEnabled())

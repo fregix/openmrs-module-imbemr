@@ -2,14 +2,14 @@
     config.require("appId");
 %>
 
-<div id="referenceapplication-delete-userApp-dialog-${config.appId}" class="dialog" style="display: none">
+<div id="imbemr-delete-userApp-dialog-${config.appId}" class="dialog" style="display: none">
     <div class="dialog-header">
-        <h3>${ ui.message("referenceapplication.app.deleteUserAppDefinition") }</h3>
+        <h3>${ ui.message("imbemr.app.deleteUserAppDefinition") }</h3>
     </div>
     <div class="dialog-content">
         <ul>
             <li class="info">
-                ${ ui.message("referenceapplication.app.deleteUserApp.message", "<b>"+config.appId+"</b>") }
+                ${ ui.message("imbemr.app.deleteUserApp.message", "<b>"+config.appId+"</b>") }
             </li>
         </ul>
         <form method="POST" action="manageApps.page">

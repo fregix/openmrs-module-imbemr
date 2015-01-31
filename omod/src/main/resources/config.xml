@@ -64,22 +64,22 @@
 	<!-- /Internationalization -->
 
 	<privilege>
-		<name>App: referenceapplication.vitals</name>
+		<name>App: imbemr.vitals</name>
 		<description>Able to access the vitals app</description>
 	</privilege>
 
 	<privilege>
-		<name>App: referenceapplication.legacyAdmin</name>
+		<name>App: imbemr.legacyAdmin</name>
 		<description>Able to access the advanced administration app</description>
 	</privilege>
 
 	<privilege>
-		<name>App: referenceapplication.styleGuide</name>
+		<name>App: imbemr.styleGuide</name>
 		<description>Able to access the style guide app</description>
 	</privilege>
 
     <privilege>
-        <name>App: referenceapplication.manageApps</name>
+        <name>App: imbemr.manageApps</name>
         <description>Able to manage app definitions</description>
     </privilege>
 
