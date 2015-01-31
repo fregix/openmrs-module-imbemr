@@ -13,8 +13,6 @@
  */
 package org.openmrs.module.imbemr.page.controller;
 
-import javax.servlet.http.HttpSession;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -33,6 +31,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserAppPageController {

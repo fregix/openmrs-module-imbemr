@@ -54,21 +54,21 @@ public class ImbEmrActivator extends BaseModuleActivator {
 	 * @see ModuleActivator#willRefreshContext()
 	 */
 	public void willRefreshContext() {
-		log.info("Refreshing Reference Application Module");
+		log.info("Refreshing IMB EMR Module");
 	}
 	
 	/**
 	 * @see ModuleActivator#contextRefreshed()
 	 */
 	public void contextRefreshed() {
-		log.info("Reference Application Module refreshed");
+		log.info("IMB EMR Module refreshed");
 	}
 	
 	/**
 	 * @see ModuleActivator#willStart()
 	 */
 	public void willStart() {
-		log.info("Starting Reference Application Module");
+		log.info("Starting IMB EMR Module");
 	}
 	
 	/**
@@ -174,9 +174,9 @@ public class ImbEmrActivator extends BaseModuleActivator {
              FormService formService = Context.getFormService();
              HtmlFormEntryService htmlFormEntryService = Context.getService(HtmlFormEntryService.class);
 
- 			 List<String> htmlforms = Arrays.asList("referenceapplication:htmlforms/vitals.xml",
-			    "referenceapplication:htmlforms/simpleVisitNote.xml", "referenceapplication:htmlforms/simpleAdmission.xml",
-			    "referenceapplication:htmlforms/simpleDischarge.xml", "referenceapplication:htmlforms/simpleTransfer.xml");
+ 			 List<String> htmlforms = Arrays.asList("imbemr:htmlforms/vitals.xml",
+			    "imbemr:htmlforms/simpleVisitNote.xml", "imbemr:htmlforms/simpleAdmission.xml",
+			    "imbemr:htmlforms/simpleDischarge.xml", "imbemr:htmlforms/simpleTransfer.xml");
 
              for (String htmlform : htmlforms) {
                  HtmlFormUtil.getHtmlFormFromUiResource(resourceFactory, formService, htmlFormEntryService, htmlform);
