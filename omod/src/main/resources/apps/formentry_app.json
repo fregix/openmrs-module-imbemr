@@ -5,7 +5,7 @@
         "extensions": [
             {
                 "id": "formentryapp.forms.homepageLink",
-                "extensionPointId": "org.openmrs.referenceapplication.configuremetadataLink",
+                "extensionPointId": "org.openmrs.imbemr.configuremetadataLink",
                 "type": "link",
                 "label": "formentryapp.manageforms",
                 "url": "formentryapp/forms.page?app=formentryapp.forms",

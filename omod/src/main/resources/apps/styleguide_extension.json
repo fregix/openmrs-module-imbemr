@@ -1,12 +1,12 @@
 [
     {
-        "id": "referenceapplication.styleGuide",
+        "id": "imbemr.styleGuide",
         "extensionPointId": "systemAdministration.apps",
         "type": "link",
-        "label": "referenceapplication.app.styleguide.label",
+        "label": "imbemr.app.styleguide.label",
         "url": "uicommons/styleGuide.page",
         "icon": "icon-magic",
-		"requiredPrivilege": "App: referenceapplication.styleGuide",
+		"requiredPrivilege": "App: imbemr.styleGuide",
         "order": 95
     }
 ]

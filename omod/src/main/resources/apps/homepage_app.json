@@ -1,10 +1,10 @@
 [
     {
-        "id": "referenceapplication.homepage",
+        "id": "imbemr.homepage",
         "extensionPoints": [
             {
-                "id": "org.openmrs.referenceapplication.homepageLink",
-                "description": "referenceapplication.homepageExt.description"
+                "id": "org.openmrs.imbemr.homepageLink",
+                "description": "imbemr.homepageExt.description"
             }
         ]
     }
