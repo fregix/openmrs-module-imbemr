@@ -1,4 +1,4 @@
-<htmlform>
+<htmlform formUuid="948340c0-a9fc-11e4-bcd8-0800200c9a66" formName="Oncology App" formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" formVersion="1.0">
 
     <macros> paperFormId =
         Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor =
