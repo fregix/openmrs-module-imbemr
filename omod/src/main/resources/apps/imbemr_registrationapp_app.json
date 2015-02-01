@@ -7,7 +7,7 @@
         "extensions": [
             {
                 "id": "imbemr.registrationapp.registerPatient.homepageLink",
-                "extensionPointId": "org.openmrs.imbemr.homepageLink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
                 "type": "link",
                 "label": "imbemr.app.registerPatient.label",
                 "url": "registrationapp/registerPatient.page?appId=imbemr.registrationapp.registerPatient",

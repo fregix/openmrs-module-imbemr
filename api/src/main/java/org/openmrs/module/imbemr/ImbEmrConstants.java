@@ -17,7 +17,7 @@ public final class ImbEmrConstants {
 	
 	public static final String MODULE_ID = "imbemr";
 	
-	public static final String HOME_PAGE_EXTENSION_POINT_ID = "org.openmrs.imbemr.homepageLink";
+	public static final String HOME_PAGE_EXTENSION_POINT_ID = "org.openmrs.referenceapplication.homepageLink";
 
 	public static final String PROCESS_HL7_TASK_NAME = "Process HL7 Task";
 	

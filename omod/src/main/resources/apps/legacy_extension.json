@@ -6,7 +6,6 @@
         "label": "imbemr.app.legacy.admin.label",
         "url": "admin/index.htm",
         "icon": "icon-cogs",
-        "order": 99,
-        "requiredPrivilege": "App: imbemr.legacyAdmin"
+        "order": 99
     }
 ]

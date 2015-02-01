@@ -5,7 +5,7 @@
         "extensions": [
             {
                 "id": "imbemr.vitals",
-			    "extensionPointId": "org.openmrs.imbemr.homepageLink",
+			    "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
 			    "type": "link",
 			    "label": "imbemr.app.capturevitals.title",
 			    "url": "coreapps/findpatient/findPatient.page?app=imbemr.vitals",

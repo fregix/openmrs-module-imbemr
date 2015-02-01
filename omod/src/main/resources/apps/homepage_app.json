@@ -3,7 +3,7 @@
         "id": "imbemr.homepage",
         "extensionPoints": [
             {
-                "id": "org.openmrs.imbemr.homepageLink",
+                "id": "org.openmrs.referenceapplication.homepageLink",
                 "description": "imbemr.homepageExt.description"
             }
         ]
