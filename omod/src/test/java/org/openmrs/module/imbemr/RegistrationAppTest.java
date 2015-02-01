@@ -1,18 +1,5 @@
 package org.openmrs.module.imbemr;
 
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-
 import org.junit.Test;
 import org.openmrs.module.appframework.AppTestUtil;
 import org.openmrs.module.appframework.domain.AppDescriptor;
@@ -24,6 +11,18 @@ import org.openmrs.module.appframework.repository.AllAppTemplates;
 import org.openmrs.module.registrationapp.form.RegisterPatientFormBuilder;
 import org.openmrs.module.registrationapp.model.NavigableFormStructure;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 /**
  *
  */
@@ -31,7 +30,7 @@ public class RegistrationAppTest {
 
 	@Test
 	public void testConfigOfRegistrationApp() throws Exception {
-		AppDescriptor app = AppTestUtil.getAppDescriptor("referenceapplication.registrationapp.registerPatient");
+		AppDescriptor app = AppTestUtil.getAppDescriptor("imbemr.registrationapp.registerPatient");
 		NavigableFormStructure formStructure = RegisterPatientFormBuilder.buildFormStructure(app);
 		assertNotNull(formStructure);
 	}
@@ -52,6 +51,6 @@ public class RegistrationAppTest {
             // This throws an exception for referenceapplication.vitals if coreapps module is not present.
 			allAppDescriptors.setAppTemplatesOnInstances(allAppTemplates);
 		}
-		assertNotNull(allAppDescriptors.getAppDescriptor("referenceapplication.vitals"));
+		assertNotNull(allAppDescriptors.getAppDescriptor("imbemr.vitals"));
 	}
 }
