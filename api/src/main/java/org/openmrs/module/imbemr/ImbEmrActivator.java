@@ -16,11 +16,8 @@ package org.openmrs.module.imbemr;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.GlobalProperty;
-import org.openmrs.Location;
-import org.openmrs.LocationTag;
 import org.openmrs.api.AdministrationService;
 import org.openmrs.api.FormService;
-import org.openmrs.api.LocationService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.Module;
@@ -31,7 +28,6 @@ import org.openmrs.module.emrapi.EmrApiConstants;
 import org.openmrs.module.htmlformentry.HtmlFormEntryService;
 import org.openmrs.module.htmlformentryui.HtmlFormUtil;
 import org.openmrs.module.namephonetics.NamePhoneticsConstants;
-import org.openmrs.module.referencemetadata.ReferenceMetadataConstants;
 import org.openmrs.module.referencemetadata.ReferenceMetadataProperties;
 import org.openmrs.module.registrationcore.RegistrationCoreConstants;
 import org.openmrs.scheduler.SchedulerService;
@@ -90,10 +86,6 @@ public class ImbEmrActivator extends BaseModuleActivator {
 	        setupNamePhoneticsGlobalProperties(administrationService);
 	        setupRegistrationcoreGlobalProperties(administrationService);
 	        setupConceptManagementAppsGlobalProperties(administrationService);
-            setupTagLocation(ReferenceMetadataConstants.LOGIN_LOCATION_TAG_UUID);
-            setupTagLocation(ReferenceMetadataConstants.ADMISSION_LOCATION_TAG_UUID);
-            setupTagLocation(ReferenceMetadataConstants.TRANSFER_LOCATION_TAG_UUID);
-            setupTagLocation(ReferenceMetadataConstants.VISIT_LOCATION_TAG_UUID);
 	        setupHtmlForms();
 	        setupHL7ProcessingTask(schedulerService);
 		} 
@@ -142,30 +134,6 @@ public class ImbEmrActivator extends BaseModuleActivator {
         }
         gp.setPropertyValue(propertyValue);
         administrationService.saveGlobalProperty(gp);
-    }
-
-    private void setupTagLocation(String locationTagUuid) {
-        LocationService ls = Context.getLocationService();
-        LocationTag tag = ls.getLocationTagByUuid(locationTagUuid);
-        if (tag != null) {
-            List<Location> taggedLocations = ls.getLocationsByTag(tag);
-            if (taggedLocations.isEmpty()) {
-                Location location = ls.getLocationByUuid(ReferenceMetadataConstants.UNKNOWN_LOCATION_UUID);
-                if (location == null) {
-                    location = ls.getLocation("Unknown Location");
-                    if (location == null) {
-                        List<Location> locations = ls.getAllLocations(false);
-                        if (!locations.isEmpty()) {
-                            location = locations.get(0);
-                        }
-                    }
-                }
-                if (location != null) {
-                    location.addTag(tag);
-                    ls.saveLocation(location);
-                }
-            }
-        }
     }
     
     private void setupHtmlForms() throws Exception {

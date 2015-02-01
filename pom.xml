@@ -42,6 +42,7 @@
         <emrapiVersion>1.5-SNAPSHOT</emrapiVersion>
         <formentryappVersion>1.1-SNAPSHOT</formentryappVersion>
         <idgenVersion>3.0</idgenVersion>
+        <imbMetadataVersion>1.0-SNAPSHOT</imbMetadataVersion>
         <htmlformentryVersion>2.5-SNAPSHOT</htmlformentryVersion>
         <htmlformentryuiVersion>1.2-SNAPSHOT</htmlformentryuiVersion>
         <metadatadeployVersion>1.4-SNAPSHOT</metadatadeployVersion>
@@ -57,7 +58,6 @@
         <uiframeworkVersion>3.3-SNAPSHOT</uiframeworkVersion>
         <webservicesRestModuleVersion>2.6</webservicesRestModuleVersion>
 	</properties>
-
 
     <dependencies>
 
@@ -107,6 +107,14 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>referencemetadata-api</artifactId>
             <version>${referenceMetadataVersion}</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>imbmetadata-api</artifactId>
+            <version>${imbMetadataVersion}</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
