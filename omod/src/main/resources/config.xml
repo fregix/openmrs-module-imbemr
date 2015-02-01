@@ -42,6 +42,10 @@
         <require_module version="${htmlformentryuiVersion}">
             org.openmrs.module.htmlformentryui
         </require_module>
+
+        <require_module version="${imbMetadataVersion}">
+            org.openmrs.module.imbmetadata
+        </require_module>
 			
 	</require_modules>
 	<!-- / Required Modules -->
