@@ -83,6 +83,22 @@
         </fieldset>
 
 
+        <fieldset class="required Routine-follow-up">
+            <legend>
+                <uimessage code="Routine follow up"/>
+            </legend>
+            <h3>
+                <uimessage code="Routine follow up"/>
+            </h3>
+
+            <p class="left">
+                <obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" id="routineFollowUp" showUnits="false"
+                     unitsCssClass="append-to-value" style="dropdown" size="9" required="true">
+                </obs>
+            </p>
+        </fieldset>
+
+
 
     </section>
 
