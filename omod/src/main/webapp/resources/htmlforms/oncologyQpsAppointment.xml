@@ -1,0 +1,91 @@
+<htmlform formUuid="19d0f920-aaac-11e4-bcd8-0800200c9a66" formName="Oncology App QPS" formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" formVersion="1.0">
+
+    <macros> paperFormId =
+        Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor =
+        white </macros>
+    <style>
+        <style>
+
+            .encounter-summary-container {
+            font-size: 1em;
+            font-weight: normal;
+            }
+        </style>
+
+    </style>
+
+    <script type="text/javascript">
+        jq(function() {
+
+        // hack to make the datepicker show when the form is opened
+        getField('encounterDate.value').datepicker('show');
+
+        });
+    </script>
+
+
+    <section id="oncologyQpsAppointment" sectionTag="section" headerStyle="title" headerCode="Schedule Oncology Appointment">
+
+        <fieldset class="required">
+            <legend>
+                <uimessage code="Encounter Date"/>
+            </legend>
+            <h3>
+                <uimessage code="Encounter Date"/>
+            </h3>
+
+            <p class="left">
+                <encounterDate id="encounterDate" showTime="false" default="now"/>
+            </p>
+        </fieldset>
+
+        <fieldset class="required">
+            <legend>
+                <uimessage code="Provider"/>
+            </legend>
+            <h3>
+                <uimessage code="Oncology Provider"/>
+            </h3>
+
+            <p class="left">
+
+                <encounterProvider default="currentUser" role="Oncology Provider" />
+            </p>
+        </fieldset>
+
+        <fieldset class="required">
+            <legend>
+                <uimessage code="Location"/>
+            </legend>
+            <h3>
+                <uimessage code="Location"/>
+            </h3>
+
+            <p class="left">
+                <encounterLocation required="true" default="Butaro Hospital"/>
+            </p>
+        </fieldset>
+
+
+        <fieldset class="required comunicate-pathology-results-question">
+            <legend>
+                <uimessage code="Communicate pathology results"/>
+            </legend>
+            <h3>
+                <uimessage code="Communicate pathology results"/>
+            </h3>
+
+            <p class="left">
+                <obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" id="communicatePathologyResults" showUnits="false"
+                     unitsCssClass="append-to-value" style="dropdown" size="9" required="true">
+                </obs>
+            </p>
+        </fieldset>
+
+
+
+    </section>
+
+    <submit/>
+
+</htmlform>

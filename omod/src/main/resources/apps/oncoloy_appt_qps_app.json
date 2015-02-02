@@ -1,0 +1,23 @@
+[
+    {
+        "id": "imbemr.oncologyQpsAppointment",
+        "instanceOf": "coreapps.template.findPatient",
+        "extensions": [
+            {
+                "id": "imbemr.oncologyQpsAppointment.extension",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "Schedule Oncology Appointment Form QPS",
+                "url": "coreapps/findpatient/findPatient.page?app=imbemr.oncologyQpsAppointment",
+                "icon": "icon-stethoscope",
+                "order": -99,
+                "requiredPrivilege": "App: imbemr.forms"
+            }
+        ],
+        "config": {
+            "afterSelectedUrl": "/htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patientId}}&definitionUiResource=imbemr:htmlforms/oncologyQpsAppointment.xml",
+            "label": "Oncology Appointment QPS",
+            "heading": "Oncology Appointment QPS"
+        }
+    }
+]
