@@ -1,0 +1,11 @@
+[
+    {
+        "id": "imbemr.sync",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Synchronization",
+        "url": "module/sync/overview.htm",
+        "icon": "icon-exchange",
+        "order": 199
+    }
+]
