@@ -5,7 +5,7 @@
         "extensions": [
             {
                 "id": "imbemr.oncologyAppointment.extension",
-			    "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+			    "extensionPointId": "imbForms.apps",
 			    "type": "link",
 			    "label": "Schedule Oncology Appointment Form",
 			    "url": "coreapps/findpatient/findPatient.page?app=imbemr.oncologyAppointment",

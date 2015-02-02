@@ -87,5 +87,11 @@
         <description>Able to manage app definitions</description>
     </privilege>
 
+    <privilege>
+        <name>App: imbemr.imbForms</name>
+        <description>Able to view IMB Forms</description>
+    </privilege>
+
+
 </module>
 
