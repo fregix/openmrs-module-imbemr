@@ -24,11 +24,9 @@ import org.openmrs.module.Module;
 import org.openmrs.module.ModuleActivator;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.appframework.service.AppFrameworkService;
-import org.openmrs.module.emrapi.EmrApiConstants;
 import org.openmrs.module.htmlformentry.HtmlFormEntryService;
 import org.openmrs.module.htmlformentryui.HtmlFormUtil;
 import org.openmrs.module.namephonetics.NamePhoneticsConstants;
-import org.openmrs.module.referencemetadata.ReferenceMetadataProperties;
 import org.openmrs.module.registrationcore.RegistrationCoreConstants;
 import org.openmrs.scheduler.SchedulerService;
 import org.openmrs.scheduler.TaskDefinition;
@@ -81,8 +79,7 @@ public class ImbEmrActivator extends BaseModuleActivator {
 	
 	        administrationService.saveGlobalProperty(new GlobalProperty("registrationcore.patientNameSearch",
 	                "registrationcore.ExistingPatientNameSearch"));
-	
-	        setupEmrApiGlobalProperties(administrationService);
+
 	        setupNamePhoneticsGlobalProperties(administrationService);
 	        setupRegistrationcoreGlobalProperties(administrationService);
 	        setupConceptManagementAppsGlobalProperties(administrationService);
@@ -102,17 +99,6 @@ public class ImbEmrActivator extends BaseModuleActivator {
 		setGlobalProperty(administrationService, "conceptmanagementapps.snomedCtConceptSource",
 		    "1ADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
 	}
-
-    public void setupEmrApiGlobalProperties(AdministrationService administrationService) {
-        setGlobalProperty(administrationService, EmrApiConstants.GP_ADMISSION_ENCOUNTER_TYPE, ReferenceMetadataProperties.ADMISSION_ENCOUNTER_TYPE_UUID);
-        setGlobalProperty(administrationService, EmrApiConstants.GP_TRANSFER_WITHIN_HOSPITAL_ENCOUNTER_TYPE, ReferenceMetadataProperties.TRANSFER_ENCOUNTER_TYPE_UUID);
-        setGlobalProperty(administrationService, EmrApiConstants.GP_EXIT_FROM_INPATIENT_ENCOUNTER_TYPE, ReferenceMetadataProperties.DISCHARGE_ENCOUNTER_TYPE_UUID);
-        setGlobalProperty(administrationService, EmrApiConstants.GP_CHECK_IN_ENCOUNTER_TYPE, ReferenceMetadataProperties.CHECK_IN_ENCOUNTER_TYPE_UUID);
-
-        setGlobalProperty(administrationService, EmrApiConstants.GP_AT_FACILITY_VISIT_TYPE, ReferenceMetadataProperties.FACILITY_VISIT_TYPE_UUID);
-
-        setGlobalProperty(administrationService, EmrApiConstants.GP_DIAGNOSIS_SET_OF_SETS, ReferenceMetadataProperties.ICPC_DIAGNOSIS_CATEGORIES_CONCEPT_UUID);
-    }
 
     private void setupNamePhoneticsGlobalProperties(AdministrationService administrationService) {
 		setGlobalProperty(administrationService, NamePhoneticsConstants.GIVEN_NAME_GLOBAL_PROPERTY, "Soundex");
