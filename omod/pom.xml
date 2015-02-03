@@ -45,6 +45,7 @@
             <artifactId>compass</artifactId>
             <version>0.11.7</version>
             <type>gem</type>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -52,6 +53,7 @@
 		    <artifactId>sass</artifactId>
 		    <version>3.2.5</version>
 		    <type>gem</type>
+            <scope>provided</scope>
 		 </dependency>
 
          <dependency>
@@ -282,6 +284,7 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <includeGemsInResources>false</includeGemsInResources>
                             <jrubyVersion>1.7.10</jrubyVersion>
                             <execArgs>${gem.home}/bin/compass watch ${basedir}/src/main/compass</execArgs>
                         </configuration>
