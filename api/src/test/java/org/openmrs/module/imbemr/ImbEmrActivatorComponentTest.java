@@ -42,7 +42,7 @@ public class ImbEmrActivatorComponentTest extends BaseModuleContextSensitiveTest
         MetadataUtil.setupSpecificMetadata(getClass().getClassLoader(), "Reference_Application_Visit_and_Encounter_Types");
 
         ImbEmrActivator referenceApplicationActivator = new ImbEmrActivator();
-        referenceApplicationActivator.setupEmrApiGlobalProperties(administrationService);
+        //referenceApplicationActivator.setupEmrApiGlobalProperties(administrationService);
 
         assertThat(emrApiProperties.getAdmissionEncounterType(), hasUuid(ReferenceMetadataProperties.ADMISSION_ENCOUNTER_TYPE_UUID));
         assertThat(emrApiProperties.getExitFromInpatientEncounterType(), hasUuid(ReferenceMetadataProperties.DISCHARGE_ENCOUNTER_TYPE_UUID));
