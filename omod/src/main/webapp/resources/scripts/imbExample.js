@@ -4,29 +4,33 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
         function($scope, $http) {
 
             $scope.calculateBmi = function() {
-                var bmi = $scope.weight / ($scope.height * $scope.height);
 
-                //var errors = [];
-                //if (!$scope.weight) {
-                //    errors.push("Missing weight");
-                //}
-                //if (!$scope.height) {
-                //    errors.push("Missing height");
-                //}
-                //
-                //if (!bmi) {
-                //    errors.push("Invalid");
-                //}
-                //if (bmi < 10) {
-                //    errors.push("Invalid: BMI too low");
-                //}
-                //if (bmi > 40) {
-                //    errors.push("Invalid: BMI too high (" + bmi + ")");
-                //}
-                //
-                //if (errors.length > 0) {
-                //    $scope.errorMessage = errors.join(", ");
-                //}
+                console.log("weight=" + $scope.weight);
+                console.log("height=" + $scope.height);
+
+                var bmi = $scope.weight / ($scope.height * $scope.height) ;
+
+                var errors = [];
+                if (!$scope.weight) {
+                    errors.push("Missing weight");
+                }
+                if (!$scope.height) {
+                    errors.push("Missing height");
+                }
+
+                if (!bmi) {
+                    errors.push("Invalid");
+                }
+                if (bmi < 10) {
+                    errors.push("Invalid: BMI too low");
+                }
+                if (bmi > 40) {
+                    errors.push("Invalid: BMI too high (" + bmi + ")");
+                }
+
+                if (errors.length > 0) {
+                    $scope.errorMessage = errors.join(", ");
+                }
 
                 return bmi;
             }
