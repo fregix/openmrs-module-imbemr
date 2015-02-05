@@ -76,7 +76,8 @@ public class ImbEmrActivator extends BaseModuleActivator {
 	
 	        appFrameworkService.disableApp("registrationapp.basicRegisterPatient");
 	        appFrameworkService.disableApp("coreapps.awaitingAdmission");
-	
+            appFrameworkService.disableApp("coreapps.mostRecentVitals");
+
 	        administrationService.saveGlobalProperty(new GlobalProperty("registrationcore.patientNameSearch",
 	                "registrationcore.ExistingPatientNameSearch"));
 

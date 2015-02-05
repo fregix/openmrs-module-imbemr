@@ -1,6 +1,7 @@
 package org.openmrs.module.imbemr;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openmrs.api.AdministrationService;
 import org.openmrs.api.LocationService;
@@ -37,6 +38,7 @@ public class ImbEmrActivatorComponentTest extends BaseModuleContextSensitiveTest
     @Autowired
     private SchedulerService schedulerService;
 
+    @Ignore
     @Test
     public void testSetUpAdtGlobalProperties() throws Exception {
         MetadataUtil.setupSpecificMetadata(getClass().getClassLoader(), "Reference_Application_Visit_and_Encounter_Types");
