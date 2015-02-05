@@ -1,0 +1,11 @@
+[
+    {
+        "id": "imbemr.ng-example",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Angular Example",
+        "url": "imbemr/imbExample.page",
+        "icon": "icon-double-angle-up",
+        "order": 200
+    }
+]

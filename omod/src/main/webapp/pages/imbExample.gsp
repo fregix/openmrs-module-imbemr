@@ -15,7 +15,7 @@
 
     <div>
         Search for a patient:
-        <input type="text" size="40" ng-model="patientSearch"/>
+        <input type="text" size="40" ng-model="patientSearch" ng-keydown="searchForPatients(patientSearch)"/>
         <button ng-click="searchForPatients(patientSearch)">Do Search</button>
     </div>
 
@@ -42,12 +42,12 @@
 
         <form ng-submit="saveWeightAndHeight()">
             <p>
-                <label>Weight</label>
+                <label>Weight(Kg)</label>
                 <input ng-model="weight"/>
             </p>
 
             <p>
-                <label>Height</label>
+                <label>Height(cm)</label>
                 <input ng-model="height"/>
             </p>
 

@@ -4,29 +4,36 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
         function($scope, $http) {
 
             $scope.calculateBmi = function() {
-                var bmi = $scope.weight / ($scope.height * $scope.height);
 
-                //var errors = [];
-                //if (!$scope.weight) {
-                //    errors.push("Missing weight");
-                //}
-                //if (!$scope.height) {
-                //    errors.push("Missing height");
-                //}
-                //
-                //if (!bmi) {
-                //    errors.push("Invalid");
-                //}
-                //if (bmi < 10) {
-                //    errors.push("Invalid: BMI too low");
-                //}
-                //if (bmi > 40) {
-                //    errors.push("Invalid: BMI too high (" + bmi + ")");
-                //}
-                //
-                //if (errors.length > 0) {
-                //    $scope.errorMessage = errors.join(", ");
-                //}
+                console.log("weight=" + $scope.weight);
+                console.log("height=" + $scope.height);
+
+                var bmi = $scope.weight / (($scope.height * $scope.height) /10000 );
+
+                var errors = [];
+                if (!$scope.weight) {
+                    errors.push("Missing weight");
+                }
+                if (!$scope.height) {
+                    errors.push("Missing height");
+                }
+
+                if (!bmi) {
+                    errors.push("Invalid");
+                }
+                if (bmi < 18.5) {
+                    errors.push("Warning: BMI too low, UNDERWEIGHT");
+                }
+                if (bmi > 25 && bmi < 30) {
+                    errors.push("Warning: BMI too high. OVERWEIGHT (" + bmi + ")");
+                }
+                if (bmi >= 30) {
+                    errors.push("Warning: BMI is very high, OBESITY");
+                }
+
+                if (errors.length > 0) {
+                    $scope.errorMessage = errors.join(", ");
+                }
 
                 return bmi;
             }

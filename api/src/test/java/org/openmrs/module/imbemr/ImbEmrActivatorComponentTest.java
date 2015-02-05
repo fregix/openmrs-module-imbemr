@@ -1,7 +1,6 @@
 package org.openmrs.module.imbemr;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openmrs.api.AdministrationService;
 import org.openmrs.api.LocationService;
@@ -17,42 +16,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Collection;
 
-import static org.junit.Assert.assertThat;
-import static org.openmrs.test.OpenmrsMatchers.hasUuid;
-
 /**
  *
  */
 public class ImbEmrActivatorComponentTest extends BaseModuleContextSensitiveTest {
-
-    @Autowired
-    private EmrApiProperties emrApiProperties;
-
-    @Autowired
-    @Qualifier("adminService")
-    private AdministrationService administrationService;
-
-    @Autowired
-    private LocationService locationService;
     
     @Autowired
     private SchedulerService schedulerService;
-
-    @Ignore
-    @Test
-    public void testSetUpAdtGlobalProperties() throws Exception {
-        MetadataUtil.setupSpecificMetadata(getClass().getClassLoader(), "Reference_Application_Visit_and_Encounter_Types");
-
-        ImbEmrActivator referenceApplicationActivator = new ImbEmrActivator();
-        //referenceApplicationActivator.setupEmrApiGlobalProperties(administrationService);
-
-        assertThat(emrApiProperties.getAdmissionEncounterType(), hasUuid(ReferenceMetadataProperties.ADMISSION_ENCOUNTER_TYPE_UUID));
-        assertThat(emrApiProperties.getExitFromInpatientEncounterType(), hasUuid(ReferenceMetadataProperties.DISCHARGE_ENCOUNTER_TYPE_UUID));
-        assertThat(emrApiProperties.getTransferWithinHospitalEncounterType(), hasUuid(ReferenceMetadataProperties.TRANSFER_ENCOUNTER_TYPE_UUID));
-        assertThat(emrApiProperties.getCheckInEncounterType(), hasUuid(ReferenceMetadataProperties.CHECK_IN_ENCOUNTER_TYPE_UUID));
-
-        assertThat(emrApiProperties.getAtFacilityVisitType(), hasUuid(ReferenceMetadataProperties.FACILITY_VISIT_TYPE_UUID));
-    }
     
     /**
      * Tests that if process hl7 task is set up correctly
