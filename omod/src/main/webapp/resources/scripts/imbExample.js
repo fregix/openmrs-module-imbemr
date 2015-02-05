@@ -8,7 +8,7 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
                 console.log("weight=" + $scope.weight);
                 console.log("height=" + $scope.height);
 
-                var bmi = $scope.weight / ($scope.height * $scope.height) ;
+                var bmi = $scope.weight / (($scope.height * $scope.height) /10000 );
 
                 var errors = [];
                 if (!$scope.weight) {
@@ -21,11 +21,14 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
                 if (!bmi) {
                     errors.push("Invalid");
                 }
-                if (bmi < 10) {
-                    errors.push("Invalid: BMI too low");
+                if (bmi < 18.5) {
+                    errors.push("Warning: BMI too low, UNDERWEIGHT");
                 }
-                if (bmi > 40) {
-                    errors.push("Invalid: BMI too high (" + bmi + ")");
+                if (bmi > 25 && bmi < 30) {
+                    errors.push("Warning: BMI too high. OVERWEIGHT (" + bmi + ")");
+                }
+                if (bmi >= 30) {
+                    errors.push("Warning: BMI is very high, OBESITY");
                 }
 
                 if (errors.length > 0) {
