@@ -9,7 +9,7 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
                 console.log("height=" + $scope.height);
 
                 var bmi = $scope.weight / (($scope.height * $scope.height) /10000 );
-
+                $scope.errorMessage = '';
                 var errors = [];
                 if (!$scope.weight) {
                     errors.push("Missing weight");
@@ -33,6 +33,8 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
 
                 if (errors.length > 0) {
                     $scope.errorMessage = errors.join(", ");
+                } else {
+                    $scope.errorMessage = 'Normal';
                 }
 
                 return bmi;
@@ -52,18 +54,21 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
             $scope.saveWeightAndHeight = function() {
                 var encounter = {
                     patient: $scope.selectedPatient.uuid,
-                    encounterType: 'TODO',
+                    encounterType: 'daf32375-d293-4e27-a68d-2a58494c96e1',
                     obs: [
                         {
-                            concept: '5089-uuid',
+                            concept: '3ce93b62-26fe-102b-80cb-0017a47871b2', //5089-uuid
                             value: $scope.weight
                         },
                         {
-                            concept: '5090-uuid',
+                            concept: '3ce93cf2-26fe-102b-80cb-0017a47871b2', //5090-uuid
                             value: $scope.height
                         }
                     ]
                 };
+
+                console.log("submit bmi");
+
 
                 $http.post("/" + OPENMRS_CONTEXT_PATH + "/ws/rest/v1/encounter",
                     encounter)
@@ -73,7 +78,8 @@ angular.module('imbExample', [ 'encounterService',  'ui.bootstrap' ])
                     .error(function(error) {
                         console.log(error);
                         window.alert("Error");
-                    })
+                    });
+
             }
 
         }])

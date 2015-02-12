@@ -12,7 +12,7 @@
   ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
   -->
 
-<htmlform formUuid="a000cb34-9ec1-4344-a1c8-f692232f6edd" formName="Vitals" formEncounterType="67a71486-1a54-468f-ac3e-7091a9a79584" formVersion="1.0">
+<htmlform formUuid="a000cb34-9ec1-4344-a1c8-f692232f6edd" formName="Vitals" formEncounterType="daf32375-d293-4e27-a68d-2a58494c96e1" formVersion="1.0">
     <style>
         #calculated-bmi {
             font-weight: bold;
@@ -129,7 +129,7 @@
             <legend>Who?</legend>
             <label>Who?</label>
 
-            <encounterProviderAndRole default="currentUser" encounterRole="240b26f9-dd88-4172-823d-4a8bfeb7841f" required="true"/>
+            <encounterProvider default="currentUser" role="Provider" />
         </fieldset>
 
         <fieldset>
@@ -142,21 +142,21 @@
 
     <section id="vitals" sectionTag="section" headerStyle="title" headerCode="imbemr.vitals.title">
         <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5090').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5090').name"/></h3>
+            <legend><lookup expression="fn.getConcept('PIH:5090').name"/></legend>
+            <h3><lookup expression="fn.getConcept('PIH:5090').name"/></h3>
             
             <p class="left">
-                <obs conceptId="CIEL:5090" id="height" showUnits="uicommons.units.centimeters" unitsCssClass="append-to-value"/>
+                <obs conceptId="PIH:5090" id="height" showUnits="uicommons.units.centimeters" unitsCssClass="append-to-value"/>
             </p>
 
         </fieldset>
 
         <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5089').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5089').name"/></h3>
+            <legend><lookup expression="fn.getConcept('PIH:5089').name"/></legend>
+            <h3><lookup expression="fn.getConcept('PIH:5089').name"/></h3>
 
             <p class="left">
-                <obs conceptId="CIEL:5089" id="weight" showUnits="uicommons.units.kilograms" unitsCssClass="append-to-value"/>
+                <obs conceptId="PIH:5089" id="weight" showUnits="uicommons.units.kilograms" unitsCssClass="append-to-value"/>
             </p>
 
         </fieldset>
@@ -187,69 +187,14 @@
         </includeIf>
 
         <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5088').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5088').name"/></h3>
+            <legend><lookup expression="fn.getConcept('PIH:5088').name"/></legend>
+            <h3><lookup expression="fn.getConcept('PIH:5088').name"/></h3>
             
             <p class="left">
-                <obs conceptId="CIEL:5088" id="temperature" showUnits="uicommons.units.degreesCelsius" unitsCssClass="append-to-value"/>
+                <obs conceptId="PIH:5088" id="temperature" showUnits="uicommons.units.degreesCelsius" unitsCssClass="append-to-value"/>
             </p>
 
         </fieldset>
-
-        <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5087').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5087').name"/></h3>
-
-            <p>
-                <obs conceptId="CIEL:5087" id="heart_rate" showUnits="uicommons.units.perMinute" unitsCssClass="append-to-value"/>
-            </p>
-        </fieldset>
-
-        <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5242').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5242').name"/></h3>
-
-            <p>
-                <obs conceptId="CIEL:5242" id="respiratory_rate" showUnits="uicommons.units.perMinute" unitsCssClass="append-to-value"/>
-            </p>
-        </fieldset>
-
-        <fieldset field-separator=" / ">
-            <legend><uimessage code="imbemr.vitals.bloodPressure.title"/></legend>
-            <h3><uimessage code="imbemr.vitals.bloodPressure.title"/></h3>
-
-            <p class="left">
-                <obs conceptId="CIEL:5085" id="bp_systolic"/>
-            </p>
-            <p class="left">
-                /
-            </p>
-            <p class="left">
-                <obs conceptId="CIEL:5086" id="bp_diastolic"/>
-            </p>
-        </fieldset>
-
-        <fieldset>
-            <legend><lookup expression="fn.getConcept('CIEL:5092').name"/></legend>
-            <h3><lookup expression="fn.getConcept('CIEL:5092').name"/></h3>
-
-            <p>
-                <obs conceptId="CIEL:5092" id="o2_sat" showUnits="uicommons.units.percent" unitsCssClass="append-to-value"/>
-            </p>
-        </fieldset>
-
-
-        <!-- only show BMI if patient is less than 13 years old (on the encounterDate) -->
-        <includeIf velocityTest="13 > $patient.getAge($encounter.getEncounterDatetime())">
-            <fieldset>
-                <legend><lookup expression="fn.getConcept('CIEL:1343').name"/></legend>
-                <h3><lookup expression="fn.getConcept('CIEL:1343').name"/></h3>
-
-                <p>
-                    <obs conceptId="CIEL:1343" id="muac" showUnits="uicommons.units.millimeters" unitsCssClass="append-to-value"/>
-                </p>
-            </fieldset>
-        </includeIf>
 
 
     </section>

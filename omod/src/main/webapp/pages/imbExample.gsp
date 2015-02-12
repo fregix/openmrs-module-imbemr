@@ -43,12 +43,12 @@
         <form ng-submit="saveWeightAndHeight()">
             <p>
                 <label>Weight(Kg)</label>
-                <input ng-model="weight"/>
+                <input ng-model="weight" ng-change="calculateBmi()"/>
             </p>
 
             <p>
                 <label>Height(cm)</label>
-                <input ng-model="height"/>
+                <input ng-model="height" ng-change="calculateBmi()"/>
             </p>
 
             <p ng-show="weight && height">
@@ -58,7 +58,7 @@
 
             <div class="error" ng-show="errorMessage">{{ errorMessage }}</div>
 
-            <input type="submit" ng-disabled="errorMessage"/>
+            <input type="submit" />
         </form>
 
 
