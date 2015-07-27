@@ -1,0 +1,11 @@
+[
+    {
+        "id": "imbemr.emr-monitor",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "EMR Monitor",
+        "url": "emrmonitor/configEmrMonitorServer.page",
+        "icon": "icon-desktop",
+        "order": 201
+    }
+]
