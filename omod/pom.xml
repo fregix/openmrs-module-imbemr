@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>webservices.rest-omod-common</artifactId>
-            <version>${webservicesRestModuleVersion}</version>
+            <version>${webservicesRestVersion}</version>
             <scope>provided</scope>
         </dependency>
 
