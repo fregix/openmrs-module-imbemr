@@ -12,11 +12,6 @@
 	<name>IMB EMR Module OMOD</name>
 	<description>OMOD project for IMB EMR</description>
 
-    <properties>
-        <gem.home>${basedir}/rubygems</gem.home>
-        <gem.path>${basedir}/rubygems</gem.path>
-    </properties>
-
 	<dependencies>
         <dependency>
             <groupId>${project.parent.groupId}</groupId>
@@ -27,60 +22,15 @@
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>appui-omod</artifactId>
-            <version>${appuiVersion}</version>
-            <type>jar</type>
+            <artifactId>appframework-api</artifactId>
+            <version>${appframeworkVersion}</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>registrationapp-omod</artifactId>
-            <version>${registrationappVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-						
-        <dependency>
-            <groupId>rubygems</groupId>
-            <artifactId>compass</artifactId>
-            <version>0.11.7</version>
-            <type>gem</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>rubygems</groupId>
-		    <artifactId>sass</artifactId>
-		    <version>3.2.5</version>
-		    <type>gem</type>
-            <scope>provided</scope>
-		 </dependency>
-
-         <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>coreapps-omod</artifactId>
-             <version>${coreappsVersion}</version>
-             <scope>provided</scope>
-         </dependency>
-         
-         <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>formentryapp-omod</artifactId>
-             <version>${formentryappVersion}</version>
-             <scope>provided</scope>
-         </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>webservices.rest-omod-common</artifactId>
             <version>${webservicesRestModuleVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>appframework-api</artifactId>
-            <version>${appframeworkVersion}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -244,54 +194,8 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>de.saumya.mojo</groupId>
-                <artifactId>gem-maven-plugin</artifactId>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <jrubyVersion>1.7.10</jrubyVersion>
-                    <execArgs>${gem.home}/bin/compass compile ${basedir}/src/main/compass</execArgs>
-                </configuration>
-            </plugin>
             
 		</plugins>
 	</build>
-
-    <profiles>
-        <profile>
-            <id>watch-sass</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>de.saumya.mojo</groupId>
-                        <artifactId>gem-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <includeGemsInResources>false</includeGemsInResources>
-                            <jrubyVersion>1.7.10</jrubyVersion>
-                            <execArgs>${gem.home}/bin/compass watch ${basedir}/src/main/compass</execArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
 </project>

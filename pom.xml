@@ -34,29 +34,19 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>1.9.9-SNAPSHOT</openMRSVersion>
-        <appframeworkVersion>2.3-SNAPSHOT</appframeworkVersion>
+        <openMRSVersion>1.9.9</openMRSVersion>
+        <appframeworkVersion>2.4-SNAPSHOT</appframeworkVersion>
         <appuiVersion>1.3-SNAPSHOT</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
-        <coreappsVersion>1.5-SNAPSHOT</coreappsVersion>
-        <emrapiVersion>1.5-SNAPSHOT</emrapiVersion>
-        <formentryappVersion>1.1-SNAPSHOT</formentryappVersion>
-        <idgenVersion>3.0</idgenVersion>
-        <imbMetadataVersion>1.0-SNAPSHOT</imbMetadataVersion>
-        <htmlformentryVersion>2.5-SNAPSHOT</htmlformentryVersion>
-        <htmlformentryuiVersion>1.2-SNAPSHOT</htmlformentryuiVersion>
-        <metadatadeployVersion>1.4-SNAPSHOT</metadatadeployVersion>
-        <metadatasharingVersion>1.1.8</metadatasharingVersion>
-        <namephoneticsVersion>1.4</namephoneticsVersion>
-        <providermanagementVersion>2.2</providermanagementVersion>
-        <referenceMetadataVersion>2.3-SNAPSHOT</referenceMetadataVersion>
-        <registrationcoreVersion>1.1-SNAPSHOT</registrationcoreVersion>
-        <registrationappVersion>1.1-SNAPSHOT</registrationappVersion>
-        <reportingVersion>0.9.3-SNAPSHOT</reportingVersion>
-        <serializationxstreamVersion>0.2.8-SNAPSHOT</serializationxstreamVersion>
-        <uicommonsVersion>1.4-SNAPSHOT</uicommonsVersion>
-        <uiframeworkVersion>3.3-SNAPSHOT</uiframeworkVersion>
-        <webservicesRestModuleVersion>2.6</webservicesRestModuleVersion>
+        <idgenVersion>4.0</idgenVersion>
+        <htmlformentryVersion>2.6</htmlformentryVersion>
+        <metadatasharingVersion>1.1.9</metadatasharingVersion>
+        <namephoneticsVersion>1.5</namephoneticsVersion>
+        <reportingVersion>0.9.8.1</reportingVersion>
+        <serializationxstreamVersion>0.2.8</serializationxstreamVersion>
+        <uicommonsVersion>1.4</uicommonsVersion>
+        <uiframeworkVersion>3.4-SNAPSHOT</uiframeworkVersion>
+        <webservicesRestModuleVersion>2.12-SNAPSHOT</webservicesRestModuleVersion>
 	</properties>
 
     <dependencies>
@@ -101,23 +91,7 @@
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
-        <!-- END -->
 
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>referencemetadata-api</artifactId>
-            <version>${referenceMetadataVersion}</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>imbmetadata-api</artifactId>
-            <version>${imbMetadataVersion}</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
@@ -143,35 +117,6 @@
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>appui-api</artifactId>
-            <version>${appuiVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>emrapi-api-1.9</artifactId>
-            <version>${emrapiVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>emrapi-api</artifactId>
-            <version>${emrapiVersion}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>providermanagement-api</artifactId>
-            <version>${providermanagementVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
             <artifactId>metadatasharing-api</artifactId>
             <version>${metadatasharingVersion}</version>
             <scope>provided</scope>
@@ -179,25 +124,10 @@
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>metadatadeploy-api</artifactId>
-            <version>${metadatadeployVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
             <artifactId>namephonetics-api</artifactId>
             <version>${namephoneticsVersion}</version>
             <scope>provided</scope>
         </dependency>
-		
-		<dependency>
-			<groupId>org.openmrs.module</groupId>
-			<artifactId>registrationcore-api</artifactId>
-            <version>${registrationcoreVersion}</version>
-            <scope>provided</scope>
-		</dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
@@ -210,13 +140,6 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>htmlformentry-api</artifactId>
             <version>${htmlformentryVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>htmlformentryui-api</artifactId>
-            <version>${htmlformentryuiVersion}</version>
             <scope>provided</scope>
         </dependency>
 
