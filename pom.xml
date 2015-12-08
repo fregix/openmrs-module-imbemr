@@ -55,6 +55,27 @@
         <uicommonsVersion>1.4</uicommonsVersion>
         <uiframeworkVersion>3.4</uiframeworkVersion>
         <webservicesRestVersion>2.12</webservicesRestVersion>
+
+        <!--
+            Rwanda Primary Care Module	2.0.7-SNAPSHOT
+            OpenMRS EmrMonitor Module	1.0-SNAPSHOT
+            Address Hierarchy Rwanda	1.2.5-SNAPSHOT
+            Reporting Object Group	1.0.4.4-SNAPSHOT
+            Usage Statistics	1.5-SNAPSHOT
+            Order Extension	2.0-SNAPSHOT
+            Validation Module	1.0.1
+            Row Per Patient Reports	1.5.3-SNAPSHOT
+            Groovy	2.2.4
+            HTML Form Entry Extensions for OpenMRS 1.9 Module	1.6.1
+            Form Filter Module	1.0.0
+            simplelabentry	1.8-SNAPSHOT
+            Rwanda Reports	2.5.8-SNAPSHOT
+            Omod Export Module	1.0-SNAPSHOT
+            Patient Summary Module	1.4.0
+            Research Encounters	2.5
+            PIH Rwanda HIV Flowsheet	0.5.5
+            Height Weight tracker	1.1-SNAPSHOT
+        -->
 	</properties>
 
     <dependencies>
