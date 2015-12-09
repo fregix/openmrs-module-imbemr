@@ -43,6 +43,18 @@
                 </dependency>
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
+                    <artifactId>formfilter-omod</artifactId>
+                    <version>${formfilterVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
+                    <artifactId>groovy-omod</artifactId>
+                    <version>${groovyVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
                     <artifactId>htmlformentry-omod</artifactId>
                     <version>${htmlformentryVersion}</version>
                     <scope>provided</scope>
@@ -101,6 +113,21 @@
                     <version>${namephoneticsVersion}</version>
                     <scope>provided</scope>
                 </dependency>
+                <!--
+                    TODO
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
+                    <artifactId>patientsummary-omod</artifactId>
+                    <version>${patientsummaryVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
+                    <artifactId>pihrwandahivflowsheet-omod</artifactId>
+                    <version>${pihrwandahivflowsheetVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
+                -->
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>reporting-omod</artifactId>
