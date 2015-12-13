@@ -54,10 +54,11 @@
         <pihrwandahivflowsheetVersion>0.5.5</pihrwandahivflowsheetVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
-        <serializationVersion>0.2.8</serializationVersion>
+        <serializationVersion>0.2.9</serializationVersion>
         <syncVersion>1.2</syncVersion>
         <uicommonsVersion>1.4</uicommonsVersion>
         <uiframeworkVersion>3.4</uiframeworkVersion>
+        <usagestatisticsVersion>1.4.2</usagestatisticsVersion>
         <webservicesRestVersion>2.12</webservicesRestVersion>
 
         <!--

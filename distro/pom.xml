@@ -114,20 +114,21 @@
                     <scope>provided</scope>
                 </dependency>
                 <!--
-                    TODO
-                <dependency>
-                    <groupId>org.openmrs.module</groupId>
-                    <artifactId>patientsummary-omod</artifactId>
-                    <version>${patientsummaryVersion}</version>
-                    <scope>provided</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.openmrs.module</groupId>
-                    <artifactId>pihrwandahivflowsheet-omod</artifactId>
-                    <version>${pihrwandahivflowsheetVersion}</version>
-                    <scope>provided</scope>
-                </dependency>
-                -->
+               <dependency>
+                   <groupId>org.openmrs.module</groupId>
+                   <artifactId>patientsummary-omod</artifactId>
+                   <version>${patientsummaryVersion}</version>
+                   <scope>provided</scope>
+               </dependency>
+
+   TODO
+<dependency>
+   <groupId>org.openmrs.module</groupId>
+   <artifactId>pihrwandahivflowsheet-omod</artifactId>
+   <version>${pihrwandahivflowsheetVersion}</version>
+   <scope>provided</scope>
+</dependency>
+-->
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>reporting-omod</artifactId>
@@ -162,6 +163,12 @@
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>uiframework-omod</artifactId>
                     <version>${uiframeworkVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
+                    <artifactId>usagestatistics-omod</artifactId>
+                    <version>${usagestatisticsVersion}</version>
                     <scope>provided</scope>
                 </dependency>
                 <dependency>
