@@ -36,43 +36,39 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <openMRSVersion>1.9.9</openMRSVersion>
+        <addresshierarchyrwandaVersion>1.2.5-SNAPSHOT</addresshierarchyrwandaVersion>
         <appframeworkVersion>2.4</appframeworkVersion>
         <appuiVersion>1.3</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
-        <idgenVersion>4.0</idgenVersion>
+        <emrmonitorVersion>1.0-SNAPSHOT</emrmonitorVersion>
         <formfilterVersion>1.2</formfilterVersion>
         <groovyVersion>2.2.4</groovyVersion>
+        <heightweighttrackerVersion>1.1-SNAPSHOT</heightweighttrackerVersion>
         <htmlformentryVersion>2.6</htmlformentryVersion>
         <htmlformentry19extVersion>1.6.1</htmlformentry19extVersion>
         <htmlformflowsheetVersion>1.3</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.7.0</htmlwidgetsVersion>
+        <idgenVersion>4.0</idgenVersion>
         <logicVersion>0.5.2</logicVersion>
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
         <metadatasharingVersion>1.1.9</metadatasharingVersion>
         <namephoneticsVersion>1.5</namephoneticsVersion>
+        <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>2.1</patientsummaryVersion>
         <pihrwandahivflowsheetVersion>0.5.5</pihrwandahivflowsheetVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
+        <reportingobjectgroupVersion>1.0.4.4-SNAPSHOT</reportingobjectgroupVersion>
+        <rowperpatientreportsVersion>1.5.3-SNAPSHOT</rowperpatientreportsVersion>
+        <rwandaprimarycareVersion>2.0.7-SNAPSHOT</rwandaprimarycareVersion>
+        <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.9</serializationVersion>
+        <simplelabentryVersion>1.8-SNAPSHOT</simplelabentryVersion>
         <syncVersion>1.2</syncVersion>
         <uicommonsVersion>1.4</uicommonsVersion>
         <uiframeworkVersion>3.4</uiframeworkVersion>
         <usagestatisticsVersion>1.4.2</usagestatisticsVersion>
         <webservicesRestVersion>2.12</webservicesRestVersion>
-
-        <!--
-            Rwanda Primary Care Module	2.0.7-SNAPSHOT
-            OpenMRS EmrMonitor Module	1.0-SNAPSHOT
-            Address Hierarchy Rwanda	1.2.5-SNAPSHOT
-            Reporting Object Group	1.0.4.4-SNAPSHOT
-            Order Extension	2.0-SNAPSHOT
-            Row Per Patient Reports	1.5.3-SNAPSHOT
-            simplelabentry	1.8-SNAPSHOT
-            Rwanda Reports	2.5.8-SNAPSHOT
-            Omod Export Module	1.0-SNAPSHOT
-            Height Weight tracker	1.1-SNAPSHOT
-        -->
 	</properties>
 
     <dependencies>

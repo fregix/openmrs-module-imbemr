@@ -121,13 +121,17 @@
                    <scope>provided</scope>
                </dependency>
 
-<!--   TODO
-<dependency>
-   <groupId>org.openmrs.module</groupId>
-   <artifactId>pihrwandahivflowsheet-omod</artifactId>
-   <version>${pihrwandahivflowsheetVersion}</version>
-   <scope>provided</scope>
-</dependency>
+<!--   TODO: Add the below modules
+            addressHierarchyRwandaVersion
+            emrmonitorVersion
+            heightweighttrackerVersion
+            rwandaprimarycareVersion
+            reportingobjectgroupVersion
+            orderExtensionVersion
+            pihrwandahivflowsheet
+            rowperpatientreportsVersion
+            simplelabentryVersion
+            rwandareportsVersion
 -->
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
