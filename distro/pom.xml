@@ -113,7 +113,7 @@
                     <version>${namephoneticsVersion}</version>
                     <scope>provided</scope>
                 </dependency>
-                <!--
+
                <dependency>
                    <groupId>org.openmrs.module</groupId>
                    <artifactId>patientsummary-omod</artifactId>
@@ -121,7 +121,7 @@
                    <scope>provided</scope>
                </dependency>
 
-   TODO
+<!--   TODO
 <dependency>
    <groupId>org.openmrs.module</groupId>
    <artifactId>pihrwandahivflowsheet-omod</artifactId>

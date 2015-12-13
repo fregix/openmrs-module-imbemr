@@ -50,7 +50,7 @@
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
         <metadatasharingVersion>1.1.9</metadatasharingVersion>
         <namephoneticsVersion>1.5</namephoneticsVersion>
-        <patientsummaryVersion>1.4.0</patientsummaryVersion>
+        <patientsummaryVersion>2.1</patientsummaryVersion>
         <pihrwandahivflowsheetVersion>0.5.5</pihrwandahivflowsheetVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
@@ -62,20 +62,16 @@
         <webservicesRestVersion>2.12</webservicesRestVersion>
 
         <!--
-
-
             Rwanda Primary Care Module	2.0.7-SNAPSHOT
             OpenMRS EmrMonitor Module	1.0-SNAPSHOT
             Address Hierarchy Rwanda	1.2.5-SNAPSHOT
             Reporting Object Group	1.0.4.4-SNAPSHOT
-            Usage Statistics	1.5-SNAPSHOT
             Order Extension	2.0-SNAPSHOT
             Row Per Patient Reports	1.5.3-SNAPSHOT
             simplelabentry	1.8-SNAPSHOT
             Rwanda Reports	2.5.8-SNAPSHOT
             Omod Export Module	1.0-SNAPSHOT
             Height Weight tracker	1.1-SNAPSHOT
-
         -->
 	</properties>
 
