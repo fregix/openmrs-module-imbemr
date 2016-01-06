@@ -120,6 +120,13 @@
                    <version>${patientsummaryVersion}</version>
                    <scope>provided</scope>
                </dependency>
+               
+                <dependency>
+                   <groupId>org.openmrs.module</groupId>
+                   <artifactId>omodexport-omod</artifactId>
+                   <version>${omodExportVersion}</version>
+                   <scope>provided</scope>
+               </dependency>
 
 <!--   TODO: Add the below modules
             addressHierarchyRwandaVersion

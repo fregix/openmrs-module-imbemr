@@ -69,6 +69,7 @@
         <uiframeworkVersion>3.4</uiframeworkVersion>
         <usagestatisticsVersion>1.4.2</usagestatisticsVersion>
         <webservicesRestVersion>2.12</webservicesRestVersion>
+        <omodExportVersion>1.0</omodExportVersion>
 	</properties>
 
     <dependencies>
@@ -181,6 +182,13 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>serialization.xstream-api</artifactId>
             <version>${serializationVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+         <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>omodexport-api</artifactId>
+            <version>${omodExportVersion}</version>
             <scope>provided</scope>
         </dependency>
 
