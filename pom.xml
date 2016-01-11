@@ -71,9 +71,7 @@
         <webservicesRestVersion>2.12</webservicesRestVersion>
         <omodExportVersion>1.0</omodExportVersion>
         <validationVersion>1.0.1</validationVersion>
-        <researchEncountersVersion>2.5</researchEncountersVersion>
         <patientFlagsVersion>1.3.4</patientFlagsVersion>
-        <registerVersion>1.2</registerVersion>
 	</properties>
 
     <dependencies>
@@ -205,22 +203,8 @@
         
          <dependency>
             <groupId>org.openmrs.module</groupId>
-            <artifactId>researchencounters-api</artifactId>
-            <version>${researchEncountersVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        
-         <dependency>
-            <groupId>org.openmrs.module</groupId>
             <artifactId>patientflags-api</artifactId>
             <version>${patientFlagsVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>register-api</artifactId>
-            <version>${registerVersion}</version>
             <scope>provided</scope>
         </dependency>
 
