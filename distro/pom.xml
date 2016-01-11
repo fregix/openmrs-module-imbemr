@@ -127,19 +127,36 @@
                    <version>${omodExportVersion}</version>
                    <scope>provided</scope>
                </dependency>
+               
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validationVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+         <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>researchencounters-api</artifactId>
+            <version>${researchEncountersVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+         <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>patientflags-api</artifactId>
+            <version>${patientFlagsVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>register-api</artifactId>
+            <version>${registerVersion}</version>
+            <scope>provided</scope>
+        </dependency>
 
-<!--   TODO: Add the below modules
-            addressHierarchyRwandaVersion
-            emrmonitorVersion
-            heightweighttrackerVersion
-            rwandaprimarycareVersion
-            reportingobjectgroupVersion
-            orderExtensionVersion
-            pihrwandahivflowsheet
-            rowperpatientreportsVersion
-            simplelabentryVersion
-            rwandareportsVersion
--->
+
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>reporting-omod</artifactId>
