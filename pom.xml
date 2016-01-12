@@ -60,7 +60,7 @@
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>1.0.4.4-SNAPSHOT</reportingobjectgroupVersion>
         <rowperpatientreportsVersion>1.5.3-SNAPSHOT</rowperpatientreportsVersion>
-        <rwandaprimarycareVersion>2.0.7-SNAPSHOT</rwandaprimarycareVersion>
+        <rwandaprimarycareVersion>2.0.7</rwandaprimarycareVersion>
         <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.9</serializationVersion>
         <simplelabentryVersion>1.8-SNAPSHOT</simplelabentryVersion>
@@ -205,6 +205,13 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>patientflags-api</artifactId>
             <version>${patientFlagsVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>rwandaprimarycare-api</artifactId>
+            <version>${rwandaprimarycareVersion}</version>
             <scope>provided</scope>
         </dependency>
 

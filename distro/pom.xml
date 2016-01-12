@@ -141,12 +141,18 @@
             <version>${patientFlagsVersion}</version>
             <scope>provided</scope>
         </dependency>
+        
+         <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>rwandaprimarycare-omod</artifactId>
+            <version>${rwandaprimarycareVersion}</version>
+            <scope>provided</scope>
+        </dependency>
 
 <!--   TODO: Add the below modules
             addressHierarchyRwandaVersion
             emrmonitorVersion
             heightweighttrackerVersion
-            rwandaprimarycareVersion
             reportingobjectgroupVersion
             orderExtensionVersion
             pihrwandahivflowsheet
