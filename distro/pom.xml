@@ -161,11 +161,18 @@
 					<artifactId>reportingobjectgroup-omod</artifactId>
 					<version>${reportingobjectgroupVersion}</version>
 					<scope>provided</scope>
+				</dependency> 
+				
+				<dependency>
+					<groupId>org.openmrs.module</groupId>
+					<artifactId>rowperpatientreports-omod</artifactId>
+					<version>${rowperpatientreportsVersion}</version>
+					<scope>provided</scope>
 				</dependency>
 
 				<!-- TODO: Add the below modules emrmonitorVersion 
 					heightweighttrackerVersion orderExtensionVersion 
-					pihrwandahivflowsheet rowperpatientreportsVersion simplelabentryVersion rwandareportsVersion -->
+					pihrwandahivflowsheet simplelabentryVersion rwandareportsVersion -->
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>reporting-omod</artifactId>
