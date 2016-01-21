@@ -58,7 +58,7 @@
         <pihrwandahivflowsheetVersion>0.5.5</pihrwandahivflowsheetVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
-        <reportingobjectgroupVersion>1.0.4.4-SNAPSHOT</reportingobjectgroupVersion>
+        <reportingobjectgroupVersion>1.0.4.4</reportingobjectgroupVersion>
         <rowperpatientreportsVersion>1.5.3-SNAPSHOT</rowperpatientreportsVersion>
         <rwandaprimarycareVersion>2.0.7</rwandaprimarycareVersion>
         <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
@@ -219,6 +219,13 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>addresshierarchyrwanda-api</artifactId>
             <version>${addresshierarchyrwandaVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>reportingobjectgroup-api</artifactId>
+            <version>${reportingobjectgroupVersion}</version>
             <scope>provided</scope>
         </dependency>
 
