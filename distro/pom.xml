@@ -155,9 +155,16 @@
 					<version>${addresshierarchyrwandaVersion}</version>
 					<scope>provided</scope>
 				</dependency>
+				
+				<dependency>
+					<groupId>org.openmrs.module</groupId>
+					<artifactId>reportingobjectgroup-omod</artifactId>
+					<version>${reportingobjectgroupVersion}</version>
+					<scope>provided</scope>
+				</dependency>
 
 				<!-- TODO: Add the below modules emrmonitorVersion 
-					heightweighttrackerVersion reportingobjectgroupVersion orderExtensionVersion 
+					heightweighttrackerVersion orderExtensionVersion 
 					pihrwandahivflowsheet rowperpatientreportsVersion simplelabentryVersion rwandareportsVersion -->
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
