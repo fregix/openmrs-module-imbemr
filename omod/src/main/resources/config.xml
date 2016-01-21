@@ -13,7 +13,7 @@
 	</description>
 	<updateURL>https://dev.openmrs.org/modules/download/${project.parent.artifactId}/update.rdf</updateURL>
 	<require_version>${openMRSVersion}</require_version>
-
+	
 	<require_modules>
         <require_module version="${addresshierarchyrwandaVersion}">org.openmrs.module.addresshierarchyrwanda</require_module>
 		<require_module version="${appframeworkVersion}">org.openmrs.module.appframework</require_module>
@@ -49,6 +49,8 @@
         <require_module version="${usagestatisticsVersion}">org.openmrs.module.usagestatistics</require_module>
         <require_module version="${webservicesRestVersion}">org.openmrs.module.webservices.rest</require_module>
         <require_module version="${omodExportVersion}">org.openmrs.module.omodexport</require_module>
+        <require_module version="${validationVersion}">org.openmrs.module.validation</require_module>
+        <require_module version="${patientFlagsVersion}">org.openmrs.module.patientflags</require_module>
 	</require_modules>
 
 	<activator>${project.parent.groupId}.${project.parent.artifactId}.ImbEmrActivator</activator>
