@@ -54,15 +54,15 @@
         <namephoneticsVersion>1.5</namephoneticsVersion>
         <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>2.1</patientsummaryVersion>
-        <pihrwandahivflowsheetVersion>0.5.5</pihrwandahivflowsheetVersion>
         <reportingVersion>0.9.8.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>1.0.4.4</reportingobjectgroupVersion>
         <rowperpatientreportsVersion>1.5.3</rowperpatientreportsVersion>
+        <rwandahivflowsheetVersion>0.5.5</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.0.7</rwandaprimarycareVersion>
         <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.9</serializationVersion>
-        <simplelabentryVersion>1.8-SNAPSHOT</simplelabentryVersion>
+        <simplelabentryVersion>1.8</simplelabentryVersion>
         <syncVersion>1.2</syncVersion>
         <uicommonsVersion>1.4</uicommonsVersion>
         <uiframeworkVersion>3.4</uiframeworkVersion>
@@ -157,7 +157,7 @@
             <version>${idgenVersion}</version>
             <scope>provided</scope>
         </dependency>
-        
+
          <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>heightweighttracker-api</artifactId>
