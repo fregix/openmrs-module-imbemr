@@ -55,6 +55,12 @@
 				</dependency>
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
+					<artifactId>heightweighttracker-omod</artifactId>
+					<version>${heightweighttrackerVersion}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.openmrs.module</groupId>
 					<artifactId>htmlformentry-omod</artifactId>
 					<version>${htmlformentryVersion}</version>
 					<scope>provided</scope>
@@ -173,7 +179,7 @@
 				</dependency>
 
 				<!-- TODO: Add the below modules emrmonitorVersion 
-					heightweighttrackerVersion orderExtensionVersion 
+				    orderExtensionVersion 
 					pihrwandahivflowsheet simplelabentryVersion rwandareportsVersion -->
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
