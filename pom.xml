@@ -6,7 +6,6 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>IMB Emr Module</name>
-	<description>Provides basic web features</description>
 	<url>https://wiki.openmrs.org/display/docs/IMB+EMR+Module</url>
 	
 	<developers>
