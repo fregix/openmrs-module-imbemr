@@ -133,6 +133,7 @@
 					<artifactId>validation-omod</artifactId>
 					<version>${validationVersion}</version>
 					<scope>provided</scope>
+                    <type>omod</type>
 				</dependency>
 
 				<dependency>
@@ -154,6 +155,7 @@
 					<artifactId>addresshierarchyrwanda-omod</artifactId>
 					<version>${addresshierarchyrwandaVersion}</version>
 					<scope>provided</scope>
+                    <type>omod</type>
 				</dependency>
 				
 				<dependency>
@@ -270,8 +272,7 @@
 									<goal>run</goal>
 								</goals>
 							</execution>
-							<!-- For some reason the serialization.xstream-omod artifact is .omod, 
-								not .jar -->
+							<!-- For some reason some of the omod artifacts are .omod, not .jar -->
 							<execution>
 								<id>rename-omods-to-omod</id>
 								<phase>package</phase>
