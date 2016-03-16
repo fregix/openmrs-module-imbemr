@@ -51,6 +51,7 @@
         <logicVersion>0.5.2</logicVersion>
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
         <metadatasharingVersion>1.1.9</metadatasharingVersion>
+        <mohbillingVersion>1.0-SNAPSHOT</mohbillingVersion>
         <namephoneticsVersion>1.5</namephoneticsVersion>
         <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>2.1</patientsummaryVersion>

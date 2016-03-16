@@ -126,55 +126,54 @@
 					<version>${metadatasharingVersion}</version>
 					<scope>provided</scope>
 				</dependency>
+                <dependency>
+                    <groupId>org.openmrs.module</groupId>
+                    <artifactId>mohbilling-omod</artifactId>
+                    <version>${mohbillingVersion}</version>
+                    <scope>provided</scope>
+                </dependency>
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>namephonetics-omod</artifactId>
 					<version>${namephoneticsVersion}</version>
 					<scope>provided</scope>
 				</dependency>
-
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>patientsummary-omod</artifactId>
 					<version>${patientsummaryVersion}</version>
 					<scope>provided</scope>
 				</dependency>
-
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>omodexport-omod</artifactId>
 					<version>${omodExportVersion}</version>
 					<scope>provided</scope>
 				</dependency>
-
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>orderextension-omod</artifactId>
                     <version>${orderextensionVersion}</version>
                     <scope>provided</scope>
                 </dependency>
-
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>patientflags-omod</artifactId>
 					<version>${patientFlagsVersion}</version>
 					<scope>provided</scope>
 				</dependency>
-
                 <dependency>
                     <groupId>org.openmrs.module</groupId>
                     <artifactId>rwandahivflowsheet-omod</artifactId>
                     <version>${rwandahivflowsheetVersion}</version>
                     <scope>provided</scope>
                 </dependency>
-
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>rwandaprimarycare-omod</artifactId>
 					<version>${rwandaprimarycareVersion}</version>
 					<scope>provided</scope>
 				</dependency>
-				
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>reportingobjectgroup-omod</artifactId>
