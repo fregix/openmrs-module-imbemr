@@ -180,8 +180,7 @@
 					<artifactId>reportingobjectgroup-omod</artifactId>
 					<version>${reportingobjectgroupVersion}</version>
 					<scope>provided</scope>
-				</dependency> 
-				
+				</dependency>
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>rowperpatientreports-omod</artifactId>
