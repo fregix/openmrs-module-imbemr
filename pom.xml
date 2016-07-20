@@ -36,39 +36,39 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <openMRSVersion>1.9.9</openMRSVersion>
         <addresshierarchyrwandaVersion>1.2.7</addresshierarchyrwandaVersion>
-        <appframeworkVersion>2.4</appframeworkVersion>
-        <appuiVersion>1.3</appuiVersion>
+        <appframeworkVersion>2.9</appframeworkVersion>
+        <appuiVersion>1.5.1</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
         <emrmonitorVersion>1.0-SNAPSHOT</emrmonitorVersion>
         <formfilterVersion>1.2</formfilterVersion>
         <groovyVersion>2.2.4</groovyVersion>
         <heightweighttrackerVersion>1.0.3</heightweighttrackerVersion>
-        <htmlformentryVersion>2.6</htmlformentryVersion>
-        <htmlformentry19extVersion>1.6.1</htmlformentry19extVersion>
-        <htmlformflowsheetVersion>1.3</htmlformflowsheetVersion>
-        <htmlwidgetsVersion>1.7.0</htmlwidgetsVersion>
-        <idgenVersion>4.0</idgenVersion>
+        <htmlformentryVersion>3.1</htmlformentryVersion>
+        <htmlformentry19extVersion>1.7</htmlformentry19extVersion>
+        <htmlformflowsheetVersion>1.4.1</htmlformflowsheetVersion>
+        <htmlwidgetsVersion>1.7.2</htmlwidgetsVersion>
+        <idgenVersion>4.3</idgenVersion>
         <logicVersion>0.5.2</logicVersion>
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
-        <metadatasharingVersion>1.1.9</metadatasharingVersion>
+        <metadatasharingVersion>1.2</metadatasharingVersion>
         <mohbillingVersion>1.0-SNAPSHOT</mohbillingVersion>
         <namephoneticsVersion>1.5</namephoneticsVersion>
         <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>2.1</patientsummaryVersion>
-        <reportingVersion>0.9.8.1</reportingVersion>
+        <reportingVersion>0.10.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
-        <reportingobjectgroupVersion>1.0.4.4</reportingobjectgroupVersion>
+        <reportingobjectgroupVersion>1.1</reportingobjectgroupVersion>
         <rowperpatientreportsVersion>1.5.3</rowperpatientreportsVersion>
         <rwandahivflowsheetVersion>0.5.5</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.0.7</rwandaprimarycareVersion>
         <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
-        <serializationVersion>0.2.9</serializationVersion>
+        <serializationVersion>0.2.11</serializationVersion>
         <simplelabentryVersion>1.8</simplelabentryVersion>
-        <syncVersion>1.2</syncVersion>
-        <uicommonsVersion>1.4</uicommonsVersion>
-        <uiframeworkVersion>3.4</uiframeworkVersion>
+        <syncVersion>1.3</syncVersion>
+        <uicommonsVersion>1.8</uicommonsVersion>
+        <uiframeworkVersion>3.7</uiframeworkVersion>
         <usagestatisticsVersion>1.4.2</usagestatisticsVersion>
-        <webservicesRestVersion>2.12</webservicesRestVersion>
+        <webservicesRestVersion>2.14</webservicesRestVersion>
         <omodExportVersion>1.0</omodExportVersion>
         <validationVersion>1.0.1</validationVersion>
         <patientFlagsVersion>1.3.4</patientFlagsVersion>
