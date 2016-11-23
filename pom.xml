@@ -34,12 +34,12 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>1.9.9</openMRSVersion>
-        <addresshierarchyrwandaVersion>1.2.7</addresshierarchyrwandaVersion>
+        <openMRSVersion>1.9.11</openMRSVersion>
+        <addresshierarchyrwandaVersion>1.2.8</addresshierarchyrwandaVersion>
         <appframeworkVersion>2.9</appframeworkVersion>
         <appuiVersion>1.5.1</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
-        <emrmonitorVersion>1.0-SNAPSHOT</emrmonitorVersion>
+        <emrmonitorVersion>1.0.2</emrmonitorVersion>
         <formfilterVersion>1.2</formfilterVersion>
         <groovyVersion>2.2.4</groovyVersion>
         <heightweighttrackerVersion>1.0.3</heightweighttrackerVersion>
@@ -47,7 +47,7 @@
         <htmlformentry19extVersion>1.7</htmlformentry19extVersion>
         <htmlformflowsheetVersion>1.4.1</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.7.2</htmlwidgetsVersion>
-        <idgenVersion>4.3</idgenVersion>
+        <idgenVersion>4.0</idgenVersion>
         <logicVersion>0.5.2</logicVersion>
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
         <metadatasharingVersion>1.2</metadatasharingVersion>

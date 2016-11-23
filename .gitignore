@@ -23,3 +23,5 @@ omod/src/main/webapp/resources/styles/login.css
 omod/src/main/webapp/resources/styles/customVariables.css
 omod/src/main/webapp/resources/styles/imbemr.css
 omod/src/main/webapp/resources/styles/manageApps.css
+
+.idea/*
