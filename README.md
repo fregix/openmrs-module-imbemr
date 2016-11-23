@@ -8,8 +8,8 @@ Using the OpenMRS SDK to create a Rwanda development enviroment
 2. Clone this project
 3. Run "mvn clean install" on this project
 4. Make sure that the "properties" variables in the main IMB pom are all set the proper versions of modules you want to run
-5. Run "mvn openmrs-sdk:setup" (from any directory)
-    **Note** if the build fails at any time during this process because it is saying it can't find a module in the Maven repo, you may need
+5. Run "mvn openmrs-sdk:setup" (from any directory) --
+    **Note**: if the build fails at any time during this process because it is saying it can't find a module in the Maven repo, you may need
     to check out that module and install it locally ("mvn clean install")
     1. Pick the name of the server (this will determine the subdirectory off ~/openmrs/ where it created the information for this server--in my case, I used 'rwanda'
     2. For "Distribution" or "Platform" chose "Distribution"
@@ -32,8 +32,8 @@ Using the OpenMRS SDK to create a Rwanda development enviroment
 Updating your Rwanda development environment when module versions change
 ------------------------------------------------------------------------
 
-1. *From the base directory of this module*, run: ""
-2. Then just restart the server via "mvn openmrs-sdk:run"
+1. *From the base directory of this module*, run: "mvn openmrs-sdk:deploy -Ddistro=api/src/main/resources/openmrs-distro.properties"
+2. Then just start the server via "mvn openmrs-sdk:run"
 
 
 Other OpenMRS SDK tips and tricks
