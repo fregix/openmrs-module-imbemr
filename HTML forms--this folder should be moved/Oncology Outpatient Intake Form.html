@@ -1314,7 +1314,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 </tr>
             </obsgroup>
         </table>
-    </section> <section headerLabel="CURRENT MEDICATIONS AND ALLERGIES">
+    </section> <section headerLabel="CURRENT MEDICATIONS" >
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
             <tr >
                 <td><strong>Medications </strong></td>
@@ -1348,105 +1348,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                     <br /><obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@POST-MENOPAUSAL@" answerLabel="Post-menopausal"/>
                 </td>
             </tr>
-            <tr>
-                <td class="checkboxGroup"><span id="checkboxRadio"><strong>Does patient have allergies ?:
-                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                </strong> <obs conceptId="$@HAS_ALLERGIES@"
-                               answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
-                               answerLabel="yes" id="showAllergies" />
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-				 <obs conceptId="$@HAS_ALLERGIES@"
-                      answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
-                      answerLabel="no" id="hideAllergies1" />
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-				 <obs conceptId="$@HAS_ALLERGIES@" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2" answerLabel="unknown"  id="hideAllergies2"/></span></td>
-            </tr>
-
-            <!-- <tr class="allergies"> -->
-            <tr>
-                <td>
-                    <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                        <tr>
-
-                            <td><b><center>Allergen(medication or other):</center>
-                            </b>
-                            </td>
-                            <td><b><center>Reaction:</center>
-                            </b>
-                            </td>
-                            <td><b><center>Year of reaction:</center>
-                            </b>
-                            </td>
-                        </tr>
-
-                        <lookup
-                                complexExpression="#set($obsGroupList = [])
-
-						#foreach($encounter in $fn.allEncounters(null))
-						                                         #foreach($obs in $encounter.obs)
-				                                                   #if( $obs.obsGroup.concept.uuid == '3cd95d5a-26fe-102b-80cb-0017a47871b2' )
-				                                                     #if( ($obsGroupList.contains($obs.obsGroup)) )
-
-				                                                     #else
-                                                                       #set($_usls =$obsGroupList.add($obs.obsGroup))
-                                                                     #end
-				                                                    #end
-				                                                   #end
-				                                                 #end
-				                                      #foreach($obsGroup in $obsGroupList)
-				                                      &lt;tr class='existingAllergy'>
-                                                        #foreach($o in $obsGroup.groupMembers)
-                                                         #if( $o.concept.uuid == '3cd95ed6-26fe-102b-80cb-0017a47871b2' )
-                                                            #set($causes = $o.valueCoded.name)
-                                                         #elseif( $o.concept.uuid == '3cd96052-26fe-102b-80cb-0017a47871b2' )
-                                                            #set($reaction = $o.valueCoded.name)
-                                                         #elseif( $o.concept.uuid == '3cd964bc-26fe-102b-80cb-0017a47871b2' )
-                                                          #set($year = $o.valueDatetime)
-                                                        #end
-                                                      #end
-                                                        &lt;td style='border: 1px solid black; border-collapse: collapse;'> $causes &lt;/td>  &lt;td style='border: 1px solid black; border-collapse: collapse;'> $reaction &lt;/td>  &lt;td style='border: 1px solid black; border-collapse: collapse;'> $year &lt;/td>
-                                                      &lt;/tr>
-                                                    #end" />
-
-
-
-
-                        <tr>
-                            <obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
-                                <td><obs id="cause1"
-                                         conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /><obs  id="causeNonCoded1" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
-                                <td><obs id="reaction1"
-                                         conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded1" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
-                                <td><obs id="firstAllergyYear"
-                                         conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
-                                </td>
-                            </obsgroup>
-                        </tr>
-                        <tr>
-                            <obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
-                                <td><obs id="cause2"
-                                         conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /><obs id="causeNonCoded2" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
-                                <td><obs id="reaction2"
-                                         conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded2" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
-                                <td><obs id="secondAllergyYear"
-                                         conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
-                                </td>
-                            </obsgroup>
-                        </tr>
-                        <tr>
-                            <obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
-                                <td><obs id="cause3"
-                                         conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /> <obs id="causeNonCoded3" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
-                                <td><obs id="reaction3"
-                                         conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded3" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
-                                <td><obs id="thirdAllergyYear"
-                                         conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
-                                </td>
-                            </obsgroup>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+            
 
         </table>
     </section>
@@ -1475,7 +1377,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                     </td>
                 </tr>
                 <tr >
-                    <td>Liver Ultrasound:<br /></td>
+                    <td>Ultrasound:<br /></td>
                     <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
                             conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
                             answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
@@ -2068,7 +1970,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                     </td>
                 </tr>
                 <tr >
-                    <td>Liver Ultrasound:<br /></td>
+                    <td>Ultrasound:<br /></td>
                     <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
                             conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
                             answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
@@ -2134,14 +2036,11 @@ getField('reactionNonCoded3.value')[0].disabled = true;
     </section> <section headerLabel="DISPOSITION">
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
             <tr>
-                <td class="checkboxGroup">
-                	<obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda">
-                	<!-- <obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"> --> 
-                	<obs conceptId="d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44"
-                              answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2"
-                              answerLabel="Hospital admission date &amp; site: " /> 
-                    <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true"/> 
-                  	admission reason: <obs conceptId="1d642160-089f-49d3-98ce-68885cb5f893" /><br />
+                <td class="checkboxGroup"><obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"><!-- <obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"> --> <obs conceptId="d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44"
+                                                                                                                                                                                                                        answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2"
+                                                                                                                                                                                                                        answerLabel="Hospital admission date &amp; site: " /> <obs
+                        conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /> admission
+			reason: <obs conceptId="1d642160-089f-49d3-98ce-68885cb5f893" /><br />
             <span id="checkboxRadio">
 			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwinkwavu DH"/>
 			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="BUTARO DH"/>

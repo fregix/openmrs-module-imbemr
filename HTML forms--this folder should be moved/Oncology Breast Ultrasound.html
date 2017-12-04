@@ -262,7 +262,7 @@
                             id="encounterLocation" default="Butaro Hospital" />
                     </td>
                     <td>Provider:<encounterProvider id="encounterProvider"
-                                                    role="Oncology Provider" default="currentUser" />
+                                                    role="Oncology Provider"  />
                     </td>
                 </tr>
             </table>
@@ -510,7 +510,7 @@
                         <obs conceptId="$@referred_to@"/>
                         <br/>
                         U/S follow-up on
-                        <obs conceptId="$@Dates_of_Ultrasound_follow_up@"/>
+                        <obs conceptId="$@Dates_of_Ultrasound_follow_up@" allowFutureDates="true"/>
                         <obs conceptId="$@Reason_of_ultrasound_follow-up@" answerConceptId="$@Aspiration_or_drainage@"
                              answerLabel="Aspiration or drainage" style="checkbox"/>
                         <obs conceptId="$@Reason_of_ultrasound_follow-up@" answerConceptId="$@Core_needle_biopsy@"
