@@ -17,4 +17,6 @@ public final class ImbEmrConstants {
 	
 	public static final String MODULE_ID = "imbemr";
 
+	public static final String HEALTH_FACILITY_GP_VALUE = "Health Facility";
+
 }

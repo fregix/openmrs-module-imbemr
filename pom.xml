@@ -36,7 +36,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <openMRSVersion>1.9.11</openMRSVersion>
         <addresshierarchyrwandaVersion>1.2.8</addresshierarchyrwandaVersion>
-        <appframeworkVersion>2.9</appframeworkVersion>
+        <appframeworkVersion>2.10.0</appframeworkVersion>
         <appuiVersion>1.5.1</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
         <emrmonitorVersion>1.0.2</emrmonitorVersion>
@@ -48,7 +48,7 @@
         <htmlformflowsheetVersion>1.4.1</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.7.2</htmlwidgetsVersion>
         <idgenVersion>4.0</idgenVersion>
-        <logicVersion>0.5.2</logicVersion>
+        <!--<logicVersion>0.5.2</logicVersion>-->
         <metadatamappingVersion>1.0.2</metadatamappingVersion>
         <metadatasharingVersion>1.2</metadatasharingVersion>
         <mohbillingVersion>1.0-SNAPSHOT</mohbillingVersion>
@@ -58,20 +58,24 @@
         <reportingVersion>0.10.1</reportingVersion>
         <reportingcompatibilityVersion>1.5.8</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>1.1</reportingobjectgroupVersion>
-        <rowperpatientreportsVersion>1.5.4</rowperpatientreportsVersion>
+        <rowperpatientreportsVersion>1.5.6-SNAPSHOT</rowperpatientreportsVersion>
         <rwandahivflowsheetVersion>0.5.5</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.0.7</rwandaprimarycareVersion>
         <rwandareportsVersion>2.5.8-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.11</serializationVersion>
         <simplelabentryVersion>1.8</simplelabentryVersion>
         <syncVersion>1.3</syncVersion>
-        <uicommonsVersion>1.8</uicommonsVersion>
-        <uiframeworkVersion>3.7</uiframeworkVersion>
+        <uicommonsVersion>2.3.0</uicommonsVersion>
+        <uiframeworkVersion>3.11.0</uiframeworkVersion>
         <usagestatisticsVersion>1.4.2</usagestatisticsVersion>
         <webservicesRestVersion>2.14</webservicesRestVersion>
         <omodExportVersion>1.0</omodExportVersion>
         <validationVersion>1.0.1</validationVersion>
         <patientFlagsVersion>1.3.4</patientFlagsVersion>
+        <metadatadeployVersion>1.9.0</metadatadeployVersion>
+        <emrapiVersion>1.21.0</emrapiVersion>
+        <metadatadeployVersion>1.9.0</metadatadeployVersion>
+        <!--<htmlwidgetsVersion>1.8.0</htmlwidgetsVersion>-->
 	</properties>
 
     <dependencies>
@@ -240,6 +244,39 @@
             <groupId>org.openmrs.module</groupId>
             <artifactId>rowperpatientreports-api</artifactId>
             <version>${rowperpatientreportsVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>metadatadeploy-api</artifactId>
+            <version>${metadatadeployVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>emrapi-api</artifactId>
+            <version>${emrapiVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>htmlwidgets-api</artifactId>
+            <version>${htmlwidgetsVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>htmlwidgets-omod</artifactId>
+            <version>${htmlwidgetsVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>metadatadeploy-api</artifactId>
+            <version>${metadatadeployVersion}</version>
+            <type>jar</type>
             <scope>provided</scope>
         </dependency>
 

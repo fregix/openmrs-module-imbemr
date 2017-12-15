@@ -107,13 +107,13 @@
 					<artifactId>imbemr-omod</artifactId>
 					<version>${project.parent.version}</version>
 				</dependency>
-				<dependency>
+				<!--<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>logic-omod</artifactId>
 					<version>${logicVersion}</version>
 					<type>omod</type>
 					<scope>provided</scope>
-				</dependency>
+				</dependency>-->
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>metadatamapping-omod</artifactId>
@@ -251,6 +251,13 @@
 					<groupId>org.openmrs.module</groupId>
 					<artifactId>webservices.rest-omod</artifactId>
 					<version>${webservicesRestVersion}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.openmrs.module</groupId>
+					<artifactId>metadatadeploy-api</artifactId>
+					<version>${metadatadeployVersion}</version>
+					<type>jar</type>
 					<scope>provided</scope>
 				</dependency>
 			</dependencies>
