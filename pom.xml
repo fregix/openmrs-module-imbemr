@@ -37,7 +37,7 @@
         <openMRSVersion>1.9.11</openMRSVersion>
         <addresshierarchyrwandaVersion>1.2.8</addresshierarchyrwandaVersion>
         <appframeworkVersion>2.10.0</appframeworkVersion>
-        <appuiVersion>1.5.1</appuiVersion>
+        <appuiVersion>1.8.0</appuiVersion>
         <calculationVersion>1.1</calculationVersion>
         <emrmonitorVersion>1.0.2</emrmonitorVersion>
         <formfilterVersion>1.2</formfilterVersion>

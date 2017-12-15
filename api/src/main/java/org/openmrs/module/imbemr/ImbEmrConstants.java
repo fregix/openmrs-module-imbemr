@@ -19,4 +19,18 @@ public final class ImbEmrConstants {
 
 	public static final String HEALTH_FACILITY_GP_VALUE = "Health Facility";
 
+	public static final String HOME_PAGE_EXTENSION_POINT_ID = "imbemr.homepageLink";
+
+	public static final String PROCESS_HL7_TASK_NAME = "Process HL7 Task";
+
+	public static final long PROCESS_HL7_TASK_INTERVAL = 5L;
+
+
+
+	public static final java.lang.String SESSION_ATTRIBUTE_INFO_MESSAGE = "emr.infoMessage";
+	public static final java.lang.String SESSION_ATTRIBUTE_TOAST_MESSAGE = "emr.toastMessage";
+	public static final java.lang.String SESSION_ATTRIBUTE_MANUAL_LOGOUT = "manual-logout";
+
+
+
 }
