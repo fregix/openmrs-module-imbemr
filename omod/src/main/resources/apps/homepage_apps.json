@@ -1,0 +1,18 @@
+[
+  {
+    "id": "imbemr.findPatient",
+    "description": "Basic patient search, by ID or Name (using OpenMRS's standard patient search)",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.findPatient.homepageLink",
+        "extensionPointId": "imbemr.homepageLink",
+        "type": "link",
+        "label": "coreapps.findPatient.app.label",
+        "url": "coreapps/findpatient/findPatient.page",
+        "icon": "icon-search",
+        "requiredPrivilege": "App: coreapps.findPatient"
+      }
+    ]
+  }
+]
