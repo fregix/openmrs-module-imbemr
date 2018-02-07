@@ -220,6 +220,10 @@
     @INTERNAL_MAMMARY_LEVEL@=088a4f0a-0b6f-497b-ad07-2de7b8a72985
     @LYMPHANEDOPATHY_LEVELS@=206ed02d-251f-42ee-8703-4cc175f55578
     @PALLIATIVE@=b4c1df8a-9e39-4132-89a7-463394e765cd
+    @DIAGNOSIS_BASED_ON@=a6f812ac-16ee-4616-a11e-f9a068ab2244
+    @CLINICAL_CRITERIA@=b50f4136-1f74-4288-869e-7bea6620ee25
+
+
 
     @CHEMOTHERAPY_REGIMEN_TIMING@=bfe19cc9-27cc-484f-8cdf-c737153dceaa
     @IMAGING_STUDY_DATE@=71d7014e-3f02-4c41-b49a-bb6462de85ff
@@ -298,12 +302,6 @@
     @OTHER_PATH_SOURCE@=8362f5af-7d55-4224-aaa3-fb0c86d84b58
 
     @CML@=a21d0f82-a102-4658-9b43-cbc928be413e
-
-    @TUMOR_LOCATION@=327e5bb9-6c8c-47b0-869a-e03817c6236a
-    @STOMACH@=59b921c0-5a42-4a05-b207-1b85d2496458
-    @GE_JUNCTION@=9cd5afc3-f250-4917-b46b-d64368177cba
-    @DISTAL_ESOPHAGUS@=02180b0a-07d4-4bb8-9b64-d73e064a3a6e
-
 
     @PHILADELPHIA_CHROMOSOME@=c8a79d23-9476-41a5-99dc-e80b663eadcb
     @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
@@ -420,10 +418,6 @@
 
     @LOCATION_OF_ENDOSCOPY@=b2bea54f-ff32-4991-ab45-5d215b966138
     @OTHER_LOCATION_OF_ENDOSCOPY@=6015b9c0-2fe5-4c75-84fa-dffb7dc401b7
-    @LOCATION_OF_SURGERY@=9c9517fb-42a9-434a-891d-db1d67a76a0f
-    @OTHER_LOCATION_OF_SURGERY@=25ee45e5-16a2-45b0-bc0e-3e65b7efa53c
-    @SURGERY_DATE@=48e392bb-0685-4ab3-a217-fd23502a5635
-
 
     @BIOPSY_DATE@=a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2
     @BIOPSY_LOCATION@=4d214712-e82a-4d6f-8a5d-cfb4868443f5
@@ -440,10 +434,10 @@
 
     @SITES_OF_METASTESES@=2fab8399-309b-40af-9237-a68d8f519e4f
     @LUNG@=3ce43cb6-26fe-102b-80cb-0017a47871b2
-    @KIDNEY@=137bafa2-ed72-4993-b4f7-c7ff5209f52d
-    @SPLEEN@=acb0b30b-4c62-45f3-af1b-dc39b591fee6
+    @KIDNEY@=0af67fb5-50e0-468e-94cd-8f21e9a98392
+    @SPLEEN@=9feb93a7-f48f-432a-889b-b9232c4eb036
     @GI_TRACT@=cc73f6e5-2ee7-45e3-aa7c-23c35158045d
-    @BRAIN@=f56326d5-fc43-45a9-8590-d48890bd3477
+    @BRAIN@=e10d25b8-4d11-417d-bbe3-743799582966
     @LIVER@=f967cf2a-6bd6-43eb-ab52-e41915e6409c
     @OTHER_LOCATION_OF_METASTESES@=c7860c6f-2b57-42bf-987d-1bb930a96f70
 
@@ -527,7 +521,8 @@
     @IMMUNE_SYSTEM_PROGNOSIS_FOR_KS@=26ada79f-153a-4067-b4dd-bec6bfc40647
     @I0_KS@=e130bc8b-4b85-4b6c-b8da-81ccb44f2635
     @I1_KS@=24ad21f7-5dac-4ccb-8095-92448278379b
-    @ABDOMINOPERINEAL_RESECTION@=d9b011cd-de8f-4123-920f-5a3ebda6644e
+
+    @RISK_SCORE@=e3e5590f-7257-485c-a1f6-eb892a622837
 
 
     @SYSTEMIC_ILLNESS_PROGNOSIS_FOR_KS@=2476256a-2c16-4605-adcb-2ca1d33c299d
@@ -557,7 +552,7 @@
     @RADIATION_OR_CHEMO_STATUS@=ef2f24b6-02a7-495c-a72b-7184ec7aca93
     @INDUCTION_CHEMO_STATUS@=40a0e837-13a5-49f4-bbfe-f6c88d4ccae7
 
-    @CHEMOTHERAPY_TYPE@=a14d9ad6-86e1-4949-be3c-08f9a9ae12a0
+    @CHEMOTHERAPY_TYPE@=17b5c7cc-f180-454a-aa33-f3383d6c5419
     @GLEEVEC@=77941AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     @HYDROXUREA+ALLOPURINOL@=18257b2c-039f-4e70-8b00-f38698e10d7c
     @TAXOL@=1fc083a8-2edc-4b5e-982c-f263720b5857
@@ -804,22 +799,32 @@
     </div>
 
 
-    <h2>DST Breast Cancer (v1.0)</h2>
+    <h2>Gestational Trophoblastic Neoplasia (GTN)</h2>
+
+
 
     <section>
         <table class="baseline-aligned">
             <th class="tableHeader">Diagnosis</th>
-            <tr><td><b>Initial Biopsy</b></td></tr>
             <tr>
-                <td>Pathology Report Date <!-- sometimes called biopsy pathology report -->
+                <td><b>Diagnosis based on:</b>
+                    <obs conceptId="$@DIAGNOSIS_BASED_ON@"
+                         answerConceptId="$@PATHOLOGY_PERFORMED@" answerLabel="Pathology" />
+                    <obs conceptId="$@DIAGNOSIS_BASED_ON@"
+                         answerConceptId="$@CLINICAL_CRITERIA@" answerLabel="Clinical criteria (persistently elevated/rising &#946;HCG &#62;3 weeks after evacuation of molar pregnancy)" />
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pathology Report Date: <!-- sometimes called biopsy pathology report -->
                     <obs conceptId="$@DATE_OF_PATHOLOGY_REPORT@" /> <obs
                             conceptId="$@PATHOLOGY_PERFORMED@" answerConceptId="$@NO@"
                             answerLabel="N/A (No Pathology)" /></td>
             </tr>
-
             <tr>
 
-                <td>Institution issuing pathology report <obs
+                <td>Institution issuing pathology report: <obs
                         conceptId="$@LOCATION_OF_PATHOLOGY@" answerConceptId="$@BWH@"
                         answerLabel="BWH" /> <obs conceptId="$@LOCATION_OF_PATHOLOGY@"
                                                   answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwink" /> <obs
@@ -834,184 +839,22 @@
                         conceptId="$@LOCATION_OF_PATHOLOGY@"
                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
                         conceptId="$@OTHER_LOCATION_OF_PATHOLOGY@" /><br />
-                    <br /></td>
-            </tr>
-
-
-            <tr>
-                <td><b>Type of Biopsy: </b><BR></BR>&#160;&#160;&#160;&#160;
-                    <obs conceptId="$@PATH_SOURCE@"
-                         answerConceptId="$@Core_NEEDLE_INCISIONAL_EXCISIONAL_BIOPSY@"
-                         answerLabel="Core needle, incisional, or excisional lymph node biopsy" /><BR></BR>&#160;&#160;&#160;&#160;
-                    <obs conceptId="$@PATH_SOURCE@" answerConceptId="$@FNA@"
-                         answerLabel="Fine Needle aspiration (FNA); note: FNA is NOT adequate to make diagnosis" /><BR></BR>
-                    &#160;&#160;&#160;&#160;
-                    <obs conceptId="$@PATH_SOURCE@"
-                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
-                            conceptId="$@OTHER_PATH_SOURCE@" /></td>
-            </tr>
-
-
-
-
-            <obsgroup groupingConceptId="$@PRE_SURGERY_CONSTRUCT@">
-                <tr>
-                    <td><b>Diagnosis (from biopsy):</b><br />
-
-                        <obs
-                                conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                                answerConceptId="$@INVASIVE_DUCTAL_CARCINOMA@"
-                                answerLabel="Invasive ductal carcinoma" /> <br />
-                        <obs
-                                conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                                answerConceptId="$@INVASIVE_LOBULAR_CARCINOMA@"
-                                answerLabel="Invasive Lobular Carcinoma" /> <br />
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /><br />
-                    </td>
-                </tr>
-            </obsgroup>
-        </table>
-    </section>
-    <section>
-        <table>
-            <obsgroup groupingConceptId="$@PRE_SURGERY_CONSTRUCT@">
-                <tr>
-                    <td><b>IHC Results (from biopsy): </b>  <obs
-                            conceptId="$@IHC@" answerConceptId="$@NO@" answerLabel="No IHC" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>ER Status: <BR></BR> <obs conceptId="$@ESTROGEN_RECEPTOR@"
-                                                  answerConceptId="$@ER+@" answerLabel="Positive" /> <obs
-                            conceptId="$@ER_PERCENT@" />%<BR></BR>
-                        <obs conceptId="$@ESTROGEN_RECEPTOR@" answerConceptId="$@ER-@"
-                             answerLabel="Negative" /> <BR></BR>
-                        <obs conceptId="$@ESTROGEN_RECEPTOR@" answerConceptId="$@UNKNOWN@"
-                             answerLabel="Unknown" />
-                    </td>
-                    <td>PR Status: <BR></BR> <obs
-                            conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@PR+@"
-                            answerLabel="Positive" />
-                        <obs conceptId="$@PR_PERCENT@" />%<BR></BR> <obs
-                                conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@PR-@"
-                                answerLabel="Negative" /><BR></BR> <obs
-                                conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@UNKNOWN@"
-                                answerLabel="Unknown" />
-                    </td>
-                    <td>HER2 Status: <BR></BR> <obs conceptId="$@HER2@"
-                                                    answerConceptId="$@POSITIVE@" answerLabel="Positive (3+)" /><BR></BR>
-                        <obs conceptId="$@HER2@" answerConceptId="$@EQUIVOCAL@"
-                             answerLabel="Equivocal (2+)" /> <BR></BR> <obs conceptId="$@HER2@"
-                                                                            answerConceptId="$@NEGATIVE@" answerLabel="Negative(1+)" /><BR></BR>
-                        <obs conceptId="$@HER2@" answerConceptId="$@UNKNOWN@"
-                             answerLabel="Unknown" />
-                    </td>
-
-                </tr>
-
-
-            </obsgroup>
-        </table>
-    </section>
-    <section>
-        <table>
-            <tr><b>POST-OPERATIVE DIAGNOSTIC FINDINGS</b>(if applicable /
-                post-operative at time of presentation)
+                </td>
             </tr>
             <tr>
-                <td><b>Surgery Date</b> <obs conceptId="$@SURGERY_DATE@"/><br /> <b>Institution:</b> <obs
-                        conceptId="$@LOCATION_OF_SURGERY@"
-                        answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="Butaro" /> <obs
-                        conceptId="$@LOCATION_OF_SURGERY@" answerConceptId="$@KFH@"
-                        answerLabel="KFH" /> <obs conceptId="$@LOCATION_OF_SURGERY@"
-                                                  answerConceptId="$@RMH@" answerLabel="RMH" /> <obs
-                        conceptId="$@LOCATION_OF_SURGERY@" answerConceptId="$@CHUK@"
-                        answerLabel="CHUK" /> <obs conceptId="$@LOCATION_OF_SURGERY@"
-                                                   answerConceptId="$@CHUB@" answerLabel="CHUB" /> <obs
-                        conceptId="$@LOCATION_OF_SURGERY@"
-                        answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
-                        conceptId="$@OTHER_LOCATION_OF_SURGERY@" /></td>
-            </tr>
-
-
-
-            <tr>
-                <td><b>Surgical procedure: </b><br />
+                <td><b>Pathologic Diagnosis:</b>
                     <obs
-                            conceptId="$@SURGERY_TYPE@"
-                            answerConceptId="$@MODIFIED_RADICAL_MASTECTOMY@"
-                            answerLabel="Modified Radical Mastectomy (MRM) and Auxillary Lymph Node Dissection (ALND)" />
-                    <obs conceptId="$@SURGERY_TYPE@"
-                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
-                            conceptId="$@OTHER_SURGERY_TYPE@" /></td>
+                            conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
+                            answerConceptId="$@INVASIVE_MOLE@" answerLabel="Invasive mole" />
+                    <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
+                         answerConceptId="$@CHORIOCARCINOMA@" answerLabel="Choriocarcinoma" />
+                    <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
+                         answerConceptId="$@PLACENTAL_SITE_TROPHOBLASTIC_TUMOR@"
+                         answerLabel="Placental site trophoblastic tumor" />
+                    <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
+                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /><br />
+                </td>
             </tr>
-            <obsgroup groupingConceptId="$@POST_SURGERY_CONSTRUCT@">
-
-
-                <tr>
-                    <td><b>Pathologic Diagnosis (from surgery)</b><br />
-
-                        <obs
-                                conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                                answerConceptId="$@INVASIVE_DUCTAL_CARCINOMA@"
-                                answerLabel="Invasive ductal carcinoma" /> <br />
-                        <obs
-                                conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                                answerConceptId="$@INVASIVE_LOBULAR_CARCINOMA@"
-                                answerLabel="Invasive Lobular Carcinoma" /> <br />
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /><br />
-                    </td>
-                </tr>
-
-            </obsgroup>
-        </table>
-    </section>
-    <section>
-        <table>
-            <obsgroup groupingConceptId="$@POST_SURGERY_CONSTRUCT@">
-
-                <tr>
-                    <td><b>IHC Results (from Surgery): </b><br/>
-                        <obs
-                                conceptId="$@IHC@" answerConceptId="$@NO@" answerLabel="No IHC" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>ER Status: <BR></BR> <obs conceptId="$@ESTROGEN_RECEPTOR@"
-                                                  answerConceptId="$@ER+@" answerLabel="Positive" /> <obs
-                            conceptId="$@ER_PERCENT@" />%<BR></BR>
-                        <obs conceptId="$@ESTROGEN_RECEPTOR@" answerConceptId="$@ER-@"
-                             answerLabel="Negative" /> <BR></BR>
-                        <obs conceptId="$@ESTROGEN_RECEPTOR@" answerConceptId="$@UNKNOWN@"
-                             answerLabel="Unknown" />
-                    </td>
-                    <td>PR Status: <BR></BR> <obs
-                            conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@PR+@"
-                            answerLabel="Positive" />
-                        <obs conceptId="$@PR_PERCENT@" />%<BR></BR> <obs
-                                conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@PR-@"
-                                answerLabel="Negative" /><BR></BR> <obs
-                                conceptId="$@PROGESTERONE_RECEPTOR@" answerConceptId="$@UNKNOWN@"
-                                answerLabel="Unknown" />
-                    </td>
-                    <td>HER2 Status: <BR></BR> <obs conceptId="$@HER2@"
-                                                    answerConceptId="$@POSITIVE@" answerLabel="Positive (3+)" /><BR></BR>
-                        <obs conceptId="$@HER2@" answerConceptId="$@EQUIVOCAL@"
-                             answerLabel="Equivocal (2+)" /> <BR></BR> <obs conceptId="$@HER2@"
-                                                                            answerConceptId="$@NEGATIVE@" answerLabel="Negative(1+)" /><BR></BR>
-                        <obs conceptId="$@HER2@" answerConceptId="$@UNKNOWN@"
-                             answerLabel="Unknown" />
-                    </td>
-
-                </tr>
-
-
-            </obsgroup>
-
-
         </table>
     </section>
 
@@ -1035,15 +878,31 @@
                             answerLabel="No" /> <obs conceptId="$@ON_ARVS_AT_DIAGNOSIS@"
                                                      answerConceptId="$@UNKNOWN@" answerLabel="Unknown" />
                 </td>
-
             </tr>
-            <tr><td colspan="2"><hr /></td></tr>
 
+            <tr>
+                <td colspan="2">
+                    <hr />
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="2">Pretreatment serum &#946;HCG <obs showDate="true" dateLabel="date"
+                                                                  conceptId="$@B_HCG@" id="HCG" /> <obs conceptId="$@B_HCG_UNIT@"
+                                                                                                        answerConceptId="$@IU_ML@" answerLabel="UI/mL" /> <obs
+                        conceptId="$@B_HCG_UNIT@" answerConceptId="$@IU_L@"
+                        answerLabel="UI/L" id="perliter" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3"><hr /></td>
+            </tr>
             <tr>
                 <td><b>Imaging</b></td>
             </tr>
-
-
             <tr>
                 <td colspan="3" width="50%"><obs id="chestXRayObs"
                                                  conceptId="$@IMAGING_STUDIES@" answerConceptId="$@X-RAY_CHEST@"
@@ -1061,17 +920,10 @@
                          answerLabel="CT scan of Abdomen/pelvis" showDate="true"
                          dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
 
-
-
-
                     <obs conceptId="$@IMAGING_STUDIES@"
                          answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:"
                          showDate="true"
                          dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
-
-
-
-
 
                 </td>
             </tr>
@@ -1081,8 +933,92 @@
                                      cols="90" /></td>
             </tr>
 
+            <tr>
+                <td colspan="3"><hr /></td>
+            </tr>
 
+            <tr>
+                <td>Sites of Metasteses(Check all that apply):</td>
+                <td><obs conceptId="$@SITES_OF_METASTESES@"
+                         answerConceptId="$@LUNG@" answerLabel="Lung" /> <obs
+                        conceptId="$@SITES_OF_METASTESES@" answerConceptId="$@SPLEEN@"
+                        answerLabel="Spleen" /> <obs conceptId="$@SITES_OF_METASTESES@"
+                                                     answerConceptId="$@KIDNEY@" answerLabel="Kidney" /> <obs
+                        conceptId="$@SITES_OF_METASTESES@" answerConceptId="$@GI_TRACT@"
+                        answerLabel="GI tract" /> <obs conceptId="$@SITES_OF_METASTESES@"
+                                                       answerConceptId="$@BRAIN@" answerLabel="Brain" /> <obs
+                        conceptId="$@SITES_OF_METASTESES@" answerConceptId="$@NONE@"
+                        answerLabel="None" /> <obs conceptId="$@SITES_OF_METASTESES@"
+                                                   answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
+                        conceptId="$@OTHER_LOCATION_OF_METASTESES@" /></td>
+            </tr>
+            <td colspan="3"><hr /></td>
+            <tr>
+                <td>Total Number of Metasteses:</td>
+                <td><obs conceptId="$@NUMBER_OF_METASTESES@"
+                         answerConceptId="$@ZERO@" answerLabel="Zero" /> <obs
+                        conceptId="$@NUMBER_OF_METASTESES@" answerConceptId="$@1_4@"
+                        answerLabel="1-4" /> <obs conceptId="$@NUMBER_OF_METASTESES@"
+                                                  answerConceptId="$@5_8@" answerLabel="5-8" /> <obs
+                        conceptId="$@NUMBER_OF_METASTESES@"
+                        answerConceptId="$@GREATER_THAN_EIGHT@" answerLabel="&gt;8" /> <obs
+                        conceptId="$@NUMBER_OF_METASTESES@" answerConceptId="$@UNKNOWN@"
+                        answerLabel="Not Available" /></td>
+            </tr>
+            <td colspan="3"><hr /></td>
+            <tr>
+                <td>Largest tumor size, including uterus (cm):</td>
+                <td><obs conceptId="$@LARGEST_TUMOR@"
+                         answerConceptId="$@LESS_THAN_3_CM@" answerLabel="&lt;3" /> <obs
+                        conceptId="$@LARGEST_TUMOR@" answerConceptId="$@3_5_CM@"
+                        answerLabel="3-5cm" /> <obs conceptId="$@LARGEST_TUMOR@"
+                                                    answerConceptId="$@GREATER_THAN_OR_EQUAL_TO_5_CM@"
+                                                    answerLabel="&#8805;5" /> <obs conceptId="$@LARGEST_TUMOR@"
+                                                                                   answerConceptId="$@UNKNOWN@" answerLabel="Not Available" /></td>
+            </tr>
 
+            <tr>
+                <td colspan="2"><hr /></td>
+            </tr>
+            <tr> <td colspan="2"><b>Additional risk factors for WHO risk stratification</b></td></tr>
+            <tr>
+                <td colspan="2">Age  at Diagnosis (years): <obs conceptId="$@AGE@" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Antecedent pregnancy: <obs
+                        conceptId="$@ANTECEDENT_PREGNANCY_TYPE@"
+                        answerConceptId="$@MOLAR_PREGNANCY@" answerLabel="Molar Pregnancy" />
+                    <obs conceptId="$@ANTECEDENT_PREGNANCY_TYPE@"
+                         answerConceptId="$@ABORTION@" answerLabel="Abortion" /> <obs
+                            conceptId="$@ANTECEDENT_PREGNANCY_TYPE@"
+                            answerConceptId="$@TERM_PREGNANCY@" answerLabel="Term Pregnancy" />
+                    <obs conceptId="$@ANTECEDENT_PREGNANCY_TYPE@"
+                         answerConceptId="$@UNKNOWN@" answerLabel="UNKNOWN" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Interval months from index pregnancy <obs
+                        conceptId="$@PREGNANCY_INTERVAL@" answerConceptId="$@1_4@"
+                        answerLabel="&lt;4" /> <obs conceptId="$@PREGNANCY_INTERVAL@"
+                                                    answerConceptId="$@4_6@" answerLabel="4-6" /> <obs
+                        conceptId="$@PREGNANCY_INTERVAL@" answerConceptId="$@7_12@"
+                        answerLabel="7-12" /> <obs conceptId="$@PREGNANCY_INTERVAL@"
+                                                   answerConceptId="$@12+@" answerLabel="&gt;12" /> <obs
+                        conceptId="$@PREGNANCY_INTERVAL@" answerConceptId="$@NA@"
+                        answerLabel="N/A" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Previously failed chemotherapy <obs
+                        conceptId="$@PREVIOUS_FAILED_CHEMO@" answerConceptId="$@ONE@"
+                        answerLabel="Single drug" /> <obs
+                        conceptId="$@PREVIOUS_FAILED_CHEMO@" answerConceptId="$@2+@"
+                        answerLabel="Two or more drugs" /> <obs
+                        conceptId="$@PREVIOUS_FAILED_CHEMO@" answerConceptId="$@NA@"
+                        answerLabel="N/A" />
+                </td>
+            </tr>
 
         </table>
     </section>
@@ -1090,114 +1026,97 @@
     <section>
         <table class="baseline-aligned">
 
-            <obsgroup groupingConceptId="$@PRE_SURGERY_CONSTRUCT@">
-
-                <tr>
-                    <td><b>Clinical stage</b> (current presentation)<br />
-
-
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@EARLY_STAGE@"
-                             answerLabel="Early Stage" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@LOCALLY_ADVANCED@"
-                             answerLabel="Locally Advanced" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@METASTATIC@" answerLabel="Metastatic" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@RECURRENT@" answerLabel="Recurrent" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@UNABLE_TO_DETERMINE@"
-                             answerLabel="Unable to determine" />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>Clinical TNM, if available: T<obs
-                            conceptId="$@TUMOR_TNM@" /> N<obs conceptId="$@NODE_TNM@" /> M<obs
-                            conceptId="$@METASTESES_TNM@" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Stage:
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_ZERO@" answerLabel="0" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_ONE@" answerLabel="I" /> <obs
-                                conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                                answerConceptId="$@OVERALL_CANCER_STAGE_TWO@" answerLabel="II" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_THREE@" answerLabel="III" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_FOUR@" answerLabel="IV" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@UNABLE_TO_DETERMINE@" answerLabel="Unable to determine" />
-
-                    </td>
-                </tr>
-
-            </obsgroup>
-            <tr><td colspan="2"><hr /></td></tr>
-
-            <obsgroup groupingConceptId="$@POST_SURGERY_CONSTRUCT@">
-
-                <tr>
-                    <td><b>Pathologic stage </b> (from MRM/ALND, if post-operative)<br />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>Overall stage (if post-operative): pT<obs
-                            conceptId="$@TUMOR_TNM@" /> N<obs conceptId="$@NODE_TNM@" /> M<obs
-                            conceptId="$@METASTESES_TNM@" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> Stage:
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_ZERO@" answerLabel="0" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_ONE@" answerLabel="I" /> <obs
-                                conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                                answerConceptId="$@OVERALL_CANCER_STAGE_TWO@" answerLabel="II" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_THREE@" answerLabel="III" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@OVERALL_CANCER_STAGE_FOUR@" answerLabel="IV" />
-                        <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                             answerConceptId="$@UNABLE_TO_DETERMINE@" answerLabel="Unable to determine" />
-                    </td>
-                </tr>
-            </obsgroup>
 
             <tr>
-                <td><b>Operative Findings (if applicable)</b><br /> Tumor
-                    resection margins: <obs conceptId="$@TUMOR_RESECTION_MARGINS@"
-                                            answerConceptId="$@POSITIVE@" answerLabel="Positive" /> <obs
-                            conceptId="$@TUMOR_RESECTION_MARGINS@"
-                            answerConceptId="$@NEGATIVE@" answerLabel="Negative" /> <obs
-                            conceptId="$@TUMOR_RESECTION_MARGINS@"
-                            answerConceptId="$@UNABLE_TO_DETERMINE@"
-                            answerLabel="Unable to determine" /></td>
+                <td><b> Clinical Staging </b></td>
             </tr>
 
 
-
             <tr>
-                <td>Lymph node sampling: <obs
-                        conceptId="$@LYMPH_NODES_MALIGNANT@" /> out of <obs
-                        conceptId="$@LYMPH_NODES_SAMPLED@" /> sampled lymph nodes positive
-                    for malignancy
+                <td><b>Clinical ALL Stage (current presentation):(rename for
+                    other diseases)</b> <br />
+                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
+                         answerConceptId="$@OVERALL_CANCER_STAGE_ONE@" answerLabel="Stage I - Disease confined to uterus" /><br/>
+                    <obs
+                            conceptId="$@OVERALL_ONCOLOGY_STAGE@"
+                            answerConceptId="$@OVERALL_CANCER_STAGE_TWO@" answerLabel="Stage II - Disease extends outside uterus but limited to vagina and/or pelvis" /><br/>
+                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
+                         answerConceptId="$@OVERALL_CANCER_STAGE_THREE@" answerLabel="Stage III - Pulmonary metastases with or without uterin, vaginal, or pelvic involvement" /><br/>
+                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
+                         answerConceptId="$@OVERALL_CANCER_STAGE_FOUR@" answerLabel="Stage IV - All other metastatic sites" />
+
                 </td>
             </tr>
-            <tr>
-                <td>Other operative findings <obs
-                        conceptId="$@OTHER_OPERATIVE_FINDINGS@" rows="2" cols="90" />
-                </td>
-            </tr>
+
+
 
         </table>
     </section>
+
+    <section>
+        <table>
+            <th><b>WHO Risk Score</b></th>
+            <tr>
+                <td></td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td> Age</td>
+                <td>&#60;40</td>
+                <td>&#8805;40</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Interval months from index pregnancy</td>
+                <td>&#60;4</td>
+                <td>4-6</td>
+                <td>7-12</td>
+                <td>&#62;12</td>
+            </tr>
+            <tr>
+                <td>Pretreatment serum &#946;HCG( in IU/L)</td>
+                <td>&#60;1000</td>
+                <td>1000 to &#60;10,000</td>
+                <td>10,000 to &#60;100,000</td>
+                <td>&#8805;100,000</td>
+            </tr>
+            <tr>
+                <td>Largest tumor size, including uterus(cm)</td>
+                <td>&#60;3</td>
+                <td>3-5</td>
+                <td>&#62;5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Site of mestasis</td>
+                <td>Lung</td>
+                <td>Spleen, kidney</td>
+                <td>GI tract</td>
+                <td>Brain, liver</td>
+            </tr>
+            <tr>
+                <td>Number of metastases</td>
+                <td></td>
+                <td>1-4</td>
+                <td>5-8</td>
+                <td>&#62;8</td>
+            </tr>
+            <tr>
+                <td>Previous failed chemotherapy</td>
+                <td></td>
+                <td></td>
+                <td>Single drug</td>
+                <td>Two or more drugs</td>
+            </tr>
+        </table>
+        Risk Score<obs conceptId="$@RISK_SCORE@" /><br/>
+        Note: a risk score of 0-6 implies Low Risk of resistance to treatment with monotherapy. A risk score &#8805;7 implies a High Risk of resistance to treament with monotherapy.
+    </section>
+
 
     <section>
         <table class="baseline-aligned">
@@ -1206,7 +1125,7 @@
                 <td>Intent:</td>
                 <td class="checkboxGroup" colspan="3">
                     <obs conceptId="$@TREATMENT_INTENT@"
-                         answerConceptId="$@LONG-TERM_DISEASE_CONTROL@"
+                         answerConceptId="$@CURATIVE@"
                          answerLabel="Curative" />
                     <obs conceptId="$@TREATMENT_INTENT@"
                          answerConceptId="$@PALLIATIVE_SYSTEMIC@"
@@ -1219,34 +1138,36 @@
 
             <!--Treatments -->
 
-            <td colspan="2">
-                <hr />
-            </td>
-
             <tr>
-                <td>Neoadjuvant:</td>
+                <td colspan="2"><hr /></td>
+            </tr>
+            <tr>
+                <td>Chemotherapy:</td>
                 <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@NEOADJUVANT@" answerConceptId="$@PLANNED@"
-                         answerLabel="Planned" />
-                    <obs conceptId="$@NEOADJUVANT@" answerConceptId="$@NOT_PLANNED@"
-                         answerLabel="Not planned" />
-                    <obs conceptId="$@NEOADJUVANT@" answerConceptId="$@NA@"
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@"
+                         answerConceptId="$@PLANNED@" answerLabel="Planned" />
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@"
+                         answerConceptId="$@NOT_PLANNED@" answerLabel="Not planned" />
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@" answerConceptId="$@NA@"
                          answerLabel="Not applicable" />
                     <br />
-                    <obs conceptId="$@NEOADJUVANT_TYPE@" answerConceptId="$@AC+T@"
-                         answerLabel="AC+T" />
-                    <obs conceptId="$@NEOADJUVANT_TYPE@" answerConceptId="$@HORMONAL@"
-                         answerLabel="Hormonal" />
-                    <obs conceptId="$@NEOADJUVANT_TYPE@"
+
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@"
+                         answerConceptId="$@ORAL_METHOTREXATE@"
+                         answerLabel="Oral methotrexate" />
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@"
+                         answerConceptId="$@IM_METHOTREXATE@" answerLabel="IM methotrexate" />
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@"
+                         answerConceptId="$@EMACO@" answerLabel="EMACO" />
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@"
                          answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                    <obs conceptId="$@OTHER_NEOADJUVANT@" />
+                    <obs conceptId="$@OTHER_CHEMOTHERAPY@" />
 
                 </td>
             </tr>
-
-            <td colspan="2">
-                <hr />
-            </td>
+            <tr>
+                <td colspan="2"><hr /></td>
+            </tr>
 
             <tr>
                 <td>Surgery:</td>
@@ -1257,75 +1178,22 @@
                          answerLabel="Not planned" />
                     <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@NA@"
                          answerLabel="Not applicable" />
-
-
-                </td>
-            </tr>
-
-            <td colspan="2">
-                <hr />
-            </td>
-            <tr>
-                <td>Adjuvant:</td>
-                <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@ADJUVANT@" answerConceptId="$@PLANNED@"
-                         answerLabel="Planned" />
-                    <obs conceptId="$@ADJUVANT@" answerConceptId="$@NOT_PLANNED@"
-                         answerLabel="Not planned" />
-                    <obs conceptId="$@ADJUVANT@" answerConceptId="$@NA@"
-                         answerLabel="Not applicable" />
                     <br />
-                    <obs conceptId="$@ADJUVANT_TYPE@" answerConceptId="$@AC+T@"
-                         answerLabel="AC+T" />
-                    <obs conceptId="$@ADJUVANT_TYPE@" answerConceptId="$@HORMONAL@"
-                         answerLabel="Hormonal" />
-                    <obs conceptId="$@ADJUVANT_TYPE@"
+                    <obs conceptId="$@SURGERY_TYPE@" answerConceptId="$@HYSTERECTOMY@"
+                         answerLabel="Hysterectomy" />
+                    <obs conceptId="$@SURGERY_TYPE@" answerConceptId="$@EVACUATION@"
+                         answerLabel="Evacuation" />
+                    <obs conceptId="$@SURGERY_TYPE@"
                          answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                    <obs conceptId="$@OTHER_ADJUVANT@" />
+
+                    <obs conceptId="$@OTHER_SURGERY_TYPE@" />
 
                 </td>
             </tr>
-            <td colspan="2">
-                <hr />
-            </td>
+
             <tr>
-                <td>Radiotherapy:</td>
-                <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@RADIATION_STATUS@" answerConceptId="$@PLANNED@"
-                         answerLabel="Planned" />
-                    <obs conceptId="$@RADIATION_STATUS@"
-                         answerConceptId="$@NOT_PLANNED@" answerLabel="Not planned" />
-                    <obs conceptId="$@RADIATION_STATUS@" answerConceptId="$@NA@"
-                         answerLabel="Not applicable" />
-                </td>
+                <td colspan="2"><hr /></td>
             </tr>
-
-            <td colspan="2">
-                <hr />
-            </td>
-            <tr>
-                <td>Palliative Cancer Therapy:</td>
-                <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@PALLIATIVE_CANCER_THERAPY_STATUS@"
-                         answerConceptId="$@PLANNED@" answerLabel="Planned" />
-                    <obs conceptId="$@PALLIATIVE_CANCER_THERAPY_STATUS@"
-                         answerConceptId="$@NOT_PLANNED@" answerLabel="Not planned" />
-                    <obs conceptId="$@PALLIATIVE_CANCER_THERAPY_STATUS@"
-                         answerConceptId="$@NA@" answerLabel="Not applicable" />
-                    <br />
-                    <obs conceptId="$@PALLIATION_TYPE@" answerConceptId="$@TAXOL@"
-                         answerLabel="Single agent paclitaxel" />
-                    <obs conceptId="$@PALLIATION_TYPE@" answerConceptId="$@HORMONAL@"
-                         answerLabel="Hormonal" />
-                    <obs conceptId="$@PALLIATION_TYPE@"
-                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                    <obs conceptId="$@OTHER_PALLIATION_TYPE@" />
-
-                </td>
-            </tr>
-            <td colspan="2">
-                <hr />
-            </td>
             <tr>
                 <th>Planned changes to protocol treatment plan:</th>
                 <td colspan="3">
@@ -1346,694 +1214,6 @@
     <submit />
     <br />
     <br />
-
-    <strong><u>Clinical Staging Key from Rwanda Breast Cancer Protocol:</u></strong><br /><br />
-
-    <strong>Early stage: fully resectable at time of presentation (operable disease)</strong>
-    <ol>
-        <li>Disease confined to the breast and ipsilateral axillary nodes </li>
-        <li>No skin involvement (such as peau d&#38;rsquo;orange or inflammatory changes; <em>note: other</em> <em>overlying skin changes such as hyperpigmentation and tethering may be operable if within the mastectomy field)</em> </li>
-        <li> No chest wall involvement </li>
-        <li> Tumor size &#60; 5 cm <em>(note: tumors &#62; 5 cm may be operable depending on size and location relative to entire breast)</em> </li>
-        <li> Axillary nodes not fixed to skin or underlying tissue </li>
-        <li> No other lymphadenopathy </li>
-    </ol>
-    <strong>Locally advanced: not operable at time of presentation</strong>
-    <ol>
-        <li> No distant metastases </li>
-        <li> No cervical lymphadenopathy or contralateral lymphadenopathy </li>
-        <li> Ipsilateral supraclavicular lymphadenopathy may be considered locally advanced </li>
-        <li> Localized breast skin involvement or chest wall involvement </li>
-        <li>Axillary nodes fixed to skin or underlying tissue </li>
-    </ol>
-    <strong>Metastatic </strong>
-    <ol>
-        <li>Distant disease (e.g. in bones, liver, lung, brain or skin distant to breast)  </li>
-        <li>Cervical lymphadenopathy or any contralateral lymphadenopathy </li>
-    </ol>
-    <br/>
-    <strong><u>AJCC 7<sup>th</sup> ed. Breast Cancer TNM Staging Key:</u></strong>
-    <table border="1" cellspacing="0" cellpadding="0">
-        <tbody>
-        <tr>
-            <td colspan="2" width="697">
-                <strong>Primary Tumor (T)</strong>
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                TX
-            </td>
-            <td width="630">
-                Primary tumor cannot be assessed
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T0
-            </td>
-            <td width="630">
-                No evidence of primary tumor
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                Tis
-            </td>
-            <td width="630">
-                Carcinoma in situ
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                Tis (DCIS)
-            </td>
-            <td width="630">
-                Ductal carcinoma in situ
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                Tis (LCIS)
-            </td>
-            <td width="630">
-                Lobular carcinoma in situ
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                Tis (Paget's)
-            </td>
-            <td width="630">
-                Paget's disease (Paget disease) of the nipple NOT associated with invasive carcinoma and/or carcinoma in situ (DCIS and/or LCIS) in the underlying breast parenchyma. Carcinomas in the breast parenchyma associated with Paget's disease are categorized based on the size and characteristics of the parenchymal disease, although the presence of Paget's disease should still be noted.
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T1
-            </td>
-            <td width="630">
-                Tumor &#8804;20 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T1mi
-            </td>
-            <td width="630">
-                Tumor &#8804;1 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T1a
-            </td>
-            <td width="630">
-                Tumor &#62;1 mm but &#8804;5 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T1b
-            </td>
-            <td width="630">
-                Tumor &#62;5 mm but &#8804;10 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T1c
-            </td>
-            <td width="630">
-                Tumor &#62;10 mm but &#8804;20 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T2
-            </td>
-            <td width="630">
-                Tumor &#62;20 mm but &#8804;50 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T3
-            </td>
-            <td width="630">
-                Tumor &#62;50 mm in greatest dimension
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T4
-            </td>
-            <td width="630">
-                Tumor of any size with direct extension to the chest wall and/or to the skin (ulceration or skin nodules)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T4a
-            </td>
-            <td width="630">
-                Extension to the chest wall, not including only pectoralis muscle adherence/invasion
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T4b
-            </td>
-            <td width="630">
-                Ulceration and/or ipsilateral satellite nodules and/or edema (including peau d'orange) of the skin, which do not meet the criteria for inflammatory carcinoma
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T4c
-            </td>
-            <td width="630">
-                Both T4a and T4b
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                T4d
-            </td>
-            <td width="630">
-                Inflammatory carcinoma
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" width="697">
-                <strong>Regional Lymph Nodes (N)</strong>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" width="697">
-                <strong><em>Clinical (N)</em></strong>
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                NX
-            </td>
-            <td width="630">
-                Regional lymph nodes cannot be assessed (eg, previously removed)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N0
-            </td>
-            <td width="630">
-                No regional lymph node metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N1
-            </td>
-            <td width="630">
-                Metastases to movable ipsilateral level I, II axillary lymph node(s)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N2
-            </td>
-            <td width="630">
-                Metastases in ipsilateral level I, II axillary lymph nodes that are clinically fixed or matted; or in clinically detected ipsilateral internal mammary nodes in the <em>absence</em> of clinically evident axillary lymph node metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N2a
-            </td>
-            <td width="630">
-                Metastases in ipsilateral level I, II axillary lymph nodes fixed to one another (matted) or to other structures
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N2b
-            </td>
-            <td width="630">
-                Metastases only in clinically detected ipsilateral internal mammary nodes and in the <em>absence</em> of clinically evident level I, II axillary lymph node metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N3
-            </td>
-            <td width="630">
-                Metastases in ipsilateral infraclavicular (level III axillary) lymph node(s) with or without level I, II axillary lymph node involvement; or in clinically detected ipsilateral internal mammary lymph node(s) with clinically evident level I, II axillary lymph node metastases; or metastases in ipsilateral supraclavicular lymph node(s) with or without axillary or internal mammary lymph node involvement
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N3a
-            </td>
-            <td width="630">
-                Metastases in ipsilateral infraclavicular lymph node(s)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N3b
-            </td>
-            <td width="630">
-                Metastases in ipsilateral internal mammary lymph node(s) and axillary lymph node(s)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                N3c
-            </td>
-            <td width="630">
-                Metastases in ipsilateral supraclavicular lymph node(s)
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" width="697">
-                <strong><em>Pathologic (pN)</em></strong>
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pNX
-            </td>
-            <td width="630">
-                Regional lymph nodes cannot be assessed (eg, previously removed, or not removed for pathologic study)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN0
-            </td>
-            <td width="630">
-                No regional lymph node metastasis identified histologically
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN0(i-)
-            </td>
-            <td width="630">
-                No regional lymph node metastases histologically, negative immunohistochemistry (IHC)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN0(i+)
-            </td>
-            <td width="630">
-                Malignant cells in regional lymph node(s) no greater than 0.2 mm (detected by H&amp;E or IHC including isolated tumor cell clusters (ITC))
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN0(mol-)
-            </td>
-            <td width="630">
-                No regional lymph node metastases histologically, negative molecular findings (RT-PCR)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN0(mol+)
-            </td>
-            <td width="630">
-                Positive molecular findings (RT-PCR), but no regional lymph node metastases detected by histology or IHC
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN1
-            </td>
-            <td width="630">
-                Micrometastases; or metastases in 1-3 axillary lymph nodes; and/or in internal mammary nodes with metastases detected by sentinel lymph node biopsy but not clinically detected
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN1mi
-            </td>
-            <td width="630">
-                Micrometastases (greater than 0.2 mm and/or more than 200 cells, but none greater than 2.0 mm)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN1a
-            </td>
-            <td width="630">
-                Metastases in 1-3 axillary lymph nodes, at least one metastasis greater than 2.0 mm
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN1b
-            </td>
-            <td width="630">
-                Metastases in internal mammary nodes with micrometastases or macrometastases detected by sentinel lymph node biopsy but not clinically detected
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN1c
-            </td>
-            <td width="630">
-                Metastases in 1-3 axillary lymph nodes and in internal mammary lymph nodes with micrometastases or macrometastases detected by sentinel lymph node biopsy but not clinically detected
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN2
-            </td>
-            <td width="630">
-                Metastases in 4-9 axillary lymph nodes; or in clinically detected internal mammary lymph nodes in the <em>absence</em> of axillary lymph node metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN2a
-            </td>
-            <td width="630">
-                Metastases in 4-9 axillary lymph nodes (at least one tumor deposit greater than 2.0 mm)
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN2b
-            </td>
-            <td width="630">
-                Metastases in clinically detected internal mammary lymph nodes in the <em>absence</em> of axillary lymph node metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN3
-            </td>
-            <td width="630">
-                Metastases in ten or more axillary lymph nodes; or in infraclavicular (level III axillary) lymph nodes; or in clinically detected ipsilateral internal mammary lymph nodes in the <em>presence</em> of one or more positive level I, II axillary lymph nodes; or in more than three axillary lymph nodes and in internal mammary lymph nodes with micrometastases or macrometastases detected by sentinel lymph node biopsy but not clinically detected ; or in ipsilateral supraclavicular lymph nodes
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN3a
-            </td>
-            <td width="630">
-                Metastases in ten or more axillary lymph nodes (at least one tumor deposit greater than 2.0 mm); or metastases to the infraclavicular (level III axillary lymph) nodes
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN3b
-            </td>
-            <td width="630">
-                Metastases in clinically detected ipsilateral internal mammary lymph nodes in the <em>presence</em> of one or more positive axillary lymph nodes; or in more than three axillary lymph nodes and in internal mammary lymph nodes with micrometastases or macrometastases detected by sentinel lymph node biopsy but not clinically detected
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                pN3c
-            </td>
-            <td width="630">
-                Metastases in ipsilateral supraclavicular lymph nodes
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" width="697">
-                <strong>Distant Metastases (M)</strong>
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                M0
-            </td>
-            <td width="630">
-                No clinical or radiographic evidence of distant metastases
-            </td>
-        </tr>
-        <tr>
-            <td width="67">
-                M1
-            </td>
-            <td width="630">
-                Distant detectable metastases as determined by classic clinical and radiographic means and/or histologically proven larger than 0.2 mm
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <div>
-        <table border="1" cellspacing="0" cellpadding="0">
-            <tbody>
-            <tr>
-                <td colspan="4" width="383">
-                    <strong>Anatomic Stage/Prognostic Groups (AJCC 7th ed)</strong>
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    0
-                </td>
-                <td width="96">
-                    Tis
-                </td>
-                <td width="96">
-                    N0
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    IA
-                </td>
-                <td width="96">
-                    T1
-                </td>
-                <td width="96">
-                    N0
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td rowspan="2" width="96">
-                    IB
-                </td>
-                <td width="96">
-                    T0
-                </td>
-                <td width="96">
-                    N1mi
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T1
-                </td>
-                <td width="96">
-                    N1mi
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td rowspan="3" width="96">
-                    IIA
-                </td>
-                <td width="96">
-                    T0
-                </td>
-                <td width="96">
-                    N1
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T1
-                </td>
-                <td width="96">
-                    N1
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T2
-                </td>
-                <td width="96">
-                    N0
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td rowspan="2" width="96">
-                    IIB
-                </td>
-                <td width="96">
-                    T2
-                </td>
-                <td width="96">
-                    N1
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T3
-                </td>
-                <td width="96">
-                    N0
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td rowspan="5" width="96">
-                    IIIA
-                </td>
-                <td width="96">
-                    T0
-                </td>
-                <td width="96">
-                    N2
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T1
-                </td>
-                <td width="96">
-                    N2
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T2
-                </td>
-                <td width="96">
-                    N2
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T3
-                </td>
-                <td width="96">
-                    N1
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T3
-                </td>
-                <td width="96">
-                    N2
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td rowspan="3" width="96">
-                    IIIB
-                </td>
-                <td width="96">
-                    T4
-                </td>
-                <td width="96">
-                    N0
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T4
-                </td>
-                <td width="96">
-                    N1
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    T4
-                </td>
-                <td width="96">
-                    N2
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    IIIC
-                </td>
-                <td width="96">
-                    Any T
-                </td>
-                <td width="96">
-                    N3
-                </td>
-                <td width="96">
-                    M0
-                </td>
-            </tr>
-            <tr>
-                <td width="96">
-                    IV
-                </td>
-                <td width="96">
-                    Any T
-                </td>
-                <td width="96">
-                    Any N
-                </td>
-                <td width="96">
-                    M1
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
     <br />
 
 </htmlform>
