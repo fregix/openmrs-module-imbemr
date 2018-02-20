@@ -1,0 +1,132 @@
+<htmlform>
+    <!--  -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        <!-- concepts -->
+        @patientWeight@ =3ce93b62-26fe-102b-80cb-0017a47871b2
+        @diastolicBloodPressure@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+        @systolicBloodPressure@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+        @temperature@ = 3ce939d2-26fe-102b-80cb-0017a47871b2
+        @pulse@ = 3ce93824-26fe-102b-80cb-0017a47871b2
+        @sodium@ = 3cd76b58-26fe-102b-80cb-0017a47871b2
+        @potassium@ = 3cd76ce8-26fe-102b-80cb-0017a47871b2
+        @carbondioxide@ = 3cd77012-26fe-102b-80cb-0017a47871b2
+        @INR@ = 16e928e5-bdfb-4ec8-a9c2-9d64c78a0ce5
+        @returnDate@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+        @comments@ = 3cdc5938-26fe-102b-80cb-0017a47871b2
+        @creatinine@ = 3cd4374e-26fe-102b-80cb-0017a47871b2
+        @bloodVolumeStatus@ = 5c5755df-3d1b-4ae2-a465-31dc05f49ddd
+        @NYHA@= e90416ff-65d8-4ab3-9fc6-8e16ae5f2caf
+        @HGB@ = 3ccc7158-26fe-102b-80cb-0017a47871b2
+        @familyPlanning@ = 3ceb46fa-26fe-102b-80cb-0017a47871b2
+        @adherence@ = 7c9f7be9-3b1b-44b6-a00f-8738a99a7431
+        @NOT_APPLICABLE@ = 3cd7b72a-26fe-102b-80cb-0017a47871b2
+        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+
+        <!-- encouter Types-->
+        @Chronic_Kidney_Disease@ = 710c8487-9831-4063-a79d-bf07f27653b2
+        @HYPERTENSION_VISIT@ = 2f75f29f-454d-4e91-915c-ec3fd49532b1
+        @Heart_Failure@ = d889bcb3-c99d-4648-a3ea-b373335b9efd
+    </macros>
+
+    <style>
+        .section {
+        border: 1px solid $headerColor;
+        padding: 2px;
+        text-align: left;
+        margin-bottom: 1em;
+        }
+        .sectionHeader {
+        background-color: $headerColor;
+        color: $fontOnHeaderColor;
+        display: block;
+        padding: 2px;
+        font-weight: bold;
+        }
+        table.baseline-aligned td {
+        vertical-align: baseline;
+        }
+    </style>
+
+    <section headerLabel="1. Encounter Details">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                         height="65" ></img>
+                    <b>REPUBLIC OF RWANDA
+                        <br />MINISTRY OF HEALTH</b>
+                </td>
+                <td><strong>RENDEZ-VOUS/</strong> CLINIC VISITS <br/>
+                    <b> IMB ID: <lookup class="value"
+                                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                           expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    <br/>
+                    Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Clinique / Clinic: <encounterLocation/>
+                </td>
+                <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                    Provider:<encounterProvider id="encounterProvider"
+                                                role="Provider" default="currentUser"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="2. Rendez-Vous/CLINIC VISITS">
+        <div style="overflow-x:auto;width:100%">
+            <table border="2" cellspacing="0" cellpadding="2" width="100%" >
+                <tr>
+                    <th>EMR</th>
+                    <th>Poid/Wt</th>
+                    <th>T/A/BP</th>
+                    <th>T<sup>o</sup></th>
+                    <th>P</th>
+                    <th>NYHA</th>
+                    <th>Hemody namie</th>
+                    <th>Adherence</th>
+                    <th>Na</th>
+                    <th>K</th>
+                    <th>CO<sub>2</sub></th>
+                    <th>Cr</th>
+                    <th>Hgb</th>
+                    <th>INR</th>
+                    <th>PF</th>
+                    <th>RDV</th>
+                </tr>
+                <tr>
+                    <td rowspan='2'></td>
+                    <td><obs conceptId="$@patientWeight@"/>Kg</td>
+                    <td><obs conceptId="$@systolicBloodPressure@"/>mmHg<obs conceptId="$@diastolicBloodPressure@"/>mmHg</td>
+                    <td><obs conceptId="$@temperature@"/></td>
+                    <td><obs conceptId="$@pulse@"/></td>
+                    <td><obs conceptId="$@NYHA@"/></td>
+                    <td><obs conceptId="$@bloodVolumeStatus@" answers="HYPERVOLUMIC, EUVOLUMIC, HYPOVOLUMIC" answerLabels="Hyper, Eu, Hypo" style="radio"/></td>
+                    <td><obs conceptId="$@adherence@" answersConceptId="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="oui/yes, non/no, NA" style="radio"/></td>
+                    <td><obs conceptId="$@sodium@"/> mmoI/L</td>
+                    <td><obs conceptId="$@potassium@"/> mEq/L </td>
+                    <td><obs conceptId="$@carbondioxide@"/></td>
+                    <td><obs conceptId="$@creatinine@"/>mmoI/L</td>
+                    <td><obs conceptId="$@HGB@"/> (mg/dl)</td>
+                    <td><obs conceptId="$@INR@"/></td>
+                    <td><obs conceptId="$@familyPlanning@" answers="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="yes, no, NA" style="radio"/></td>
+                    <td><obs conceptId="$@returnDate@" allowFutureDates="true"/></td>
+                </tr>
+                <tr>
+                    <td colspan="15">commentaires <br/>
+                        Note:(Lab tests according to protocol)<br/><obs conceptId="$@comments@" rows="4" cols="100"/></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <submit/>
+    <encounterVoided/>
+</htmlform>

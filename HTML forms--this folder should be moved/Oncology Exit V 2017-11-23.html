@@ -1,8 +1,8 @@
 <htmlform> <!--
 	   Oncology - Death form
-		Author:  
-		Builder: Jberchmas 
-		started on Feb 21, 2013		
+		Author:
+		Builder: Jberchmas
+		started on Feb 21, 2013
 	-->
     <macros>
 
@@ -63,114 +63,115 @@
         @Exit_Notes@ =0fe44b73-26ad-4f47-9903-2287ef52e007
     </macros>
     <style>
-        .formName {
-        background-color: #e0e0ff;
-        }
-
-        .section {
-        border: 1px solid #8FABC7;
-        text-align: left;
-        margin-bottom: 10px;
-        }
-
-        .disabled {
-        color: #D8D8D8;
-        }
-
         .sectionHeader {
-        background-color: #3333cc;
+        background-color: #009d8e;;
         color: white;
         display: block;
         padding: 2px;
         font-weight: bold;
         }
 
-        table.symptoms th {
-        text-align: right;
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
         }
 
-        th.subheader {
-        background-color: #8FABC7;
-        color: white
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
         }
 
-        .note {
-        color: red;
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
         }
 
         td {
-        border-color:white;
-        vertical-align: top;
+        font-size: 15px;
         }
 
-        table.labTable td {
-        color: red;
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
         }
 
-        table.labTable
-        td.dateField {
-        text-align: right;
+        @media print {
+        #container {
+        display: block;
         }
-
-        table.identifierTable td {
-        padding-right: 10px;
+        #printArea {
+        display: none;
         }
-
-        div.paddedTable span {
-        padding-right: 20px;
+        #userBar {
+        display: none;
         }
-
-        .indented {
-        padding-left: 20pt;
-        padding-right: 20pt;
+        #banner {
+        display: none;
         }
-
-        .bigIndent {
-        padding-left: 40pt;
-        padding-right: 10pt;
+        #footer {
+        display: none;
         }
-
-        .newpage {
-        color: #8FABC7;
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .value {
+        font-size: 20px;
         font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
         }
 
-        .midleCell{
-        border-right:  1px dashed black;
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
         }
-
-        .bottomCell{
-        border-bottom:  1px dashed black;
+        #container {
+        display: block;
         }
-
-        .topCell{
-        border-top:  1px dashed black;
+        #printArea {
+        display: none;
         }
-
-
-
-        .disdiv {
-        background-color: grey;
         }
-        /* for centering the page */
-
-        #wrapper1{
-        width:1400px;
-        margin:0 auto;
-        }
-
-        #wrapper2{
-        width:1400px;
-        margin:0 auto;
-        border-style:solid;
-        border-width:medium;
-        }
-
-        #wrapper3{
-        width:1400px;
-        margin:0 auto;
-        }
-
     </style>
     <script>
 	$j(function() {
@@ -187,7 +188,7 @@
 								});
 							}
 							$j('.disabled').find('input, textarea, button, select').attr('disabled',true);
-							
+
 							$j(".enableDisable").each(
 									function() {
 										var group = $j(this);
@@ -357,7 +358,7 @@
                     <td>Nom / Last name: <lookup class="value"
                                                  expression="patient.personName.familyName" />
                     </td>
-                    <td>Prénom/ First name: <lookup class="value"
+                    <td>PrÃ©nom/ First name: <lookup class="value"
                                                     expression="patient.personName.givenName" />
                     </td>
                 </tr>
@@ -393,36 +394,35 @@
                 </tr>
                 <tr >
                     <td class="midleCell"><b>Reason for exit</b>:</td>
-                    <td style="border-bottom-style:dashed; border-width:1px; border-color:black;" colspan="2">
-                    If the patient is exiting permanently, fill this drop down. <exitFromCare/>
+                    <td style="border-bottom-style:dashed; border-width:1px; border-color:black;" colspan="2" class="checkboxGroup">
+                        If the patient is exiting permanently, fill this drop down. <exitFromCare/>
                         <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<span id="checkboxRadio">
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@BIOPSY_NEGATIVE@" answerLabel="Biopsy negative for cancer" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@NOT_CANCER@" answerLabel="Not Cancer (no biopsy)" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@DECLINED_CARE@" answerLabel="Declined further care" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@LTFU@" answerLabel="Lost to follow up"/> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@Oncology_Follow_up_completion@" answerLabel="After treatment follow up completed" /> <br/>
 
-                    </td>
-                </tr>
-                <tr >
-                    <td class="midleCell"></td>
-                    <td colspan="2"><b>If Referred:</b>
-                        <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+					<b>If Referred:</b>
+						<br/>
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@REF_CURATIVE@" answerLabel="Referred for curative cancer care" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@REF_PALLIATIVE_SYSTEMIC@" answerLabel="Referred for Palliative cancer therapy" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
+						<obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@REF_PALLIATIVE_ONLY@" answerLabel="Referred for palliation only care" /> <br/>
-                        <obs conceptId="$@ONC_END_REASON@"
-                             answerConceptId="$@OTHER_REASON_FOR_REFERRAL@" answerLabel="Other reason for referral" /> <br/>
+						<obs conceptId="$@ONC_END_REASON@"
+                             answerConceptId="$@OTHER_REASON_FOR_REFERRAL@" answerLabel="Other reason for referral" />
+                            <obs conceptId="$@OTHER_REASON_FOR_REFERRAL@" cols="40"/>
+                            <br/>
 
-
+						</span>
 
                     </td>
                 </tr>
@@ -438,7 +438,7 @@
                              answerConceptId="$@REFERRAL_HOSPITAL@" answerLabel="Referral Hospital" /> <br/>
                         <obs conceptId="$@REFERRAL_LOCATION@"
                              answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs	conceptId="$@FACILITY@" /> <br/>
-                    <br/>
+                        <br/>
                         Diagnosis: <obs conceptId="$@DIAGNOSIS@"/>
                         <obs conceptId="$@Diagnosis_confidence@" answerConceptId="$@Suspected@" answerLabel="Suspected" style="checkbox"/>
                         <obs conceptId="$@Diagnosis_confidence@" answerConceptId="$@Pathologically_confirmed@" answerLabel="Pathology confirmed" style="checkbox"/>
@@ -449,7 +449,7 @@
                 <tr>
                     <td class="midleCell"></td>
                     <td colspan="2">
-                       <b> Death: </b>
+                        <b> Death: </b>
                         <obs conceptId="$@Death_Characteristics@" answerConceptId="$@Unexpected_Death@" answerLabel="Unexpected" style="checkbox"/>
                         <obs conceptId="$@Death_Characteristics@" answerConceptId="$@Death_occurred_prior_to_curative_treatment_initiation@" answerLabel="Prior to curative treatment" style="checkbox"/>
                         <br/>
@@ -479,32 +479,32 @@
                     id="checkboxRadio">
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs
-                    conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
-                    answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230"
-                    answerLabel="While admitted at Butaro" /><br />
+                        conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
+                        answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230"
+                        answerLabel="While admitted at Butaro" /><br />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs
-                    conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
-                    answerConceptId="3cda8388-26fe-102b-80cb-0017a47871b2"
-                    answerLabel="While admitted at Rwinkwavu" /><br />
+                        conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
+                        answerConceptId="3cda8388-26fe-102b-80cb-0017a47871b2"
+                        answerLabel="While admitted at Rwinkwavu" /><br />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs
-                    conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
-                    answerConceptId="21fce379-01e4-4baf-a683-116e4c4e2c4b"
-                    answerLabel="While admitted at OTHER facility" /><br />
+                        conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
+                        answerConceptId="21fce379-01e4-4baf-a683-116e4c4e2c4b"
+                        answerLabel="While admitted at OTHER facility" /><br />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs
-                    conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
-                    answerConceptId="b38fccb6-7ddf-4087-a56f-18eadfcd60e2"
-                    answerLabel="At home or other outpatient setting" /><br />
+                        conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
+                        answerConceptId="b38fccb6-7ddf-4087-a56f-18eadfcd60e2"
+                        answerLabel="At home or other outpatient setting" /><br />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 <obs
-                    conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
-                    answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
-                    answerLabel="Other location: " />
-               
+                        conceptId="7d3a9892-1674-4943-adc5-414a8076319e"
+                        answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+                        answerLabel="Other location: " />
+
                 <obs
-                    conceptId="8fd332f2-d936-4943-9248-08ac0bc9169a" /> </span></td>
+                        conceptId="8fd332f2-d936-4943-9248-08ac0bc9169a" /> </span></td>
                 </tr>
                 <tr >
                     <td class="topCell" colspan="3"><span ><b>Notes:</b></span><br />
@@ -520,7 +520,7 @@
             <tr>
                 <td></td>
                 <td align="right">Form filled by:<encounterProvider id="encounterProvider"
-                                                                    role="Oncology Provider" />
+                                                                    role="Oncology Provider" default="currentUser" />
                 </td>
             </tr>
             <tr>

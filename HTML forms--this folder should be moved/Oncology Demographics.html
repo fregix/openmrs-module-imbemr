@@ -5,21 +5,23 @@
 		Builder: Jberchmas 
 		started on Sept 22, 2012		
 	-->
-    <macros>
-        @SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@ = 3ce169b4-26fe-102b-80cb-0017a47871b2
-        @OTHER_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@ = 6a442017-86dc-4d83-a7d8-42df252a63a5
-        @PATIENT_HAS_ACCOMPAGNATEUR@ = 0b71ad30-e864-4c9d-bebc-a678fdbcbd45
-        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
-        @RECOMMENDED@ = 339acef0-910f-4860-ba08-a716dabec364
-        @NOT_INDICATED@ = 3ce3fdbe-26fe-102b-80cb-0017a47871b2
-        @SOCIO-ECONOMIC_ASSISTANCE@ = 3cda0462-26fe-102b-80cb-0017a47871b2
+	<macros>
+		@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@ = 3ce169b4-26fe-102b-80cb-0017a47871b2
+		@OTHER_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@ = 6a442017-86dc-4d83-a7d8-42df252a63a5
+		@PATIENT_HAS_ACCOMPAGNATEUR@ = 0b71ad30-e864-4c9d-bebc-a678fdbcbd45
+		@YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+		@RECOMMENDED@ = 339acef0-910f-4860-ba08-a716dabec364
+		@NOT_INDICATED@ = 3ce3fdbe-26fe-102b-80cb-0017a47871b2
+		@SOCIO-ECONOMIC_ASSISTANCE@ = 3cda0462-26fe-102b-80cb-0017a47871b2
 		@NO_SOCIO-ECONOMIC_ASSISTANCE_RECOMMENDED@ = ae866472-b781-44ee-be66-bb86c42057cc
-    </macros>
-    <style>
+		@referral_hospital_construct@ = 0864bccf-ae0c-414e-9b08-7c05693b168b
+		@district_hospital_construct@ =59ec2c2c-f226-496e-8144-693326d1448d
+		@Health_center_construct@ =8f1f7d59-3b8d-4c6a-be2e-1e0069a1f8aa
+	</macros>
+	<style>
 		.formName {
 		background-color: #009d8e;
 		}
-
 		.section {
 		border: 1px solid #3333cc;
 		width: 100%;
@@ -27,52 +29,43 @@
 		text-align: left;
 		margin-bottom: 10px;
 		}
-
 		.sectionHeader {
-		background-color: #3333cc;;
+		background-color: #009d8e;
 		color: white;
 		display: block;
 		padding: 2px;
 		font-weight: bold;
 		}
-
 		table.symptoms th {
 		text-align: right;
 		}
-
 		.note {
 		color: red;
 		}
 		.disabled {
 		color: #D8D8D8;
 		}
-
 		td {
 		vertical-align: top;
 		}
-
 		table.labTable td {
 		color: red;
 		}
-
 		table.labTable
 		td.dateField {
 		text-align: right;
 		}
-
 		table.identifierTable td {
 		padding-right: 10px;
 		}
-
 		div.paddedTable span {
 		padding-right: 20px;
 		}
-
 		table {
 		border-collapse: collapse;
 		}
-    </style>
-    <script>
+	</style>
+	<script>
 	$j(function() {
 		$j('.disdiv').find('input').attr('disabled', 'true');
 	});
@@ -370,7 +363,7 @@
 					<td>Nom / Last name: <lookup class="value"
 												 expression="patient.personName.familyName" />
 					</td>
-					<td>Prénom/ First name: <lookup class="value"
+					<td>PrÃ©nom/ First name: <lookup class="value"
 													expression="patient.personName.givenName" />
 					</td>
 				</tr>
@@ -398,25 +391,25 @@
 	</div>
 
 	<section headerLabel="DEMOGRAPHICS AT INTAKE">
-        <table border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td width="20%"><b>Date of Birth</b></td>
-                <td><lookup expression="patient.birthdate"/> <!-- <patient field="birthDateOrAge" /> -->
-                </td>
-            </tr>
-            <tr>
-                <td><b>Sex</b></td>
-                <td><lookup expression="patient.gender" codePrefix="gender_"/><!-- <patient field="gender" /> -->
-                </td>
-            </tr>
-            <!--<tr>
+		<table border="1" cellspacing="0" cellpadding="6" width="100%">
+			<tr>
+				<td width="20%"><b>Date of Birth</b></td>
+				<td><lookup expression="patient.birthdate"/> <!-- <patient field="birthDateOrAge" /> -->
+				</td>
+			</tr>
+			<tr>
+				<td><b>Sex</b></td>
+				<td><lookup expression="patient.gender" codePrefix="gender_"/><!-- <patient field="gender" /> -->
+				</td>
+			</tr>
+			<!--<tr>
                 <td><b>Rwanda National ID</b></td>
                 <td><patient field="identifier" identifierTypeId="ed52ec82-4b7c-411b-804a-13bd9651bb3e"/>
                 </td>
             </tr>-->
-            <tr>
-                <td><b>Residence</b></td>
-                <td><addressHierarchyRwanda /><!-- <table>
+			<tr>
+				<td><b>Residence</b></td>
+				<td><addressHierarchyRwanda /><!-- <table>
 				<tr>
 					<td><addressHierarchyRwanda />
 					</td>
@@ -427,209 +420,220 @@
 					</td>
 				</tr>
 			</table> --></td>
-            </tr>
-            <tr>
-                <td><b>Patient Telephone</b></td>
-                <td> Primary #:<obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" /> &#160;&#160;&#160;&#160;&#160;&#160; Secondary #:<obs
-                        conceptId="55bd1ac5-d8aa-4fab-abb3-eb92c44e23e1" />
-                </td>
-            </tr>
-            <tr>
-                <td><b>Family care-giver</b></td>
-                <td> <obsgroup groupingConceptId="3cd9936a-26fe-102b-80cb-0017a47871b2">
-                    Name: <obs conceptId="3cd997f2-26fe-102b-80cb-0017a47871b2" /> &#160;&#160;&#160;&#160;&#160;&#160; Relationship: <obs conceptId="3cd99a68-26fe-102b-80cb-0017a47871b2" /> <br /><br />
-                    Telephone: <obs conceptId="276f8057-55a4-4b1c-8915-69ad090fcffb" />
-                </obsgroup>
-                </td>
-            </tr>
-            <tr>
-                <td><b>Insurance</b></td>
-                <td>
+			</tr>
+			<tr>
+				<td><b>Patient Telephone</b></td>
+				<td> Primary #:<obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" /> &#160;&#160;&#160;&#160;&#160;&#160; Secondary #:<obs
+						conceptId="55bd1ac5-d8aa-4fab-abb3-eb92c44e23e1" />
+				</td>
+			</tr>
+			<tr>
+				<td><b>Family care-giver</b></td>
+				<td> <obsgroup groupingConceptId="3cd9936a-26fe-102b-80cb-0017a47871b2">
+					Name: <obs conceptId="3cd997f2-26fe-102b-80cb-0017a47871b2" /> &#160;&#160;&#160;&#160;&#160;&#160; Relationship: <obs conceptId="3cd99a68-26fe-102b-80cb-0017a47871b2" /> <br /><br />
+					Telephone: <obs conceptId="276f8057-55a4-4b1c-8915-69ad090fcffb" />
+				</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td><b>Insurance</b></td>
+				<td>
 
-                    <table width="100%">
-                        <tr>
-                            <td class="checkboxGroup"><span id="checkboxRadio"><obs
-                                    conceptId="8da67e73-776c-43f6-9758-79d1f6786db3"
-                                    answerConceptId="465d1588-a6f6-41ac-9b9c-cc4fdf140e78"
-                                    answerLabel="Mutuelle:" />
+					<table width="100%">
+						<tr>
+							<td class="checkboxGroup"><span id="checkboxRadio"><obs
+									conceptId="8da67e73-776c-43f6-9758-79d1f6786db3"
+									answerConceptId="465d1588-a6f6-41ac-9b9c-cc4fdf140e78"
+									answerLabel="Mutuelle:" />
 				</span>
 				<span class="checkboxGroupInner"><span id="checkboxRadioInner">	
 				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
-                        conceptId="a9191adf-c999-422d-94e0-14de5f076127"
-                        answerConceptId="60faae3f-6f2c-4724-8a3e-96dfa386346e"
-                        answerLabel="I" />
+						conceptId="a9191adf-c999-422d-94e0-14de5f076127"
+						answerConceptId="60faae3f-6f2c-4724-8a3e-96dfa386346e"
+						answerLabel="I" />
 				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="a9191adf-c999-422d-94e0-14de5f076127" answerConceptId="a184e124-75cf-4ecd-a724-ea068ea94438" answerLabel="II" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="a9191adf-c999-422d-94e0-14de5f076127" answerConceptId="ddb21a09-f2df-490e-a6c4-22447a119492" answerLabel="III" /></span></span><span id="checkboxRadio">
 				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="3ce0cd1a-26fe-102b-80cb-0017a47871b2" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" /><obs conceptId="bab86ae4-080a-4e83-8808-faa9863d9a61" /><br />
 				<obs conceptId="8da67e73-776c-43f6-9758-79d1f6786db3" answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2" answerLabel="None" /></span>
-                            </td>
-                        </tr>
+							</td>
+						</tr>
 
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td><b>Socioeconomic assistance</b></td>
-                <td><table>
-                    <tr>
-                        <td>Already receiving: <br />&#160;&#160;&#160;&#160;<obs
-                                conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                answerConceptId="3cda0eee-26fe-102b-80cb-0017a47871b2"
-                                answerLabel="Food supplementation" /> <br />
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                    answerConceptId="3cd67432-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Transport" /> <br/>
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                    answerConceptId="262dba46-b8b0-4dd4-9edc-9bac0a7932cc"
-                                    answerLabel="Clinician home visits" /> <br/>
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                    answerConceptId="3cda05de-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Education support" />
-                            <br />&#160;&#160;&#160;&#160;<obs
-                                    conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                    answerConceptId="3cda08d6-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Home construction" /> <br />&#160;&#160;&#160;&#160;<obs
-                                    conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
-                                    answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Other:" />
-                            <obs conceptId="$@OTHER_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"/>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td><b>Socioeconomic assistance</b></td>
+				<td><table>
+					<tr>
+						<td>Already receiving: <br />&#160;&#160;&#160;&#160;<obs
+								conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+								answerConceptId="3cda0eee-26fe-102b-80cb-0017a47871b2"
+								answerLabel="Food supplementation" /> <br />
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+									answerConceptId="3cd67432-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Transport" /> <br/>
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+									answerConceptId="262dba46-b8b0-4dd4-9edc-9bac0a7932cc"
+									answerLabel="Clinician home visits" /> <br/>
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+									answerConceptId="3cda05de-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Education support" />
+							<br />&#160;&#160;&#160;&#160;<obs
+									conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+									answerConceptId="3cda08d6-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Home construction" /> <br />&#160;&#160;&#160;&#160;<obs
+									conceptId="$@SOCIO-ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"
+									answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Other:" />
+							<obs conceptId="$@OTHER_ECONOMIC_ASSISTANCE_ALREADY_RECEIVED@"/>
 
-                        </td>
-                        <td>Recommended:<br />&#160;&#160;&#160;&#160;<obs
-                                conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                answerConceptId="3cda0eee-26fe-102b-80cb-0017a47871b2"
-                                answerLabel="Food supplementation" /> <br />
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                    answerConceptId="3cd67432-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Transport" /> <br/>
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                    answerConceptId="262dba46-b8b0-4dd4-9edc-9bac0a7932cc"
-                                    answerLabel="Clinician home visits" /> <br/>
-                            &#160;&#160;&#160;&#160;<obs
-                                    conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                    answerConceptId="3cda05de-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Education support" />
-                            <br />&#160;&#160;&#160;&#160;<obs
-                                    conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                    answerConceptId="3cda08d6-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Home construction" /> <br />&#160;&#160;&#160;&#160;<obs
-                                    conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
-                                    answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
-                                    answerLabel="Other:" />
-                            <obs
-                                    conceptId="9710b133-7209-4e8f-af0b-fa32112230bc" /></td>
-                        <td>
-                            <obs conceptId="$@SOCIO-ECONOMIC_ASSISTANCE@"
-                                 answerConceptId="$@NO_SOCIO-ECONOMIC_ASSISTANCE_RECOMMENDED@"
-                                 answerLabel="Not Recommended" />
-                        </td>
+						</td>
+						<td>Recommended:<br />&#160;&#160;&#160;&#160;<obs
+								conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+								answerConceptId="3cda0eee-26fe-102b-80cb-0017a47871b2"
+								answerLabel="Food supplementation" /> <br />
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+									answerConceptId="3cd67432-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Transport" /> <br/>
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+									answerConceptId="262dba46-b8b0-4dd4-9edc-9bac0a7932cc"
+									answerLabel="Clinician home visits" /> <br/>
+							&#160;&#160;&#160;&#160;<obs
+									conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+									answerConceptId="3cda05de-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Education support" />
+							<br />&#160;&#160;&#160;&#160;<obs
+									conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+									answerConceptId="3cda08d6-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Home construction" /> <br />&#160;&#160;&#160;&#160;<obs
+									conceptId="3ce16b30-26fe-102b-80cb-0017a47871b2"
+									answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+									answerLabel="Other:" />
+							<obs
+									conceptId="9710b133-7209-4e8f-af0b-fa32112230bc" /></td>
+						<td>
+							<obs conceptId="$@SOCIO-ECONOMIC_ASSISTANCE@"
+								 answerConceptId="$@NO_SOCIO-ECONOMIC_ASSISTANCE_RECOMMENDED@"
+								 answerLabel="Not Recommended" />
+						</td>
 
-                    </tr>
-                </table>
-                </td>
-            </tr>
-            <tr>
-                <td><b>IMB<br/>Accompagnateur</b></td>
-                <td><table
-                        width="100%">
-                    <tr>
-                        <td>
-                            <obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
-                                 answerConceptId="$@YES@"
-                                 answerLabel="Already assigned " />
-                        </td>
-                        <td>
-                            <obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
-                                 answerConceptId="$@RECOMMENDED@"
-                                 answerLabel="Recommended" />
-                        </td>
-                        <td><obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
-                                 answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
-                                 answerLabel="NOT Recommended " />
-                        </td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td><b>IMB<br/>Accompagnateur</b></td>
+				<td><table
+						width="100%">
+					<tr>
+						<td>
+							<obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
+								 answerConceptId="$@YES@"
+								 answerLabel="Already assigned " />
+						</td>
+						<td>
+							<obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
+								 answerConceptId="$@RECOMMENDED@"
+								 answerLabel="Recommended" />
+						</td>
+						<td><obs conceptId="$@PATIENT_HAS_ACCOMPAGNATEUR@"
+								 answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+								 answerLabel="NOT Recommended " />
+						</td>
 
-                    </tr>
-                </table>
-                    <br/><relationship type="d283d13a-2700-102b-80cb-0017a47871b2" whoAmI="B"
-                                  required="false" changeExistingRelationship="false" />
-                    </td>
-            </tr>
-            <tr>
-                <td><b>Name &amp; Type of referring facility</b></td>
-                <td class="checkboxGroup"><span id="checkboxRadio"><table
-                        width="100%">
-                    <tr>
-                        <td><obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                 answerConceptId="3ce0d300-26fe-102b-80cb-0017a47871b2"
-                                 answerLabel="Health Center" />
-                            <obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" /> <br />
-                            <obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                 answerConceptId="e3f356b2-a340-47df-8b87-b70224437833"
-                                 answerLabel="District Hospital" />
+					</tr>
+				</table>
+					<br/><relationship type="d283d13a-2700-102b-80cb-0017a47871b2" whoAmI="B"
+									   required="false" changeExistingRelationship="false" />
+				</td>
+			</tr>
+			<tr>
+				<td><b>Name &amp; Type of referring facility</b></td>
+				<td class="checkboxGroup"><span id="checkboxRadio"><table
+						width="100%">
+					<tr>
+						<td>
+							<obsgroup groupingConceptId="$@Health_center_construct@">
+								<obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
+									 answerConceptId="3ce0d300-26fe-102b-80cb-0017a47871b2"
+									 answerLabel="Health Center" />
 
-                            <obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" /><br />
-                            <obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                 answerConceptId="f9875828-50ed-45ee-9c72-b4f81e270a8f"
-                                 answerLabel="N/A (not referred)" />
-                        </td>
-                        <td><obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                 answerConceptId="da32efc3-f18c-404c-bab2-acf68f42f85c"
-                                 answerLabel="Referral Hospital" />
-                             <obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" />
-                            <br />
-                            <obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                 answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
-                                 answerLabel="Other" />
+								<obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" />
+							</obsgroup>
+							<br />
+							<obsgroup groupingConceptId="$@district_hospital_construct@">
+								<obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
+									 answerConceptId="e3f356b2-a340-47df-8b87-b70224437833"
+									 answerLabel="District Hospital" />
 
-                            <obs conceptId="5fe2af49-b9c0-4c23-8d30-335a84b3c991" />
-                        </td>
-                    </tr>
-                </table>
+								<obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" />
+							</obsgroup>
+							<br />
+							<obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
+								 answerConceptId="f9875828-50ed-45ee-9c72-b4f81e270a8f"
+								 answerLabel="N/A (not referred)" />
+						</td>
+						<td>
+							<obsgroup groupingConceptId="$@referral_hospital_construct@">
+								<obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
+									 answerConceptId="da32efc3-f18c-404c-bab2-acf68f42f85c"
+									 answerLabel="Referral Hospital" />
+								<obs conceptId="4c3bcdaa-0e22-4c19-9a31-5a05ad1b12d9" />
+							</obsgroup>
+							<br />
+							<obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
+								 answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+								 answerLabel="Other" />
+
+							<obs conceptId="5fe2af49-b9c0-4c23-8d30-335a84b3c991" />
+						</td>
+					</tr>
+				</table>
 		</span></td>
-            </tr>
-            <tr>
-                <td><b>Location of referring facility</b></td>
-                <td class="checkboxGroup"><span id="checkboxRadio"><table
-                        width="100%">
-                    <tr>
-                        <td><obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
-                                 answerConceptId="89a601af-7e2b-4842-9d13-20034ad4c909"
-                                 answerLabel="Inside intake district" />
-                            <br />
+			</tr>
+			<tr>
+				<td><b>Location of referring facility</b></td>
+				<td class="checkboxGroup"><span id="checkboxRadio"><table
+						width="100%">
+					<tr>
+						<td><obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
+								 answerConceptId="89a601af-7e2b-4842-9d13-20034ad4c909"
+								 answerLabel="Inside intake district" />
+							<br />
 						<span><obs conceptId="c3e1d8d4-3040-49dd-ad66-c0928d912941"
-                                                    answerConceptId="f9875828-50ed-45ee-9c72-b4f81e270a8f"
-                                                    answerLabel="N/A (not referred)" />
+								   answerConceptId="f9875828-50ed-45ee-9c72-b4f81e270a8f"
+								   answerLabel="N/A (not referred)" />
                         </span>
-                        </td>
-                        <td><obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
-                                 answerConceptId="6c5c17ac-04e0-45fe-9b11-20850c5eaff7"
-                                 answerLabel="Outside intake district" />
-                        </td>
-                        <td>
-                            <obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
-                                 answerConceptId="e189f0b5-a733-40e1-b138-7bb464be3032"
-                                 answerLabel="Outside Rwanda" />
-                        </td>
-                    </tr>
+						</td>
+						<td><obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
+								 answerConceptId="6c5c17ac-04e0-45fe-9b11-20850c5eaff7"
+								 answerLabel="Outside intake district" />
+						</td>
+						<td>
+							<obs conceptId="b1ead3f5-b7d1-4170-882b-5d4ab655cb90"
+								 answerConceptId="e189f0b5-a733-40e1-b138-7bb464be3032"
+								 answerLabel="Outside Rwanda" />
+						</td>
+					</tr>
 
-                </table>
+				</table>
 		</span></td>
-            </tr>
-            <tr>
-                <td><b>Form filled by<br/>(name) </b></td>
-                <td ><encounterProvider
-                        role="Oncology Provider" />
-                </td>
-            </tr>
-        </table>
-    </section> ><enrollInProgram programId="20"/><submit />
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <encounterVoided/>
+			</tr>
+			<tr>
+				<td><b>Form filled by<br/>(name) </b></td>
+				<td ><encounterProvider
+						role="Oncology Provider" />
+				</td>
+			</tr>
+		</table>
+	</section> <enrollInProgram programId="20"/><submit />
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<encounterVoided/>
 </htmlform>

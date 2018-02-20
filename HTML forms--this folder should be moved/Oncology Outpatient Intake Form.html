@@ -265,85 +265,114 @@
     </macros>
 
     <style>
-        .formName {
-        background-color: #e0e0ff;
-        }
-
-        .section {
-        border: 1px solid #8FABC7;
-        width: 99%;
-        padding: 2px;
-        text-align: left;
-        margin-bottom: 10px;
-        }
-
-        .disabled {
-        color: #D8D8D8;
-        }
-
         .sectionHeader {
-        background-color: #3333cc;
+        background-color: #009d8e;;
         color: white;
         display: block;
         padding: 2px;
         font-weight: bold;
         }
 
-        table.symptoms th {
-        text-align: right;
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
         }
 
-        th.subheader {
-        background-color: #8FABC7;
-        color: white
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
         }
 
-        .note {
-        color: red;
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
         }
 
         td {
-        vertical-align: top;
+        font-size: 15px;
         }
 
-        table.labTable td {
-        color: red;
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
         }
 
-        table.labTable
-        td.dateField {
-        text-align: right;
+        @media print {
+        #container {
+        display: block;
         }
-
-        table.identifierTable td {
-        padding-right: 10px;
+        #printArea {
+        display: none;
         }
-
-        div.paddedTable span {
-        padding-right: 20px;
+        #userBar {
+        display: none;
         }
-
-        .indented {
-        padding-left: 20pt;
-        padding-right: 20pt;
+        #banner {
+        display: none;
         }
-
-        .bigIndent {
-        padding-left: 40pt;
-        padding-right: 10pt;
+        #footer {
+        display: none;
         }
-
-        .newpage {
-        color: #8FABC7;
-        font-weight: bold;
+        #htmlFormEntryBanner {
+        display: none;
         }
-
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
         table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
         border-collapse: collapse;
         }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .value {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
 
-        .disdiv {
-        /*background-color: grey;*/
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
         }
     </style>
     <script>
@@ -638,7 +667,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td>Nom / Last name: <lookup class="value"
                                              expression="patient.personName.familyName" />
                 </td>
-                <td>Prénom/ First name: <lookup class="value"
+                <td>PrÃ©nom/ First name: <lookup class="value"
                                                 expression="patient.personName.givenName" />
                 </td>
             </tr>
@@ -895,22 +924,22 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td><obs conceptId="8ad685de-4f19-4b75-b3f1-ee3b06bf05a2" />/5</td>
             </tr>
         </table>
-        <strong>
-            *ECOG Key:
-            <br/><br/>
-            0 Fully active, able to carry on all pre-disease performance without restriction
-            <br/><br/>
 
-            1 Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, i.e., light housework, office work
-            <br/><br/>
-            2 Ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of waking hours
-            <br/><br/>
-            3 Capable of only limited self-care, confined to bed or chair more than 50% of waking hours
-            <br/><br/>
-            4 Completely disabled. Cannot carry out any self-care. Totally confined to bed or chair
-            <br/><br/>
-            5 Dead
-        </strong>
+        *ECOG Key:
+        <br/><br/>
+        0 Fully active, able to carry on all pre-disease performance without restriction
+        <br/><br/>
+
+        1 Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, i.e., light housework, office work
+        <br/><br/>
+        2 Ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of waking hours
+        <br/><br/>
+        3 Capable of only limited self-care, confined to bed or chair more than 50% of waking hours
+        <br/><br/>
+        4 Completely disabled. Cannot carry out any self-care. Totally confined to bed or chair
+        <br/><br/>
+        5 Dead
+
     </section> <section headerLabel="PAST MEDICAL HISTORY">
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
 
@@ -1348,7 +1377,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                     <br /><obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@POST-MENOPAUSAL@" answerLabel="Post-menopausal"/>
                 </td>
             </tr>
-            
+
 
         </table>
     </section>
@@ -1532,7 +1561,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                         <td >BSA<obs conceptId="$@Body_surface_area@"/> M<sup>2</sup></td>
                         <td >BP <br /> <obs conceptId="$@SYSTOLIC@"/>/<obs conceptId="$@DIASTOLIC@"/></td>
                         <td >Pulse <br /> <obs conceptId="$@PULSE@"/></td>
-                        <td >Temp<br /> <obs conceptId="$@TEMP@"/> °C</td>
+                        <td >Temp<br /> <obs conceptId="$@TEMP@"/> Â°C</td>
                     </tr>
                 </table>
                 </td>
@@ -1623,13 +1652,13 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td><b>Extremities</b><br />
                     <obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
                 <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NO_EDEMA@" answerLabel="No Edema"/></td>
-                <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@EDEMA@" answerLabel="Edema"/>
+                <!--  <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@EDEMA@" answerLabel="Edema"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@1@" answerLabel="1+"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@2@" answerLabel="2+"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@3@" answerLabel="3+"/>
                     <br /><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@GROWTH@" answerLabel="mass"/> location: <obs conceptId="$@EXTREMITY_MASS_LOCATION@"/>size: <obs conceptId="$@EXTREMITY_MASS_SIZE@"/> cm
                     <br /> other:<obs conceptId="$@EXTREMITY_ABNORMALITY_TEXT@"/>
-                </td>
+                </td> -->
             </tr>
             <tr >
                 <td><b>Nervous system</b><br />
@@ -1731,7 +1760,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                             <td><workflowState
                                     workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
                                     stateId="4cef0cce-67b9-4cf5-860e-503ade7ff37a"
-                                    stateLabel="Nephroblastoma (Wilms’)" type="checkbox" /></td>
+                                    stateLabel="Nephroblastoma (Wilmsâ€™)" type="checkbox" /></td>
                             <td><workflowState
                                     workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
                                     stateId="b4cdfb5f-275b-4a76-893b-761ae302976d"
@@ -1753,11 +1782,11 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                             <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
                                     workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
                                     stateId="ca083335-c209-4d50-8a40-26bd5ef3545e"
-                                    stateLabel="Hodgkin’s lymphoma" type="checkbox" /></td>
+                                    stateLabel="Hodgkinâ€™s lymphoma" type="checkbox" /></td>
                             <td><workflowState
                                     workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
                                     stateId="890a3c62-ec89-41a0-8ffb-ca551dc36b18"
-                                    stateLabel="Burkitt’s lymphoma" type="checkbox" /></td>
+                                    stateLabel="Burkittâ€™s lymphoma" type="checkbox" /></td>
                             <td><workflowState
                                     workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
                                     stateId="70d5c89b-657d-4e46-a7e6-62cf2c04a873"
@@ -1825,7 +1854,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
             </tr>
 
             <tr>
-                <td><strong>Clinical Impression and plan details </strong>(include details
+                <td><strong>Clinical Impression and treatment plan details </strong>(include details
                     for staging disease):<br /><obs conceptId="826af985-d6b8-46a5-8773-92e53ee10d45" cols="75" rows="4" />
                 </td>
 
@@ -2037,10 +2066,10 @@ getField('reactionNonCoded3.value')[0].disabled = true;
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
             <tr>
                 <td class="checkboxGroup"><obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"><!-- <obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"> --> <obs conceptId="d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44"
-                                                                                                                                                                                                                        answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2"
-                                                                                                                                                                                                                        answerLabel="Hospital admission date &amp; site: " /> <obs
+                                                                                                                                                                                               answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2"
+                                                                                                                                                                                               answerLabel="Hospital admission date &amp; site: " /> <obs
                         conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /> admission
-			reason: <obs conceptId="1d642160-089f-49d3-98ce-68885cb5f893" /><br />
+                    reason: <obs conceptId="1d642160-089f-49d3-98ce-68885cb5f893" /><br />
             <span id="checkboxRadio">
 			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwinkwavu DH"/>
 			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="BUTARO DH"/>
