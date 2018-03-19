@@ -32,6 +32,9 @@
         @CONTINUE_REGIMEN@=3cd921a0-26fe-102b-80cb-0017a47871b2
         @STEP_DOWN@=bd9a1827-3bff-42cd-9d54-d90960d9b8d1
         @COMMENTS@=3cdc5938-26fe-102b-80cb-0017a47871b2
+        @Spiritual_pain_score@ = ef0c2cc9-0eb0-41f4-9a0d-34f1b3b17593
+        @Psychological_pain_score@ = 6e429c48-cdfa-4dfd-9267-90131c2b1e12
+        @Physical_pain_score@ = 8f0f2330-d296-4b7f-bc7e-561328227721
 
 
 
@@ -190,6 +193,7 @@
                 <td>Inhaler counseling provided</td>
                 <td>Spacer Provided</td>
                 <td>Missed Medecines?</td>
+                <td>Pain score (1-10)</td>
                 <td>RDV</td>
             </tr>
 
@@ -203,6 +207,27 @@
                 <td><obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
                 <td><obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
                 <td><obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
+                <td rowspan="3">
+                    Physical(1-10)
+                    <br/>
+                    <obs conceptId="$@Physical_pain_score@"/>
+                    <br/>
+                    <br/>
+                    Psychological
+                    <br/>
+                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                    <br/>
+                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@NO@" answerLabel="no" style="radio"/>
+                    <br/>
+                    <br/>
+                    Spiritual
+                    <br/>
+                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                    <br/>
+                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@NO@" answerLabel="No" style="radio"/>
+
+                </td>
+
                 <td rowspan="3"> <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
             </tr>
             <tr>

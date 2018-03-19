@@ -54,7 +54,7 @@
         @OTHER_CAUSE_OF_DEATH@=a18bc25f-1757-4568-88a7-d58c4100f7f2
         @Oncology_Follow_up_completion@=f38a036e-8899-4380-b66b-62c2c1f931cc
         @DIAGNOSIS@ = 226ed7ad-b776-4b99-966d-fd818d3302c2
-        @Diagnosis_confidence@ = 75db6878-341b-4d35-b7e4-4650df66db52
+        @Diagnosis_confidence@ = 3f0764f8-174b-482c-b23b-b09b5b6a2fcd
         @Suspected@ = f18d4b2d-8fa6-44e5-b130-f3819ba412cf
         @Pathologically_confirmed@ = 6baf30ed-ded5-4fe6-b1c4-911b3ca82a74
         @Death_Characteristics@ = 9b1be0ab-033c-42e2-89f3-0ab81f529732
@@ -390,7 +390,11 @@
             <table border="0" cellspacing="0" cellpadding="6" width="100%">
                 <tr >
                     <td class="bottomCell"><b>Date of exit</b>:        </td>
-                    <td class="bottomCell" colspan="2"><encounterDate id="encounterDate" default="today" /> <obs conceptId="$@DEATH_DATE_ESTIMATED@" style="checkbox" /> Date of Death Estimated </td>
+                    <td class="bottomCell" colspan="2">
+
+                        <!-- <encounterDate id="encounterDate" default="today" /> -->
+
+                        <obs conceptId="$@DEATH_DATE_ESTIMATED@" style="checkbox" /> Date of Death Estimated </td>
                 </tr>
                 <tr >
                     <td class="midleCell"><b>Reason for exit</b>:</td>

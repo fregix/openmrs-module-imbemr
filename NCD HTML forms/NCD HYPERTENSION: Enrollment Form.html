@@ -360,6 +360,11 @@
         @LYMPHOCYTES@ = 3cd6a402-26fe-102b-80cb-0017a47871b2
         @MONOCYTES@ = 3cd6a722-26fe-102b-80cb-0017a47871b2
         @PLATELETS@ = 3cd3d038-26fe-102b-80cb-0017a47871b2
+        @Spiritual_pain_score@ = ef0c2cc9-0eb0-41f4-9a0d-34f1b3b17593
+        @Psychological_pain_score@ = 6e429c48-cdfa-4dfd-9267-90131c2b1e12
+        @Physical_pain_score@ = 8f0f2330-d296-4b7f-bc7e-561328227721
+        @Pain_score_comments@ = 7c4fb4d3-5e09-49ed-bd44-190ca9a75a55
+
 
         <!-- PROGRAM ID -->
         @Hypertesion@ = a39cb21d-5f5e-4013-9b6b-139453ab93ec
@@ -784,42 +789,73 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td >
-                        <b>
-                            Signes vitaux/
-                            <span class='english'>vital signs</span>
-                        </b>
-                    </td>
-                    <td>
-                        TA
-                        <obs conceptId="$@systolicBloodPressure@" labelText="TA:" />
-                        /
-                        <obs conceptId="$@diastolicBloodPressure@" />
-                        mmHg
-                        Temp:<obs conceptId="$@temperature@"/> <sup>o</sup>C
-                    </td>
-                    <td>
-                        Pouls/Pulsse
-                        <obs conceptId="$@pulse@"  />
-                        bpm<br/>
-                        <strong>FR/</strong>RR
-                        <obs conceptId="$@RespiratoryRate@" />
-                    </td>
-                    <td>
-                        <obs conceptId="$@Weight@" labelText="Poids/weight:" />
-                        kg
-                        <br/>
-                        <obs conceptId="$@SaO2@" labelText="SaO2" />
-                        %
-                    </td>
-                    <td>
-                        <obs conceptId="$@Height@" labelText="Taille/height:" />
-                        cm
-                    </td>
-                    <td><strong>BMI</strong><obs conceptId="$@BMI@"/>   Kg/m<sup>2</sup></td>
-                </tr>
-            </table>
+                </table>
+                <table border="1">
+                    <tr>
+                        <th class="tableHeader" colspan="6">
+                            <strong>EXAMEN PHYSIQUE/PHYSICAL EXAM</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td >
+                            <b>
+                                Signes vitaux/
+                                <span class='english'>vital signs</span>
+                            </b>
+                        </td>
+                        <td>
+
+                            <obs conceptId="$@systolicBloodPressure@" labelText="TA:" />
+                            /
+                            <obs conceptId="$@diastolicBloodPressure@" />
+                            mmHg
+                            <br/>
+                            Temp:<obs conceptId="$@temperature@"/> <sup>o</sup>C
+                        </td>
+                        <td>
+                            Pouls/Pulsse
+                            <obs conceptId="$@pulse@"  />
+                            bpm<br/>
+                            <strong>FR/</strong>RR
+                            <obs conceptId="$@RespiratoryRate@" />
+                        </td>
+                        <td>
+                            <obs conceptId="$@Weight@" labelText="Poids/weight:" />
+                            kg
+                            <br/>
+                            <obs conceptId="$@SaO2@" labelText="SaO2" />
+                            %
+                        </td>
+                        <td>
+                            <obs conceptId="$@Height@" labelText="Taille/height:" />
+                            cm
+                        </td>
+                        <td><strong>BMI</strong><obs conceptId="$@BMI@"/>   Kg/m<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <th class="tableHeader" colspan="6"><strong> Evaluation dela douleur</strong> /Pain evaluation</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td >Physical</td>
+                        <td colspan="2">Psychological(If applicable)</td>
+                        <td colspan="2">Spiritual (If applicable)</td>
+                    </tr>
+                    <tr>
+                        <td>Score (circle as appropriate)</td>
+                        <td> <obs conceptId="$@Physical_pain_score@"/> </td>
+                        <td colspan="2"> <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>  </td>
+                        <td colspan="2"> <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/> </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            Comments:
+                            <obs conceptId="$@Pain_score_comments@" cols="60" />
+                        </td>
+                    </tr>
+                </table>
+
             <table border="1">
                 <tr>
                     <th class="tableHeader" colspan="3">
@@ -1103,7 +1139,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>Hémodynamie</strong></td> Fluid status
+                    <td><strong>Hémodynamie</strong> Fluid status</td>
                     <td>
                         <obs conceptId="$@PATIENTS_FLUID_MANAGEMENT@" answerConceptId="$@EUVOLEMIC@" answerLabel=""/>
                         <strong> Euvolomie</strong>
@@ -1118,7 +1154,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><strong>Autre/</strong></td>Other
+                    <td><strong>Autre/</strong>Other</td>
                     <td>
                         <obs conceptId="$@other_medical_findings@" />
 
