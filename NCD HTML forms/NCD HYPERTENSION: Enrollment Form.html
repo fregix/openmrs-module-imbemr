@@ -222,7 +222,7 @@
         @cal@ = 01765cd1-8fd6-4783-b053-190b1f6ed5bd
         @TOTAL_PROTEIN@ = 3cd3bd5a-26fe-102b-80cb-0017a47871b2
         @GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
-        @ketone@ = e8ebea1d-88c7-4e1d-aa9a-bccbe51dbb9b
+        @cetone@ = e8ebea1d-88c7-4e1d-aa9a-bccbe51dbb9b
         @OTHER_LAB_TEST_NAME@ = 3ce1c90e-26fe-102b-80cb-0017a47871b2
         @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
         @Xrays@ = 3723fd15-2e30-477d-9488-5cfd78bd790c
@@ -342,7 +342,6 @@
         @BECLOMETHASONE@ = 3cd906e8-26fe-102b-80cb-0017a47871b2
         @PREDNISOLONE@ = 3cd40850-26fe-102b-80cb-0017a47871b2
         @AMINOPHYLLINE@ = 3cd52a78-26fe-102b-80cb-0017a47871b2
-        @Lifestyle_intervention_only@
         @CIMETIDINE@ = 3ce29820-26fe-102b-80cb-0017a47871b2
         @CHLORPHENIRAMINE@ = 3cd512ae-26fe-102b-80cb-0017a47871b2
         @DOXYCYCLINE@ = 3cccddbe-26fe-102b-80cb-0017a47871b2
@@ -364,7 +363,17 @@
         @Psychological_pain_score@ = 6e429c48-cdfa-4dfd-9267-90131c2b1e12
         @Physical_pain_score@ = 8f0f2330-d296-4b7f-bc7e-561328227721
         @Pain_score_comments@ = 7c4fb4d3-5e09-49ed-bd44-190ca9a75a55
-
+        @Pain_drugs@ = bd61e49a-2e71-4b12-af02-ee8e62c3db55
+        @Non_opioids@ = e9144e27-e5d4-48df-a0a9-2f329360bf7b
+        @Morphine@ = 80106AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @other_pain_drugs@ = b20f4e61-94d3-4b31-955d-36e4df61a710
+        @OTHER_LAB_TEST_CONSTRUCT@ = 3ce1c792-26fe-102b-80cb-0017a47871b2
+        @drug_prescription_construct@ = f7505d6c-fa17-4279-822d-8914b2e9d352
+        @TWICE_A_DAY@ = 586f1146-8737-4827-8cfa-3b72d71ebd8b
+        @ONE_PER_DAY@ = 37328251-6759-4270-8a2e-8cab2c0b315b
+        @THREE_PER_DAY@ = 46a4d3d6-86d0-491f-be00-d151246caec3
+        @Four_times_a_day@ = bb025463-8631-4475-952d-1c5c83d8aa32
+        @per_need@ = f72f0403-cd94-4746-814d-717c687f63a2
 
         <!-- PROGRAM ID -->
         @Hypertesion@ = a39cb21d-5f5e-4013-9b6b-139453ab93ec
@@ -1206,84 +1215,70 @@
             </table>
             <table border="1">
                 <tr>
-                    <th class="tableHeader" colspan="4">
+                    <th class="tableHeader" colspan="5">
                         <center>
                             <strong> EXAMENS COMPLEMENTAIRES/</strong> PARACLINICAL INVESTIGATIONS
                         </center>
                     </th>
                 </tr>
                 <tr>
-                    <td>Test</td>
-                    <td>Results</td>
-                    <td>Test</td>
-                    <td>Results</td>
+                    <td><strong> Test &#38; Results </strong></td>
+                    <td><strong> Test &#38; Results</strong></td>
+                    <td><strong> Test &#38; Results </strong></td>
+                    <td><strong> Test &#38; Results </strong></td>
+                    <td><strong> Test &#38; Results </strong> </td>
                 </tr>
                 <tr>
-                    <td>1.FBC</td>
-                    <td>
-                        Red blood cells: <obs conceptId="$@RED_BLOOD_CELLS@"/><br/>
-                        Hemoglobin: <obs conceptId="$@HEMOGLOBIN@"/><br/>
-                        Hematocrit: <obs conceptId="$@HEMATOCRIT@"/><br/>
-                        White blood cells: <obs conceptId="$@WHITE_BLOOD_CELLS@"/><br/>
-                        Neutrophils: <obs conceptId="$@NEUTROPHILS@"/><br/>
-                        Eosinophil: <obs conceptId="$@EOSINOPHILS@"/><br/>
-                        Basophils: <obs conceptId="$@BASOPHILS@"/><br/>
-                        Lymphocytes: <obs conceptId="$@LYMPHOCYTES@"/><br/>
-                        Monocytes: <obs conceptId="$@MONOCYTES@"/><br/>
-                        Platelets: <obs conceptId="$@PLATELETS@"/>
+                    <td>2.Glycemie: <obs conceptId="$@GLYCEMIA@" col="100%"/> mg/dl</td>
+                    <td>Triglycerides: <obs conceptId="$@TRIGLYCERIDES@"/></td>
+                    <td><strong> Bandelette urinaire </strong></td>
+                    <td><strong>FBC:Red Blood cells</strong> </td>
+                    <td>Lymphocytes: <obs conceptId="$@LYMPHOCYTES@"/></td>
+                </tr>
+                <tr>
+                    <td>HbA1C: <obs conceptId="$@HbA1c@"/> % </td>
+                    <td>ASAT: <obs conceptId="$@ASAT_RESULT@"/></td>
+                    <td>protein: <obs conceptId="$@TOTAL_PROTEIN@"/></td>
+                    <td>Hemoglobin: <obs conceptId="$@HEMOGLOBIN@"/></td>
+                    <td>Monocytes: <obs conceptId="$@MONOCYTES@"/></td>
+                </tr>
+                <tr>
+                    <td>uree: <obs conceptId="$@UREA@"/></td>
+                    <td>ALAT: <obs conceptId="$@ALAT_RESULT@"/></td>
+                    <td>glucose: <obs conceptId="$@GLUCOSE@"/></td>
+                    <td>Hematocrit: <obs conceptId="$@HEMATOCRIT@"/></td>
+                    <td>Platelets: <obs conceptId="$@PLATELETS@"/></td>
+                </tr>
+                <tr>
+                    <td>creatinine: <obs conceptId="$@CREATININE@"/></td>
+                    <td>GamaGT: <obs conceptId="$@Gamma_GT@"/></td>
+                    <td>cetone: <obs conceptId="$@cetone@"/></td>
+                    <td><strong>FBC: White Blood cells</strong> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Total cholesterol: <obs conceptId="$@TOTAL_CHOLESTEROL@"/></td>
+                    <td>Na<sup>+</sup>: <obs conceptId="$@NA@"/></td>
+                    <td></td>
+                    <td>Neutrophils: <obs conceptId="$@NEUTROPHILS@"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>LDL: <obs conceptId="$@LDL@"/></td>
+                    <td>K<sup>+</sup>: <obs conceptId="$@K@"/></td>
+                    <td></td>
+                    <td>Eosinophil: <obs conceptId="$@EOSINOPHILS@"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>HDL: <obs conceptId="$@HDL@"/></td>
+                    <td> HIV:
+                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptIds="$@NEGATIVE@,$@POSITIVE@" answerLabels="-ve,+ve" style="radio"/>
+                    </td>
+                    <td></td>
+                    <td> Basophils: <obs conceptId="$@BASOPHILS@"/></td>
+                </tr>
 
-                    </td>
-                    <td>6.ASAT/ALAT/GamaGT</td>
-                    <td>
-                        <obs conceptId="$@ASAT_RESULT@"/>
-                        <obs conceptId="$@ALAT_RESULT@"/>
-                        <obs conceptId="$@Gamma_GT@"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2.Glycemie</td>
-                    <td><obs conceptId="$@GLYCEMIA@" col="100%"/></td>
-                    <td>7.Electrolytes(Na<sup>+</sup>,K<sup>+</sup>,C<sup>-</sup></td>
-                    <td>
-                        <obs conceptId="$@NA@"/>
-                        <obs conceptId="$@K@"/>
-                        <obs conceptId="$@cal@"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3.HbA1C</td>
-                    <td><obs conceptId="$@HbA1c@"/></td>
-                    <td>8.Bandelette urinaire(protein,glucose,cetone)</td>
-                    <td>
-                        <obs conceptId="$@TOTAL_PROTEIN@"/>
-                        <obs conceptId="$@GLUCOSE@"/>
-                        <obs conceptId="$@ketone@"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4.uree and creatinine</td>
-                    <td>
-                        <obs conceptId="$@UREA@"/>
-                        <obs conceptId="$@CREATININE@"/>
-                    </td>
-                    <td>9.HIV</td>
-                    <td>
-                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@NEGATIVE@" answerLabel="-ve" />
-                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@POSITIVE@" answerLabel="+ve" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>5.Lipid profile <br/>
-                        (Total cholesterol,LDL,HDL,Triglycerides)</td>
-                    <td>
-                        <obs conceptId="$@TOTAL_CHOLESTEROL@"/>
-                        <obs conceptId="$@LDL@"/>
-                        <obs conceptId="$@HDL@"/>
-                        <obs conceptId="$@TRIGLYCERIDES@"/>
-                    </td>
-                    <td>10.Other test <obs conceptId="$@OTHER_LAB_TEST_NAME@"/></td>
-                    <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@"/></td>
-                </tr>
             </table>
             <table border="1">
                 <tr>
@@ -1317,7 +1312,18 @@
                         <obs conceptId="$@ECG_DIAGNOSIS_(text)@" cols="80"/>
                     </td>
                 </tr>
-
+                <obsgroup groupingConceptId="$@OTHER_LAB_TEST_CONSTRUCT@">
+                    <tr>
+                        <td><obs conceptId="$@OTHER_LAB_TEST_NAME@"/></td>
+                        <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@"/></td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="$@OTHER_LAB_TEST_CONSTRUCT@">
+                    <tr>
+                        <td><obs conceptId="$@OTHER_LAB_TEST_NAME@"/></td>
+                        <td><obs conceptId="$@OTHER_LAB_TEST_RESULT@"/></td>
+                    </tr>
+                </obsgroup>
             </table>
             <table border="1">
                 <tr>
@@ -1968,8 +1974,50 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <strong>Autre/</strong> Other:
+                        <strong>Autre/</strong> Other:(Any other drug including pain or non pain)
                         <obs conceptId="$@Other_Asthma_drug@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader" colspan="2">
+                        <center> <strong> Pain drugs </strong></center>
+                    </th>
+                </tr>
+                <obsgroup groupingConceptId="$@drug_prescription_construct@">
+                    <tr>
+                        <td>
+                            <obs conceptId="$@Pain_drugs@" answerConceptId="$@Non_opioids@" answerLabel="Non opioids(Paracetamol, NAS)" style="checkbox"/>
+                        </td>
+                        <td>
+                            Dose:
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@ONE_PER_DAY@" answerLabel="1x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@TWICE_A_DAY@" answerLabel="2x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@THREE_PER_DAY@" answerLabel="3x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@Four_times_a_day@" answerLabel="4x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@per_need@" answerLabel="per need" style="checkbox"/>
+
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="$@drug_prescription_construct@">
+                    <tr>
+                        <td>
+                            <obs conceptId="$@Pain_drugs@" answerConceptId="$@Morphine@" answerLabel="Morphine (Liquid, tablets)" style="checkbox"/>
+                        </td>
+                        <td> Dose:
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@ONE_PER_DAY@" answerLabel="1x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@TWICE_A_DAY@" answerLabel="2x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@THREE_PER_DAY@" answerLabel="3x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@Four_times_a_day@" answerLabel="4x/day" style="checkbox"/>
+                            <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@per_need@" answerLabel="per need" style="checkbox"/>
+
+                        </td>
+                    </tr>
+                </obsgroup>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Pain_drugs@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style="checkbox"/>
+                        <obs conceptId="$@other_pain_drugs@"/>
                     </td>
                 </tr>
             </table>

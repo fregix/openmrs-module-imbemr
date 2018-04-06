@@ -332,6 +332,19 @@
         @Prednisone_(100_mg/m2)@=b1a43d50-3984-473d-8412-b8a240590839
         @Cyclophosphamide_(150mg/m2)@=f3648aec-0ac4-4f78-9b5f-a1d53daf8be5
         @Vincristine_(2mg/m2)@=ee7f23e3-3203-44fb-be8f-a4b05b92e877
+        @Pain_drugs@ = bd61e49a-2e71-4b12-af02-ee8e62c3db55
+        @Non_opioids@ = e9144e27-e5d4-48df-a0a9-2f329360bf7b
+        @Morphine@ = 80106AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @other_pain_drugs@ = b20f4e61-94d3-4b31-955d-36e4df61a710
+        @OTHER_LAB_TEST_CONSTRUCT@ = 3ce1c792-26fe-102b-80cb-0017a47871b2
+        @drug_prescription_construct@ = f7505d6c-fa17-4279-822d-8914b2e9d352
+        @TWICE_A_DAY@ = 586f1146-8737-4827-8cfa-3b72d71ebd8b
+        @ONE_PER_DAY@ = 37328251-6759-4270-8a2e-8cab2c0b315b
+        @THREE_PER_DAY@ = 46a4d3d6-86d0-491f-be00-d151246caec3
+        @Four_times_a_day@ = bb025463-8631-4475-952d-1c5c83d8aa32
+        @per_need@ = f72f0403-cd94-4746-814d-717c687f63a2
+        @DRUG_ORDER_FREQUENCY@ = 71ffb8ee-382e-4ad0-9b42-0b665f81aaf9
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
 
     </macros>
     <style>
@@ -809,6 +822,48 @@ $@Vincristine_(2mg/m2)@
                 <td colspan="2">
                     <strong> Autre/</strong> Other
                     <obs conceptId="$@Other_Diabetes_Drug@" cols="100"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="tableHeader" colspan="2">
+                    <center> <strong> Pain drugs </strong></center>
+                </th>
+            </tr>
+            <obsgroup groupingConceptId="$@drug_prescription_construct@">
+                <tr>
+                    <td>
+                        <obs conceptId="$@Pain_drugs@" answerConceptId="$@Non_opioids@" answerLabel="Non opioids(Paracetamol, NAS)" style="checkbox"/>
+                    </td>
+                    <td>
+                        Dose:
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@ONE_PER_DAY@" answerLabel="1x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@TWICE_A_DAY@" answerLabel="2x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@THREE_PER_DAY@" answerLabel="3x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@Four_times_a_day@" answerLabel="4x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@per_need@" answerLabel="per need" style="checkbox"/>
+
+                    </td>
+                </tr>
+            </obsgroup>
+            <obsgroup groupingConceptId="$@drug_prescription_construct@">
+                <tr>
+                    <td>
+                        <obs conceptId="$@Pain_drugs@" answerConceptId="$@Morphine@" answerLabel="Morphine (Liquid, tablets)" style="checkbox"/>
+                    </td>
+                    <td> Dose:
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@ONE_PER_DAY@" answerLabel="1x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@TWICE_A_DAY@" answerLabel="2x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@THREE_PER_DAY@" answerLabel="3x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@Four_times_a_day@" answerLabel="4x/day" style="checkbox"/>
+                        <obs conceptId="$@DRUG_ORDER_FREQUENCY@" answerConceptId="$@per_need@" answerLabel="per need" style="checkbox"/>
+
+                    </td>
+                </tr>
+            </obsgroup>
+            <tr>
+                <td>
+                    <obs conceptId="$@Pain_drugs@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style="checkbox"/>
+                    <obs conceptId="$@other_pain_drugs@"/>
                 </td>
             </tr>
         </table>
