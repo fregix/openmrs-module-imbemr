@@ -28,7 +28,6 @@
                     <artifactId>addresshierarchyrwanda-omod</artifactId>
                     <version>${addresshierarchyrwandaVersion}</version>
                     <scope>provided</scope>
-                    <type>omod</type>
                 </dependency>
 				<dependency>
 					<groupId>org.openmrs.module</groupId>
