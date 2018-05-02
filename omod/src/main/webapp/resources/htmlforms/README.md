@@ -1,59 +1,35 @@
-Mastercard Configuration
-============
+HtmlForms should be kept version controlled within this directory or a subdirectory.
 
-The mastercard framework expects two forms, a form representing the header, and a form representing each visit.
+This will allow live re-loading of these htmlforms during development, and also will enable us to configure the system to 
+ensure these forms are up-to-date in the deployed application.
 
-These forms need to be structured as follows:
+To enable changes to edited forms to be immediately available during development:
 
-* The encounterDate element needs to have an id of "visitDate":
+1. Put each of the forms into this directory (omod/src/main/webapp/resources/htmlforms)
+  * These file names should be URL friendly (eg. no spaces, use camel case)
+  * These forms should have an ".xml" extension
+  * These forms will need to contain references to the form name, uuid, and encounter type within the htmlform tag
+  * See test.xml for an example
+2. Enable development mode on this module
+  * Using the SDK, assuming a serverId = "rwink":
+    * Go into the root directory for this module code (eg. ~/code/imbemr)
+    * From this directory, run "mvn openmrs-sdk:watch -DserverId=rwink"
+3. Start up the server
+  * Using the SDK, assuming a serverId = "rwink":
+    * mvn openmrs-sdk:run -DserverId=rwink
+4. Load the htmlform:
+  * There is a page controller within the imbemr module that can be used to create/edit/view an htmlform:
+    * For example, to enter a new form contained in the htmlforms folder as "test.xml", for a particular patient:
+      * http://localhost:8080/openmrs/imbemr/htmlForm.page?patient=0000499a-727d-4161-b7a8-259be9e962c2&formName=test&editMode=true
+5. Verify that changing the form will allow you to hot-reload changes:
+  * Make some sort of a change to "test.xml"
+  * Re-load the page above and confirm that the change is there
+  
+**IMPORTANT NOTE:**
 
-	<encounterDate id="visitDate" size="20" default="today" />
-	
-* The encounterLocation element needs to have an id of "visitLocation":
+The step of loading the htmlform via the UI in step 4 above has the side effect of saving a new form or updating an existing form
+in the database with the information provided in the htmlform tag, specifically formUuid, formName, formEncounterType, formVersion
 
-	<encounterLocation id="visitLocation" />
-	
-* The Next Appointment Date observation needs to have an id of "appointmentDate".  This will enforce this date must be within 0-6 months of the visit date.
-
-	<obs conceptId="$nextAppt" id="appointmentDate" allowFutureDates="true" />
-
-* By putting the css class of 'focus-field' on an element that wraps a form field, this will ensure that this field has focus on it when the form is loaded
-
-Example:
-
-	<tr>
-		<th>Height</th>
-		<td class="focus-field"><obs conceptId="$height" id="heightInput" showUnits="true" /></td>
-	</tr>
-	
-* The visit form must be structured in View Mode as a single table, with the following structure and css classes.  The visit date cell must have the 'visit-date' css class.
-
-	<ifMode mode="VIEW" include="true">
-		<table class="visit-table">
-			<thead class="visit-table-header">
-				...
-			</thead>
-			<tbody class="visit-table-body">
-				<tr class="visit-table-row">
-					<td class="nowrap visit-date">
-						<encounterDate />
-					</td>
-					...
-				</tr>
-			</tbody>
-		</table>
-	</ifMode>
-	
-* The visit form should be structured in Edit Mode (not required, but takes advantage of built in css) with the form written as a table with css class 'visit-edit-table'
-
-    <ifMode mode="VIEW" include="false">
-		...
-        <table class="visit-edit-table">
-            <tr>
-                <th>Visit Date</th>
-                <td><encounterDate id="visitDate" size="20" default="today" /></td>
-            </tr>
-            ...
-        </table>
-    </ifMode>
-    
+So there is no longer an explicit step of saving forms to the database, but there is some risk in overwriting existing forms
+if errors are made when moving to this approach.  Care should be taken when migrating to ensure existing forms are not lost by 
+backing up your htmlform table before moving to this approach.
