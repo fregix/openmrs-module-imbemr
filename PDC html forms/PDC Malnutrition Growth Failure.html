@@ -1,0 +1,386 @@
+<htmlform> <!--
+           PDC - Malnutrition
+            Pilot_4July_v1.3NT
+                Author:
+                Builder: Byiringiro Joshua
+                started on August 29, 2017
+        -->
+
+    <macros>
+        @Growth_Curve@ = 234bbf88-50bd-4268-abf4-f5417a0f97a9
+        @Up@ = 1ecee5a5-c1d9-4bf8-a0fc-d76a94e1a041
+        @Flat_or_down@ = 54cd76a6-f99e-4a00-bc42-6f824586012e
+        @Maternal_Concerns@ = c5f3751d-647a-4f2c-a2fa-249cb2fe3e6f
+        @NONE@ = 3cd743f8-26fe-102b-80cb-0017a47871b2
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other_Maternal_Concerns@ = dbad0324-5ce9-43a8-bcf5-339a9c6ed430
+        @Referred_to_HC_malnutririon_program@ = e9dcc206-4530-40ba-8676-05304c225f55
+        @Red(HC)@ = e56d20c0-d43b-454e-92b1-b6128100fcd7
+        @Green_visit_class@ = 0aca6602-0c87-4871-99ae-4b5a19ee6261
+        @Yellow_visit_class@ = 9dbd379f-ceea-40eb-b205-15b13dc4bd07
+        @Red(DH_transit)_visit_class@ = 0c91aaf6-baf0-4ee8-ae8b-d921c1eaf09f
+        @Currently_in_HC_Malnutrition_program@ = f0b1247f-1188-4756-834c-7e1943e18ee5
+        @Previous_visit_Classification@ = e1b9fa1d-d977-4485-9b60-c30982aa4a36
+        @Current_Visit_Classification@ = c3322e03-a654-4191-82f8-8da31a8a2e1e
+        @Assessment_Needed_By@ = d2d0bdc6-5289-430d-bf2b-73046051c5b5
+        @Social_Worker@ = b01757aa-e0f3-4193-af6b-36c3c7cf5a12
+        @INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@ = 68ee1d12-193f-42f5-a0d1-c66aa6169c11
+        @Doctor@ = cec2899b-7ce2-48c8-b3a3-48786fe82861
+        @Completed_by@ = d319ba10-9cc5-4147-93fc-fe17d30aca19
+        @Nurse@ = 9c282371-55d1-4ba9-9039-0080c7b19ac9
+        @counseling_on@ = 83c937cc-881d-4ec3-a7ac-233969f3d376
+        @complementary_feeding@ =  e769a82e-0551-4fba-a928-c9c7e5bd9d26
+        @Variety_of_foods@ = 7cc0540c-b5f3-4c9d-b63b-3246d47afb26
+        @POOR_APPETITE@ = 3cf2ba0c-26fe-102b-80cb-0017a47871b2
+        @Feeding_non-breastfed_child@ = df4febe2-b4e6-4dd2-b9e1-4aa0df884719
+        @Hygiene_and_sanitation@ = ed54661e-f824-407b-a8d8-58c7ff18ea54
+        @Difficulty_chewing@ = 84eae142-bc64-4da2-a008-ecb56dfe95cb
+        @SWALLOWING_DIFFICULTIES@ = 3cf19ff0-26fe-102b-80cb-0017a47871b2
+        @High_energy_foods@ = 528ae523-47d2-4531-a537-4bae1530b570
+        @Feeding_Intervention@ = ba9a85d3-9173-4d45-abda-d89333e91de5
+        @BREASTFEEDING@ = 3cd4860e-26fe-102b-80cb-0017a47871b2
+        @Start_cows_milk@ = 66617bbf-6a8e-44fc-8eab-e03fda4beb8f
+        @food_frequency@ = ae40db94-a58e-4f0e-a027-cd1ae0817b35
+        @Change_food/drink_consistency@ = 6b91812d-2c02-4e72-baa2-f7b1c0791c89
+        @Continue_formula@ = c7c85e03-670d-4964-a7c9-0075de1b46bd
+        @Referred_to_HC@ = eccaa677-0aaa-4d3c-b4a0-42b2005a704e
+        @Other_Feeding_Intervetion@ = ffc14cc3-cdda-467f-8b39-71fb1e41d210
+        @Feeding_child_with_poor_appetite@ = 05ea6cda-4dd8-47e5-893d-1da1dac3b9c0
+
+
+
+        <!-- Imported ones -->
+        @Material_MUAC_(MM)@ = 81c255bc-0797-4f40-85bd-efc3c554b492
+        @lessthan230@ = 4fa1ad23-3b60-432c-8992-5eaff972f72e
+        @greaterorequal230@ = 287ce5de-aa55-41d1-b99f-ac59c733acbd
+        @Not_available@ = 6c8a2ebf-9925-4fca-abb9-6018531b9e76
+        @Maternal_Breast_Issues@ = 02a50dd1-8f53-4e30-87bf-d6772c33fc80
+        @NONE@ = 3cd743f8-26fe-102b-80cb-0017a47871b2
+        @Too_Little_Milk@ = d705fd71-7cb8-4b61-9324-e946c3f92ad9
+        @Other_Breast_Issues@ = d19d2b97-af3a-41f2-b678-4424cb482019
+        @Other(text)@ = c548a633-9931-496d-9ade-4b7c971e6600
+
+        @Breastfeeding_frequency@ = 310ba482-fd96-4ae7-a447-8d57d2c17b14
+        @Receives_other_liquids/foods@ = 13c73335-6d2c-49d3-966f-0d19a963cd32
+        @Good_Attachment_or_suckling@ = 97e4e380-0f77-4d25-9c0c-6d1efb413044
+        @Expressing_and_cup_feeding@ = a4c02a3d-2f02-49e5-9f95-88d4afc650db
+        @nutrition_for_breastfeeding_women@ = 88ac5d69-a618-4e40-8683-d9dd6d6c1255
+        @Breast_problems@ = 0f7a896d-4444-4ca8-8d1d-e6168d13f42c
+        @Not_enough_breastmilk@ = e5c507b7-2440-410a-8dc7-f24fad075653
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other_counselled_on@ = cf4030b1-cf74-43b9-af06-34bbedf74c02
+        @Maternal_Food_Package@ = 94740ebb-c383-4b07-b604-363a19d46e7a
+        @2-week@ = 977a1328-9e69-4f2c-b17a-bac317da0c5a
+        @1-month@ = 84eaf5e1-3388-4de0-a111-0dc27cfdf43a
+        @NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @Maternal_Food_Package_End_Time@ = 69459918-1898-4953-8bf6-9626901c6b2d
+        @PDC_Infant_Formula@ = ea4cf9dc-de07-4dc8-92a3-d4c0e7781dcc
+        @Yes_enhanced_calories_with_EBM@ = 83daf520-f210-4c4b-b31c-3f86aa2ea529
+        @Yes_only_formula@ = 98eb45cc-5857-4daf-9921-663cd23cd666
+        @Maternal_Death@ = 8fe55e42-0198-4a2e-be04-e8b05df8a1b1
+        @Number_of_Cans_Provided@ = ff5a6c88-b497-4c8a-a3b3-27c95b3cacc6
+        @PDC_Malnutrition_status@ = cd9ee151-9da1-4959-873c-95d9b4600c71
+        @LOST_TO_FOLLOWUP@ = 3ceb0ed8-26fe-102b-80cb-0017a47871b2
+        @PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@ = a01eda34-ba5d-48f1-8a40-7e05a850a31d
+        @Continue_PDC_malnutrition_treatment@ = e7fd6e22-42ea-4aae-984e-655afc42531c
+        @Cured_(malnutrition)@ = f0585282-a90d-4c20-88ee-2d1b6fb21b4b
+    </macros>
+
+
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+    <div id="container"  style="width:100%">
+        <section>
+
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    </td>
+                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nom / Last name: <lookup class="value"
+                                                 expression="patient.personName.familyName" />
+                    </td>
+                    <td>Prénom/ First name: <lookup class="value"
+                                                    expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
+                             height="65" ></img>
+                        <h2>
+                            Inshuti Mu Buzima <br /> PIH Rwanda
+                        </h2>
+                    </td>
+                    <td><strong> PDC Growth Failure</strong> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation />
+                    </td>
+                    <td>Author:<encounterProvider/>
+                    </td>
+                </tr>
+            </table>
+            <table BORDER="1">
+                <tr>
+                    <th class="tableHeader">
+                        <center>ASSESSMENT</center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Growth Curve</strong>
+                        <obs conceptId="$@Growth_Curve@" answerConceptIds="$@Up@,$@Flat_or_down@" answerLabels="Up,Flat or down" style="radio"/>
+                        <br/>
+                        <strong>Maternal Concerns</strong>
+                        <obs conceptId="$@Maternal_Concerns@" answerConceptIds="$@NONE@,$@OTHER_NON-CODED@" answerLabels="None,Other" style="radio"/>
+                        ,specify:
+                        <obs conceptId="$@Other_Maternal_Concerns@" />
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <center>PREVIOUS VISIT CLASSIFICATION</center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Previous_visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@"
+                             answerLabels="Green,Yellow,Red(HC),Red(DH transfer)" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <center>CURRENT VISIT CLASSIFICATION</center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@
+                        ,$@Currently_in_HC_Malnutrition_program@" answerLabels="Green,Yellow,Red(HC),Red(DH transfer),Referred to HC malnutrition program" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <center>PLAN</center>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Assessment needed by: </strong>
+                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Social_Worker@"
+                             answerLabel="Social worker" style="checkbox"/>
+                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@"
+                             answerLabel="Doctor" style="checkbox"/>
+                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Doctor@"
+                             answerLabel="IMCI" style="checkbox"/>
+                        <br/>
+                        <strong>Counseling on:</strong>
+                        <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@Variety_of_foods@" answerLabel="Variety of foods" style="checkbox"/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@POOR_APPETITE@" answerLabel="Poor appetite" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@Feeding_non-breastfed_child@" answerLabel="Feeding non-breastfed child" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Hygiene and sanitation" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@Difficulty_chewing@" answerLabel="Difficulty chewing" style="checkbox"/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@SWALLOWING_DIFFICULTIES@" answerLabel="Difficulty Swallowing" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@High_energy_foods@" answerLabel="High energy foods" style="checkbox"/> <br/>
+                        <obs conceptId="$@counseling_on@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                        ,Specify:<obs conceptId="$@Other_counselled_on@" />
+                        <br/>
+                        Completed by
+                        <obs conceptId="$@Completed_by@" answerConceptId="$@Nurse@" answerLabel="Nurse" style="checkbox"/>
+                        <obs conceptId="$@Completed_by@" answerConceptId="$@Social_Worker@" answerLabel="Social worker" style="checkbox"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        CHILD FOOD PACKAGE
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
+                        <br/>
+                        if green,end on:
+                        <obs conceptId="$@Maternal_Food_Package_End_Time@" allowFutureDates="true"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        FEEDING INTERVENTION
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@BREASTFEEDING@" answerLabel="Breastfeeding" style="checkbox"/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Start_cows_milk@" answerLabel="Start cow's milk" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Variety_of_foods@" answerLabel="Improve food variety" style="checkbox"/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@food_frequency@" answerLabel="Food frequency" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Change_food/drink_consistency@" answerLabel="Change food/drink consistency" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Improve hygiene/sanitation" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Feeding_child_with_poor_appetite@" answerLabel="Feeding child with poor appetit" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@High_energy_foods@" answerLabel="Add high energy foods" style="checkbox"/>
+                        <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                        ,specify:<obs conceptId="$@Other_Feeding_Intervetion@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        STATUS
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@PDC_Malnutrition_status@" answerConceptIds="$@Continue_PDC_malnutrition_treatment@,$@Cured_(malnutrition)@,
+                        $@LOST_TO_FOLLOWUP@,$@Referred_to_HC@,$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabels="Continue PDC Malnutrition Treatment,Cured(malnutrition),Lost-to-follow up,Referred to HC,Referred to DH" style="radio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        FOLLOW-UP
+                    </th>
+                </tr>
+                <tr>
+                    <td >
+                        Give follo-up appointment based on results of growth failure algorithm.<br/>
+                        Document RDV date on the visit form.
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br />
+        <encounterVoided/>
+        <br/>
+        <center>
+            <submit />
+        </center>
+        <br/>
+    </div>
+</htmlform>
