@@ -38,6 +38,27 @@
         @Other_medication@ = 032793bc-32f4-4cf1-b33e-6d4adefdf008
         @Enhanced_calorie_feeding@ = 39b9fb9d-2b18-4217-bf4c-5a457b42ade4
 
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+        @FIRST_NAME_OF_MOTHER@ = 993a19e6-1afc-4746-a6f7-898767b5f92b
+        @LAST_NAME_OF_MOTHER@ = f6ec8322-0fa7-4b6b-865f-ccaf2e3bfbb2
+        @TELEPHONE_NUMBER@ = 3cda3d7e-26fe-102b-80cb-0017a47871b2
+        @Gestational_age_at_birth_in_weeks@ = 1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @BIRTH_LOCATION_TYPE@ = 78f156b9-12f6-431a-bd74-d3ad3b146a4e
+        @HOSPITAL@ = 3ce0d472-26fe-102b-80cb-0017a47871b2
+        @HEALTH_CENTER@ = 7e327a1a-c1df-4712-ab5d-e05dc0dac35d
+        @ROAD@ = 4246a4e4-a54d-43b3-9ac1-306911a832c4
+        @UNKNOWN@ = 3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @HOUSE@ = 4d7f36bb-84d3-4915-95cc-951811c3cd4a
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @BIRTH_LOCATION_TYPE_NON_CODED@ = 97bfa34a-28cd-459f-8b1e-c2e5d71ea7f5
+        @METHOD_OF_DELIVERY@ = 3cee8c3e-26fe-102b-80cb-0017a47871b2
+        @SPONTANEOUS_VAGINAL_DELIVERY@ = 3cd7af5a-26fe-102b-80cb-0017a47871b2
+        @CESAREAN_SECTION@ = 3cd7b0ea-26fe-102b-80cb-0017a47871b2
+        @Presence_Of_Meconium@ = e0d4583c-1000-49e6-b28f-502aa5d29827
+        @RESULT_OF_HIV_TEST@ = 3ce17cec-26fe-102b-80cb-0017a47871b2
+        @POSITIVE@ = 3cd3a7a2-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@ = 3cd28732-26fe-102b-80cb-0017a47871b2
+
 
     </macros>
     <style>
@@ -308,7 +329,8 @@
                                      expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b></td>
                 <td>Referral Date: <encounterDate default="today" /></td>
                 <td>Location: <encounterLocation default="SessionAttribute:emrContext.sessionLocationId"/></td>
-                <td>Date of PDC Appointment:<obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /></td>
+                <td>Date of PDC Appointment:<obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
+
             </tr>
             <tr>
                 <td>Last name/<span class="disabled">Nom: </span><lookup class="value"
@@ -323,11 +345,13 @@
 
             <tr>
                 <td>Mother's Name (First and Last):&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                    <obs conceptId="993a19e6-1afc-4746-a6f7-898767b5f92b" labelText="" /> </td>
-                <td><obs conceptId="f6ec8322-0fa7-4b6b-865f-ccaf2e3bfbb2" labelText="" /></td>
+                    <obs conceptId="$@FIRST_NAME_OF_MOTHER@" labelText="" /> </td>
+                <td><obs conceptId="$@LAST_NAME_OF_MOTHER@" labelText="" /></td>
                 <td> &#160;&#160;&#160;&#160;&#160;&#160;Phone Number:</td>
-                <td><obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" /></td>
+                <td><obs conceptId="$@TELEPHONE_NUMBER@" /></td>
             </tr>
+
+
         </table>
     </section> <section headerLabel="Pediatric Development Clinic Referral Form">
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
@@ -344,8 +368,10 @@
             </tr>
             <tr>
                 <td width="20%"><b>Gestational Age</b></td>
-                <td><obs conceptId="1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />(Weeks)</td>
+                <td><obs conceptId="$@Gestational_age_at_birth_in_weeks@" />(Weeks)</td>
             </tr>
+
+
             <tr>
                 <td width="20%"><b>Birth Weight</b></td>
                 <td><obs conceptId="$@BIRTHWEIGHT_KG@" id="weight"/>(grams) entered but saved in Kg</td>
@@ -360,42 +386,42 @@
                                 <table width="100%" >
                                     <tr ><td class="checkboxGroup"><span
                                             id="checkboxRadio">Site of Birth:&#160;&#160;
-	<obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2" answerLabel="Hospital" />
+	<obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HOSPITAL@" answerLabel="Hospital" />
 	&#160;&#160;&#160;&#160;&#160;&#160; 
-	<obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptId="7e327a1a-c1df-4712-ab5d-e05dc0dac35d" answerLabel="Health Center" />
+	<obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HEALTH_CENTER@" answerLabel="Health Center" />
 	&#160;&#160;&#160;&#160;&#160;&#160; 
-	<obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptId="4d7f36bb-84d3-4915-95cc-951811c3cd4a" answerLabel="Home" />
+	<obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HOUSE@" answerLabel="Home" />
 	&#160;&#160;&#160;&#160;&#160;&#160; 
-	<obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptId="4246a4e4-a54d-43b3-9ac1-306911a832c4" answerLabel="En route" />
+	<obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@ROAD@" answerLabel="En route" />
 	&#160;&#160;&#160;&#160;&#160;&#160; 
-	<obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptId="4d7f36bb-84d3-4915-95cc-951811c3cd4a" answerLabel="Other:" />
+	<obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other:" />
 	&#160;&#160;&#160;&#160;&#160;&#160; 
-	<obs conceptId="97bfa34a-28cd-459f-8b1e-c2e5d71ea7f5" /></span><br/><br/></td>
+	<obs conceptId="$@BIRTH_LOCATION_TYPE_NON_CODED@" /></span><br/><br/></td>
                                     </tr>
-
                                     <tr ><td class="checkboxGroup"><span id="checkboxRadio">Delivery:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Vaginal" />
+			<obs conceptId="$@METHOD_OF_DELIVERY@" answerConceptId="$@SPONTANEOUS_VAGINAL_DELIVERY@" answerLabel="Vaginal" />
 			 &#160;&#160;&#160;&#160;&#160;&#160; 
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7b0ea-26fe-102b-80cb-0017a47871b2" answerLabel="C-Section" />
+			<obs conceptId="$@METHOD_OF_DELIVERY@" answerConceptId="$@CESAREAN_SECTION@" answerLabel="C-Section" />
 			</span></td>
                                     </tr>
                                     <tr ><td class="checkboxGroup"><span id="checkboxRadio">Presence Of Meconium:
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Yes" />
+			<obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@YES@" answerLabel="Yes" />
 			 &#160;&#160;&#160;&#160;&#160;&#160; 
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7b0ea-26fe-102b-80cb-0017a47871b2" answerLabel="No" />
+			<obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@NO@" answerLabel="No" />
 			</span></td>
                                     </tr>
                                     <tr ><td >Apgars:
                                         <obs conceptId="$@APGAR1@"/>/<obs conceptId="$@APGAR5@"/>/<obs conceptId="$@APGAR10@"/></td></tr>
                                     <tr ><td >Maternal Risk Factors:<br/></td></tr>
                                     <tr ><td >HIV:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs conceptId="3ce17cec-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd3a7a2-26fe-102b-80cb-0017a47871b2" answerLabel="Seropositive" />
+                                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@POSITIVE@" answerLabel="Seropositive" />
                                         &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs conceptId="3ce17cec-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd28732-26fe-102b-80cb-0017a47871b2" answerLabel="Seronegative" />
+                                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@NEGATIVE@" answerLabel="Seronegative" />
                                         &#160;&#160;&#160;&#160;If positive, on ARVs?<obs conceptId="$@ON_ARVS@" answerConceptId="$@YES@" /><obs conceptId="$@ON_ARVS@" answerConceptId="$@NO@" />
 
                                     </td>
                                     </tr>
+
                                     <tr ><td class="checkboxGroup"><span id="checkboxRadio">Prolonged Rupture Membrane:
 			<obs conceptId="3ce0ce96-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="Yes" />
 			 &#160;&#160;&#160;&#160;&#160;&#160; 
@@ -415,6 +441,7 @@
                 </td>
             </tr>
 
+
             <tr>
                 <td><b>Neonatal Unit Stay:</b></td>
                 <td>
@@ -429,7 +456,7 @@
 			&#160;&#160;&#160;<b>If yes</b>, on antibiotics for<obs conceptId="$@ANTIBIOTIC_DURATION@" style="radio"/>
 			</span></td>
                                     </tr>
-                                    <tr class="disabled"><td class="checkboxGroup"><span id="checkboxRadio">Supplemental Oxygen:
+                                    <tr class="disabled"><td class="checkboxGroup"><span id="checkboxRadio" class="disdiv">Supplemental Oxygen:
 			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Yes" />
 			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7b0ea-26fe-102b-80cb-0017a47871b2" answerLabel="No" />
 			&#160;&#160;&#160;<b>If yes,</b> on oxygen for<obs conceptId="$@OXYGEN_DURATION@" style="radio"/>
