@@ -2,7 +2,9 @@
 	Author: Todd
 	Prime copy source: Breast DST
 	Start date of programming: 2016 February 02
-	 --> <macros> @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+	 -->
+    <macros>
+    @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
     @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
 
     @X-RAY_CHEST@=3ccc6186-26fe-102b-80cb-0017a47871b2
@@ -610,7 +612,38 @@
 
     @PLANNED_TREATMENT_CHANGES@=32e38d0f-0d0e-4192-a5cb-ae9e1dd13436
 
-    @COMMENTS@=6602a73b-b8d3-40bc-bae8-f00ff3b9cceb </macros>
+    @COMMENTS@=6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
+
+ // Diagnosis workflow.
+    @DIAGNOSIS_work_flow@ = 2e602550-4337-4ffa-90a2-7becc3f167b1
+
+ //Diagnosis states.
+    @Breast_Cancer@ = c733a3d0-c89b-4d88-9d89-b590e9175297
+    @Other_non_Hodgkins_lymphoma@ = 1bdce46f-62d3-4eb1-acfa-644cfd99993a
+    @Large_B_cell_lymphoma@ = 70d5c89b-657d-4e46-a7e6-62cf2c04a873
+    @Other_solid_cancer@ = 8c3f2a38-eb43-4b13-87c2-4a85d66cafb1
+    @Burkitts_lymphoma@ = 890a3c62-ec89-41a0-8ffb-ca551dc36b18
+    @Cervical_cancer@ = 441c3084-33d1-49a5-abd6-9e8b19ddf049
+    @Colo_rectal_cancer@ = 34e298a3-8ca4-470e-8e4f-f422af9feef9
+    @Head_and_neck_cancer@ = d84e31f8-ebe2-4f31-8655-b29dfe671be4
+    @Chronic_Myelogenous_leukemia@ = f4eb9f32-ddad-44a2-b8da-309bfd0549e4
+    @Acute_Lymphoblastic_Leukemia@ = b2a69a8a-599f-405f-b11e-5b9f50267921
+    @Other_liquid_cancer@ = 9b9af079-2ad0-4860-9844-48d020912dc2
+    @Karposis_sarcoma@ = 9c9fdd7c-1903-4f90-90f1-50d0c794fe6a
+    @Stomach_cancer@ = 3609c073-1b51-438d-849b-35d23f042484
+    @Hodgkins_lymphoma@ = ca083335-c209-4d50-8a40-26bd5ef3545e
+    @Prostate_cancer@ = 9fb6150d-cd19-43fc-8da9-e6599fac9709
+    @Multiple_myeloma@ = 85f296a1-f196-4405-9dc6-1c36107e6df2
+    @Lung_cancer_diagnosis@ = b4cdfb5f-275b-4a76-893b-761ae302976d
+    @Nephroblastoma@ = 4cef0cce-67b9-4cf5-860e-503ade7ff37a
+    @Metastatic_cancer@ = cb041132-1c31-4580-aff3-3564e18b985b
+    @Cancer_unknown_type@ = 651f49b1-cead-434c-841b-2a4e2533ed3d
+    @Not_cancer_no_biopsy@ = 0ec01a69-95d9-4319-8458-c71106893035
+    @Acute_Lymphoblastic_Leukemia@ = b2a69a8a-599f-405f-b11e-5b9f50267921
+    @Anal_Squamous_Cell_Carcinoma@ = 507d4f4c-1456-41b2-9ba4-cf03e9b55703
+
+
+</macros>
 
 
     <style>
@@ -793,7 +826,7 @@
                             id="encounterLocation" default="Butaro Hospital" />
                     </td>
                     <td>Provider:<encounterProvider id="encounterProvider"
-                                                    role="Oncology Provider"  default="currentUser"/>
+                                                    role="Oncology Provider"  />
                     </td>
                 </tr>
             </table>
@@ -882,9 +915,10 @@
             <obsgroup groupingConceptId="$@PRE_SURGERY_CONSTRUCT@">
                 <tr>
                     <td><b>Pathologic Diagnosis</b><br />
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@ANAL_SQUAMOUS_CELL_CARCINOMA@"
-                             answerLabel="Anal squamous cell carcinoma" /> <br />
+                        <workflowState workflowId="$@DIAGNOSIS_work_flow@"
+                                       stateId="$@Anal_Squamous_Cell_Carcinoma@"
+                                       stateLabel="Anal Squamous Cell Carcinoma"
+                                       type="checkbox" /> <br />
                         <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
                              answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
                         <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /></td>
@@ -942,9 +976,10 @@
             <obsgroup groupingConceptId="$@POST_SURGERY_CONSTRUCT@">
                 <tr>
                     <td><b>Pathologic Diagnosis</b><br />
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@ANAL_SQUAMOUS_CELL_CARCINOMA@"
-                             answerLabel="Anal squamous cell carcinoma" /><br/>
+                        <workflowState workflowId="$@DIAGNOSIS_work_flow@"
+                                       stateId="$@Anal_Squamous_Cell_Carcinoma@"
+                                       stateLabel="Anal Squamous Cell Carcinoma"
+                                       type="checkbox" /><br/>
                         <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
                              answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
                         <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /></td>
@@ -978,6 +1013,19 @@
         </table>
     </section>
 
+    <!--<section>-->
+        <!--<table class="baseline-aligned" border="1">-->
+            <!--<th class="tableHeader" colspan="2"> Patient Diagnosis states</th>-->
+            <!--<tr colspan="3">-->
+                <!--<td>-->
+                    <!--States:-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<workflowState workflowId="$@DIAGNOSIS_work_flow@" stateId="$@Anal_Squamous_Cell_Carcinoma@" stateLabel="Anal Squamous Cell Carcinoma" type="checkbox" />-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</section>-->
 
     <section>
         <table class="baseline-aligned">

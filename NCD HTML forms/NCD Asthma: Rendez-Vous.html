@@ -35,6 +35,11 @@
         @Spiritual_pain_score@ = ef0c2cc9-0eb0-41f4-9a0d-34f1b3b17593
         @Psychological_pain_score@ = 6e429c48-cdfa-4dfd-9267-90131c2b1e12
         @Physical_pain_score@ = 8f0f2330-d296-4b7f-bc7e-561328227721
+        @HEIGHT_(CM)@ = 3ce93cf2-26fe-102b-80cb-0017a47871b2
+        @Peak_flow_after_salbutamol@ = e5e67313-b658-4118-9a71-5d5b60fc81d7
+        @Proper_inhaler_technique@ = 0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c
+        @Basic_inhaler_training_provided@ = 268125c5-1ff6-4ea3-8b54-b32b88a3da39
+        @Clinical_diagnosis_for_asthma@ = e8f25c6e-9491-4ca3-9d31-7df9cb3d9ed9
 
 
 
@@ -154,6 +159,131 @@
         }
         }
     </style>
+    <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+											  });
+											});
+						                });
+	}
+	</script>
     <table cellspacing="0" cellpadding="6" width="100%">
         <tr>
             <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
@@ -177,6 +307,18 @@
             <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                 Provider:<encounterProvider id="encounterProvider"
                                             role="Provider" default="currentUser"/>
+
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2" >
+                Clinical Diagnosis for Asthma:
+                <span style="color:blue">
+                    <strong>
+                        <lookup complexExpression="$fn.latestObs('$@Clinical_diagnosis_for_asthma@').valueCoded.name"/>
+                    </strong>
+                </span>
             </td>
         </tr>
     </table>
@@ -196,36 +338,73 @@
                 <td>Pain score (1-10)</td>
                 <td>RDV</td>
             </tr>
-
             <tr>
                 <td rowspan="3"></td>
                 <td><obs conceptId="$@WEIGHT@" /></td>
-                <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
+                <td><obs conceptId="$@HEIGHT_(CM)@" /></td>
                 <td><obs conceptId="$@SYSTOLIC_BP@" /> <obs conceptId="$@DIASTOLIC_BP@" /></td>
-                <td><obs conceptId="e5e67313-b658-4118-9a71-5d5b60fc81d7" /></td>
-                <td><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@NO@" answerLabel="non/no" /> <br /><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="PIH: 7399" answerLabel="entrainement brève donné/brief coaching given" /></td>
-                <td><obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
-                <td><obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
-                <td><obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
-                <td rowspan="3">
-                    Physical(1-10)
-                    <br/>
-                    <obs conceptId="$@Physical_pain_score@"/>
-                    <br/>
-                    <br/>
-                    Psychological
-                    <br/>
-                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
-                    <br/>
-                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@NO@" answerLabel="no" style="radio"/>
-                    <br/>
-                    <br/>
-                    Spiritual
-                    <br/>
-                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
-                    <br/>
-                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@NO@" answerLabel="No" style="radio"/>
+                <td><obs conceptId="$@Peak_flow_after_salbutamol@" /></td>
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@Proper_inhaler_technique@" answerConceptId="$@YES@" answerLabel="oui/yes" />
+                        <br/> <obs conceptId="$@Proper_inhaler_technique@" answerConceptId="$@NO@" answerLabel="non/no" />
+                        <br /><obs conceptId="$@Proper_inhaler_technique@" answerConceptId="$@Basic_inhaler_training_provided@" answerLabel="entrainement brève donné/brief coaching given" />
+                    </span>
+                </td>
+                <!--
+                    <br /><obs conceptId="$@Proper_inhaler_technique@" answerConceptId="PIH: 7399" answerLabel="entrainement brève donné/brief coaching given" /></td>
+                -->
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/>
+                        <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" />
+                    </span>
+                </td>
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/>
+                        <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" />
+                    </span>
+                </td>
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/>
+                        <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@NO@" answerLabel="non/no" />
+                    </span>
+                </td>
+                <td rowspan="3" >
+                    <table>
+                        <tr>
+                            <td class="checkboxGroup">
+                                Physical(1-10)
+                                <br/>
+                                <obs conceptId="$@Physical_pain_score@"/>
 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="checkboxGroup">
+                                Psychological
+                                <br/>
+                                <span id="checkboxRadio">
+                                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                                    <br/>
+                                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@NO@" answerLabel="no" style="radio"/>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="checkboxGroup">
+                                Spiritual
+                                <br/>
+                                <span id="checkboxRadio">
+                                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                                    <br/>
+                                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@NO@" answerLabel="No" style="radio"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
 
                 <td rowspan="3"> <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
@@ -233,26 +412,58 @@
             <tr>
                 <td> Reveille a cause des dyspnees/waking up due to dyspnea</td>
                 <td>Besoins salbutamol<br/>/salbutamol use</td>
-                <td>Limitations d'activities due aux d'yspnees?/ Workinglimitations due to dyspnea</td>
+                <td>Limitations d'activities due aux d'yspnees/ Working limitations due to dyspnea</td>
                 <td>Classification d'asthme/Asthma classification</td>
                 <td colspan="4"><center>Plan</center> </td>
             </tr>
             <tr>
-                <td><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" /><br/> <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" /> <br /><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" /><br/><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" /></td>
-                <td><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" /><br/> <obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" /> <br /><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" /><br/><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" /></td>
-
-                <td><obs conceptId="$@DYSPNEA@" answerConceptId="$@YES@" answerLabel="oui/Yes" /><br/> <obs conceptId="$@DYSPNEA@" answerConceptId="$@NO@" answerLabel="Non/No" /></td>
-                <td ><obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@NOT_INDICATED@" answerLabel="pas d'asthme/not asthma" /><br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@INTERMITTENT@" answerLabel="intermittent/intermittent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MID_PERSISTENT@" answerLabel="persistant léger/mid persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MODERATE_PERSISTENT@" answerLabel="persistant modéré/moderate persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_PERSISTENT@" answerLabel="persistant sévère/severe persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_UNCONTROLLED@" answerLabel="sévère incontrôlé/severe uncontrolled" />
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@"
+                             answerLabel="≤2 jours/semaine/≤2 days/week"
+                            style="radio"/>
+                        <br/> <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="≥2 jours/semaine/≥2 days per week" />
+                        <br /><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" />
+                        <br/><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" />
+                    </span>
                 </td>
-                <td colspan="4">
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_UP@" answerLabel="monter étape/step up" /> <br />
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@CONTINUE_REGIMEN@" answerLabel="continuer le même traitment/continue the same treatment" /> <br />
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_DOWN@" answerLabel="descendre etape/step down" /> <br />
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@SALBUTAMOL_USE@"
+                             answerConceptId="$@LESS_OR_EQUAL_2DAYS@"
+                             answerLabel="≤2 jours/semaine/≤2 days/week" style="radio"/>
+                        <br/> <obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="≥2 jours/semaine/≥2 days per week" />
+                        <br /><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" />
+                        <br/><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" />
+                    </span>
+                </td>
+
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@DYSPNEA@" answerConceptId="$@YES@" answerLabel="oui/Yes" style="radio"/>
+                        <obs conceptId="$@DYSPNEA@" answerConceptId="$@NO@" answerLabel="Non/No" />
+                    </span>
+                </td>
+                <td class="checkboxGroup" >
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@NOT_INDICATED@"
+                              answerLabel="pas d'asthme/not asthma" style="radio"/>
+                        <br />
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@INTERMITTENT@" answerLabel="intermittent/intermittent" /> <br />
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MID_PERSISTENT@" answerLabel="persistant léger/mid persistent" /> <br />
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MODERATE_PERSISTENT@" answerLabel="persistant modéré/moderate persistent" /> <br />
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_PERSISTENT@" answerLabel="persistant sévère/severe persistent" /> <br />
+                        <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_UNCONTROLLED@" answerLabel="sévère incontrôlé/severe uncontrolled" />
+                    </span>
+                </td>
+                <td colspan="4" class="checkboxGroup">
+                    <span id="checkboxRadio">
+                        <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_UP@" answerLabel="monter étape/step up"
+                             style="radio" />
+                        <br />
+                        <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@CONTINUE_REGIMEN@" answerLabel="continuer le même traitment/continue the same treatment" /> <br />
+                        <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_DOWN@" answerLabel="descendre etape/step down" /> <br />
+                    </span>
                 </td>
 
             </tr>

@@ -1,0 +1,573 @@
+<htmlform>
+    <!-- Heart Failure flowsheet:  Other Investigation
+         written by jberchmas
+         -->
+    <macros>
+        @Place_of_Death@ = 706c27e4-e0b0-44ab-a6b1-d49afacefa64
+        @Date_of_Death@ = ce0afb8a-35b3-496e-8ac9-37c3b8f6592e
+        @Time_of_Death@ = eea5ddfd-3655-492b-950a-d3ba31948d62
+        @Cause_of_death_A@ = 8f7853b9-2ce7-447f-bc22-dc0c684b1bcc
+        @Cause_of_death_B@ = 872a1860-31c9-4035-a033-7ce5c98f1d36
+        @Cause_of_death_C@ = dd096bf8-c1f3-4e4e-8208-5b869fd57166
+        @Cause_of_death_D@ = 07cfecbb-cc1f-4729-bcf7-01c3e232f0b1
+        @Time_interval_from_onset_to_death_A@ = 175bc1e6-b8f9-4315-bd94-2590e295501c
+        @Time_interval_from_onset_to_death_B@ = 72647fba-1382-41ce-a557-22394aa8ba0b
+        @Time_interva_from_onset_to_death_C@ = 756f9884-ed91-45f1-87ce-8caae91bef1f
+        @Time_interval_from_onset_to_death_D@ = 291c6e09-f369-4304-9782-c05890e7471d
+        @Other_significant_conditions_contributing_to_death@ = f748cf25-38f2-4549-bff7-314a9d02b214
+        @Was_surgery_performed_within_the_last_4_weeks?@ =bd580076-00f9-4c6d-a0f4-1713be69a04c
+        @NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+        @UNKNOWN@ = 3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @DATE_OF_SURGERY@ = 48e392bb-0685-4ab3-a217-fd23502a5635
+        @reason_for_surgery@ = d3106acf-82b4-46c6-91f9-4920f3724fa5
+        @Was_an_autopsy_requested?@ = c5ed73aa-c23d-456f-808b-f7c5f0105559
+        @were_the_findings_used_in_the_certification?@ = 3ebc0bdb-f1a1-4be1-bba0-9e755b94ec75
+        @Manner_of_death@ = 4ee48d96-4fbe-4d57-a960-360964302fcc
+        @Disease@ = 8a29e1f6-3c0a-4974-9197-24753ea9ef97
+        @Accident@ = 47a08420-8b98-4ac9-ad2a-51c248c6df20
+        @Intentional_self-harm@ = 794d1a88-cc10-47b5-9518-7ded0498d51a
+        @ASSAULT@ = 3cce642c-26fe-102b-80cb-0017a47871b2
+        @Legal_intervention@ = e729bb55-c71c-4880-a7e2-495c27287fec
+        @War@ = 5a784e42-aafd-43a7-8545-3817236138c7
+        @Not_determined@ = 09c8c10f-c3a6-41f8-ac91-55493ee008c6
+        @Pending_investigation@ = db4a1249-19f6-4061-ae61-e2185a73d991
+
+        <!-- lookup uuids-->
+
+        @Rwanda_national_id@ = ed52ec82-4b7c-411b-804a-13bd9651bb3e
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+        .disabled {
+        color: #D8D8D8;
+        }
+    </style>
+    <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+											  });
+											});
+						                });
+	}
+	</script>
+    <table cellspacing="0" cellpadding="6" width="100%" >
+        <!--<tr>-->
+            <!--<td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"-->
+                     <!--height="65" ></img>-->
+                <!--<b>REPUBLIC OF RWANDA-->
+                    <!--<br />MINISTRY OF HEALTH</b>-->
+            <!--</td>-->
+            <!--<td><strong> RWANDA MEDICAL CERTIFICATE OF CAUSE OF DEATH</strong><br/>-->
+                <!--<b> IMB ID: <lookup class="value"-->
+                                    <!--expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"-->
+                                                                                                       <!--expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>-->
+                <!--<br/>-->
+                <!--Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />-->
+                <!--&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
+                <!--Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>Clinique / Clinic: <encounterLocation />-->
+            <!--</td>-->
+            <!--<td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
+
+                <!--<br/>-->
+                <!--Provider:<encounterProvider id="encounterProvider"-->
+                                            <!--role="Provider" />-->
+            <!--</td>-->
+        <!--</tr>-->
+
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left" height="65"/>
+
+                <b>REPUBLIC OF RWANDA
+                <br />MINISTRY OF HEALTH</b>
+            </td>
+            <td>
+               <strong> RWANDA MEDICAL CERTIFICATE OF CAUSE OF DEATH </strong>
+
+            </td>
+            <td>
+                Health Facility:<encounterLocation />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name of the deceased(full name):
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+            </td>
+            <td>
+                NIN: <lookup expression="patient.getPatientIdentifier(7)"/>
+            </td>
+            <td>
+                Nationality: <lookup class="value" expression="personAttributes.get('Citizenship')"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <addressHierarchyRwanda />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marital status:<lookup class="value" expression="personAttributes.get('Civil Status').name.name"/>
+            </td>
+            <td>
+                Date of Birth:<lookup expression="patient.birthdate"/>
+            </td>
+            <td>
+                Sex: <lookup expression="patient.gender" codePrefix="gender_"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Place of Death:<obs conceptId="$@Place_of_Death@"/>
+            </td>
+            <td>
+                Date of Death:<obs conceptId="$@Date_of_Death@" />
+            </td>
+            <td>
+                Time of Death:<obs conceptId="$@Time_of_Death@" />
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="Frame A: Medication data:Part 1 and 2" >
+        <table border="1" width="100%">
+
+            <tr>
+                <td>
+                     1)
+                    <br/>
+                    <p>
+                        Report disease or condition directly leading to death on line a
+                    </p>
+                    <p>
+                        Report chain of events 'due to'(b to d) in order (if applicable)
+                    </p>
+                    <p>
+                        State the underlying cause on the lowest used line.
+                    </p>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th class="tableHeader">
+                            </th>
+                            <th class="tableHeader">
+                                Cause of death
+                            </th>
+                            <th class="tableHeader">
+                                Time interval from onset to death
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>a</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_A@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_A@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_B@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_B@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_C@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interva_from_onset_to_death_C@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_D@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_D@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2) Other significant conditions contributing to death (time
+                    intervals can be included in brackets after the condition)
+                </td>
+                <td>
+                    <obs conceptId="$@Other_significant_conditions_contributing_to_death@" cols="70"/>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="Frame B: Other medical data" >
+        <table border="1" width="100%">
+            <tr>
+                <td>
+                    Was surgery performed within the last 4 weeks?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Was_surgery_performed_within_the_last_4_weeks?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes please specify date of surgery
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_OF_SURGERY@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes please specify reason for surgery (disease or
+                    condition)
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@reason_for_surgery@" cols="70"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Was an autopsy requested?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Was_an_autopsy_requested?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes were the findings used in the certification?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@were_the_findings_used_in_the_certification?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <strong>Manner of death:</strong>
+                </td>
+            </tr>
+            <tr>
+
+                    <td class="checkboxGroup" colspan="3">
+                        <span id="checkboxRadio">
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Disease@" answerLabel="Disease" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@ASSAULT@" answerLabel="ASSAULT" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Not_determined@" answerLabel="Not determined" style="checkbox"/><br/>
+
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Accident@" answerLabel="Accident" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Legal_intervention@" answerLabel="Legal intervention" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Pending_investigation@" answerLabel="Pending investigation" style="checkbox"/><br/>
+
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Intentional_self-harm@" answerLabel="Intentional self-harm" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@War@" answerLabel="War" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@UNKNOWN@" answerLabel="UNKNOWN" style="checkbox"/>
+                        </span>
+                    </td>
+
+            </tr>
+        </table>
+    </section>
+    <br />
+    <center>
+        <submit />
+    </center>
+    <br />
+
+</htmlform>
