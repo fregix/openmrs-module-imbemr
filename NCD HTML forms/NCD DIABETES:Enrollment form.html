@@ -378,7 +378,6 @@
         @Four_times_a_day@ = bb025463-8631-4475-952d-1c5c83d8aa32
         @per_need@ = f72f0403-cd94-4746-814d-717c687f63a2
         @JAUNDICE@ = 3ccea1bc-26fe-102b-80cb-0017a47871b2
-        @Chronic_Respiratory_diseases@ = 16ec9d8d-acd5-485a-8463-5e8e7c471663
         @NOT_APPLICABLE@ = 3cd7b72a-26fe-102b-80cb-0017a47871b2
         @CHEST_XRAY@ = 3ccc6186-26fe-102b-80cb-0017a47871b2
         @PULMONARY_EFFUSION@ = 3cd771ac-26fe-102b-80cb-0017a47871b2
@@ -888,80 +887,80 @@
 
                     </td>
                 </tr>
-                </table>
-                <table border="1">
-                    <tr>
-                        <th class="tableHeader" colspan="6">
-                            <strong>EXAMEN PHYSIQUE/PHYSICAL EXAM</strong>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td >
-                            <b>
-                                Signes vitaux/
-                                <span class='english'>vital signs</span>
-                            </b>
-                        </td>
-                        <td>
+            </table>
+            <table border="1">
+                <tr>
+                    <th class="tableHeader" colspan="6">
+                        <strong>EXAMEN PHYSIQUE/PHYSICAL EXAM</strong>
+                    </th>
+                </tr>
+                <tr>
+                    <td >
+                        <b>
+                            Signes vitaux/
+                            <span class='english'>vital signs</span>
+                        </b>
+                    </td>
+                    <td>
 
-                            <obs conceptId="$@systolicBloodPressure@" labelText="TA:" />
-                            /
-                            <obs conceptId="$@diastolicBloodPressure@" />
-                            mmHg
-                            <br/>
-                            Temp:<obs conceptId="$@temperature@"/> <sup>o</sup>C
-                        </td>
-                        <td>
-                            Pouls/Pulsse
-                            <obs conceptId="$@pulse@"  />
-                            bpm<br/>
-                            <strong>FR/</strong>RR
-                            <obs conceptId="$@RespiratoryRate@" /> nmbr/min
-                        </td>
-                        <td>
-                            <obs conceptId="$@Weight@" labelText="Poids/weight:" id="weight"/>
-                            kg
-                            <br/>
-                            <obs conceptId="$@SaO2@" labelText="SaO2" />
-                            %
-                        </td>
-                        <td>
-                            <obs conceptId="$@Height@" labelText="Taille/height:" id="height"/>
-                            cm
-                        </td>
-                        <td>
-                            <!--
-                            <strong>BMI</strong><obs conceptId="$@BMI@" id="bmi" />Kg/m<sup>2</sup>
-                            -->
-                            BMI:
+                        <obs conceptId="$@systolicBloodPressure@" labelText="TA:" />
+                        /
+                        <obs conceptId="$@diastolicBloodPressure@" />
+                        mmHg
+                        <br/>
+                        Temp:<obs conceptId="$@temperature@"/> <sup>o</sup>C
+                    </td>
+                    <td>
+                        Pouls/Pulsse
+                        <obs conceptId="$@pulse@"  />
+                        bpm<br/>
+                        <strong>FR/</strong>RR
+                        <obs conceptId="$@RespiratoryRate@" /> nmbr/min
+                    </td>
+                    <td>
+                        <obs conceptId="$@Weight@" labelText="Poids/weight:" id="weight"/>
+                        kg
+                        <br/>
+                        <obs conceptId="$@SaO2@" labelText="SaO2" />
+                        %
+                    </td>
+                    <td>
+                        <obs conceptId="$@Height@" labelText="Taille/height:" id="height"/>
+                        cm
+                    </td>
+                    <td>
+                        <!--
+                        <strong>BMI</strong><obs conceptId="$@BMI@" id="bmi" />Kg/m<sup>2</sup>
+                        -->
+                        BMI:
                             <span id="bmival">
                             </span>
-                            Kg/m<sup>2</sup>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="tableHeader" colspan="6"><strong> Evaluation dela douleur</strong> /Pain evaluation</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td >Physical</td>
-                        <td colspan="2">Psychological(If applicable)</td>
-                        <td colspan="2">Spiritual (If applicable)</td>
-                    </tr>
-                    <tr>
-                        <td>Score (circle as appropriate)</td>
-                        <td> <obs conceptId="$@Physical_pain_score@"/> </td>
-                        <td colspan="2"> <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>  </td>
-                        <td colspan="2"> <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/> </td>
+                        Kg/m<sup>2</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader" colspan="6"><strong> Evaluation dela douleur</strong> /Pain evaluation</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td >Physical</td>
+                    <td colspan="2">Psychological(If applicable)</td>
+                    <td colspan="2">Spiritual (If applicable)</td>
+                </tr>
+                <tr>
+                    <td>Score (circle as appropriate)</td>
+                    <td> <obs conceptId="$@Physical_pain_score@"/> </td>
+                    <td colspan="2"> <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>  </td>
+                    <td colspan="2"> <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/> </td>
 
-                    </tr>
-                    <tr>
-                        <td colspan="6">
-                            Comments:
-                            <obs conceptId="$@Pain_score_comments@" cols="60" />
-                        </td>
-                    </tr>
-                </table>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        Comments:
+                        <obs conceptId="$@Pain_score_comments@" cols="60" />
+                    </td>
+                </tr>
+            </table>
 
             <table border="1">
                 <tr>

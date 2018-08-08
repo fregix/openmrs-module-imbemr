@@ -130,7 +130,7 @@
 
         @HAS_ALLERGIES@=fb609db6-b030-4f5b-8823-341dcc240c79
 
-        @DIAGNOSIS_CONFIDENCE@=75db6878-341b-4d35-b7e4-4650df66db52
+        @DIAGNOSIS_CONFIDENCE@=3f0764f8-174b-482c-b23b-b09b5b6a2fcd
         @PATHOLOGICALLY_CONFIRMED@=6baf30ed-ded5-4fe6-b1c4-911b3ca82a74
         @CLINICALLY_CONFIRMED@=54c32730-e200-4e19-a89e-de0ce7eb5f63
         @SUSPECTED@=f18d4b2d-8fa6-44e5-b130-f3819ba412cf
@@ -187,8 +187,8 @@
         @SPLENOMEGALY_SIZE@=43c0e966-ff43-4ca4-a666-a8fe3cc0d38d
         @HEPATOMEGALY_SIZE@=ff3b71b6-9657-4eb1-a031-c3a8879a0601
         @ABDOMINAL_MASS_LOCATION@=29074fef-9f6e-4015-a7d0-6a842e01a100
-        @ABDOMINAL_MASS_SIZE@=5252b973-e57a-4df6-bdfd-8c6c3c33f925
-
+        @ABDOMINAL_MASS_SIZE_(biggest_dimension)@=5252b973-e57a-4df6-bdfd-8c6c3c33f925
+        @Abdominal_mass_size_(smallest_dimension)@ = db67763c-dc46-40b1-ac32-c116aa0dc7bc
 
         @EXTREMITY_EXAM@=3cd7637e-26fe-102b-80cb-0017a47871b2
         @NO_EDEMA@=824e8df3-27e9-4e2e-b61a-942b1fc9a48b
@@ -197,7 +197,8 @@
         @2@=bff8b23f-0d4b-4606-9e72-88c9b401f4d2
         @3@=ed34b78a-e029-4711-a2a0-7cad6160c89c
         @EXTREMITY_MASS_LOCATION@=2ff86957-70b5-4b97-9894-0abf03bce4fb
-        @EXTREMITY_MASS_SIZE@=b17c406d-cb99-42d4-beb0-f9fc6b353bf8
+        @Extremity_mass_size_(biggest_dimension)@=b17c406d-cb99-42d4-beb0-f9fc6b353bf8
+        @Extremity_mass_size_(smallest_dimension)@ = 27544757-e406-4eb4-8420-1ed86f84e979
         @EXTREMITY_ABNORMALITY_TEXT@=4385ef3f-a1f2-4571-aaf2-32fda622ec36
 
 
@@ -227,7 +228,8 @@
         @GENITAL_ABNORMALITIES@=fe7a3ff3-420a-4713-a69c-daabd0b147b1
         @GENITAL_ABNORMALITIES_TEXT@=0219e809-d3d2-462f-8418-9fef24c2438c
         @CERVICAL_LESION@=c2cf5d33-5c73-4dff-a1d2-1ce023ce3e9f
-        @LESION_SIZE@=566aec6e-5e60-4439-8864-5ef7a71cd700
+        @LESION_SIZE_(largest_dimension)@=566aec6e-5e60-4439-8864-5ef7a71cd700
+        @LESION_SIZE_(smallest_dimension)@ = 6bcaf7ea-ce45-4fb4-8951-1865c5a68533
         @VAGINAL_INVOLVEMENT@=099d5db1-5c90-4717-86f0-189aa22944c6
         @PARAMETRIAL_INVOLVEMENT@=e1c33276-d7ce-4dee-977e-a9927e9e8e0a
         @PELVIC_INVOLVEMENT@=827c4a9f-639b-4593-aac9-68c8695d29b7
@@ -240,7 +242,8 @@
         @PHYSICAL_ABNORMAL@=3cd9ae0e-26fe-102b-80cb-0017a47871b2
         @HEAD_ABNORMAL@=3ce400c0-26fe-102b-80cb-0017a47871b2
         @HEAD_MASS_LOCATION@=6223cc85-a8ac-4926-8042-106d89b6eeb4
-        @HEAD_MASS_SIZE@=aaed818b-4726-40ba-8f0d-56853b8c4ae0
+        @Head_and_neck_mass_size_(biggest_dimension)@=aaed818b-4726-40ba-8f0d-56853b8c4ae0
+        @Head_and_neck_mass_size_(smallest_dimension)@ = 87d57fbb-c048-4bd5-a445-6bf57b2c0456
         @LUNG_ABNORMALITY_TEXT@=617ab83a-11f0-4984-9768-0c89e7f14163
 
         @PREVIOUS_IMAGING_CONSTRUCT@=c552ec7d-e7f3-4ea8-b593-7c708a740ada
@@ -1591,8 +1594,10 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td><obs conceptId="$@HEAD_AND_NECK_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No Abnormalities"/></td>
                 <td><obs conceptId="$@HEAD_AND_NECK_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:<obs conceptId="$@HEAD_ABNORMAL@"/>
                     <br /> <obs conceptId="$@HEAD_MASS_LOCATION@" answerConceptId="$@GROWTH@" answerLabel="MASS"/>
-                    Location:<obs conceptId="$@HEAD_MASS_LOCATION@"/> Size: <obs conceptId="$@HEAD_MASS_SIZE@"/>cm</td>
+                    Location:<obs conceptId="$@HEAD_MASS_LOCATION@"/>
+                    Size: <obs conceptId="$@Head_and_neck_mass_size_(biggest_dimension)@"/>cm x <obs conceptId="$@Head_and_neck_mass_size_(smallest_dimension)@"/>cm</td>
             </tr>
+
 
             <tr >
                 <td rowspan="2"><b>Chest</b><br />
@@ -1644,22 +1649,24 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                     <br />
                     <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@ASCITES@" answerLabel="Ascites"/> <br />
                     <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@ABDOMINAL_MASS@" answerLabel="Mass"/>:
-                    location: 	<obs conceptId="$@ABDOMINAL_MASS_LOCATION@"/>size: <obs conceptId="$@ABDOMINAL_MASS_SIZE@"/>cm
+                    location: 	<obs conceptId="$@ABDOMINAL_MASS_LOCATION@"/>
+                    size: <obs conceptId="$@ABDOMINAL_MASS_SIZE_(biggest_dimension)@"/>cm x <obs conceptId="$@Abdominal_mass_size_(smallest_dimension)@"/>cm
                 </td>
             </tr>
-
             <tr >
                 <td><b>Extremities</b><br />
                     <obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
                 <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NO_EDEMA@" answerLabel="No Edema"/></td>
-                  <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@EDEMA@" answerLabel="Edema"/>
+                <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@EDEMA@" answerLabel="Edema"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@1@" answerLabel="1+"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@2@" answerLabel="2+"/>
                     <obs conceptId="$@EDEMA@" answerConceptId="$@3@" answerLabel="3+"/>
-                    <br /><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@GROWTH@" answerLabel="mass"/> location: <obs conceptId="$@EXTREMITY_MASS_LOCATION@"/>size: <obs conceptId="$@EXTREMITY_MASS_SIZE@"/> cm
+                    <br /><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@GROWTH@" answerLabel="mass"/> location: <obs conceptId="$@EXTREMITY_MASS_LOCATION@"/>
+                    size: <obs conceptId="$@Extremity_mass_size_(biggest_dimension)@"/> cm x <obs conceptId="$@Extremity_mass_size_(smallest_dimension)@"/> cm
                     <br /> other:<obs conceptId="$@EXTREMITY_ABNORMALITY_TEXT@"/>
                 </td>
             </tr>
+
             <tr >
                 <td><b>Nervous system</b><br />
                     <obs conceptId="$@NERVOUS_SYSTEM_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
@@ -1698,7 +1705,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td><obs conceptId="$@GENITAL_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
                 <td><obs conceptId="$@GENITAL_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:
                     <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@Visible_cervical_lesion@" answerLabel ="Visible cervical lesion"/>
-                    <br /> Size of lesion (largest dimension) <obs conceptId="$@LESION_SIZE@" />cm
+                    <br /> Size of lesion (largest dimension) <obs conceptId="$@LESION_SIZE_(largest_dimension)@" />cm x <obs conceptId="$@LESION_SIZE_(smallest_dimension)@" />cm
                     <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@VAGINAL_INVOLVEMENT@" answerLabel ="Vaginal involvement"/>
                     <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@PARAMETRIAL_INVOLVEMENT@" answerLabel ="Parametrial involvement"/>
                     <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@PELVIC_INVOLVEMENT@" answerLabel ="Pelvic side wall involvement"/>
