@@ -58,6 +58,7 @@
         @RESULT_OF_HIV_TEST@ = 3ce17cec-26fe-102b-80cb-0017a47871b2
         @POSITIVE@ = 3cd3a7a2-26fe-102b-80cb-0017a47871b2
         @NEGATIVE@ = 3cd28732-26fe-102b-80cb-0017a47871b2
+        @Antibiotic_therapy@ = fa4afeb7-a905-4653-b83b-ac387cf0cd5f
 
 
     </macros>
@@ -451,10 +452,11 @@
                             <td colspan="9">
                                 <table width="100%" >
                                     <tr><td class="checkboxGroup"><span id="checkboxRadio">Antibiotic therapy:
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Yes" />
-			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7b0ea-26fe-102b-80cb-0017a47871b2" answerLabel="No" />
+			<obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@YES@" answerLabel="Yes" />
+			<obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@NO@" answerLabel="No" />
 			&#160;&#160;&#160;<b>If yes</b>, on antibiotics for<obs conceptId="$@ANTIBIOTIC_DURATION@" style="radio"/>
 			</span></td>
+
                                     </tr>
                                     <tr class="disabled"><td class="checkboxGroup"><span id="checkboxRadio" class="disdiv">Supplemental Oxygen:
 			<obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Yes" />
