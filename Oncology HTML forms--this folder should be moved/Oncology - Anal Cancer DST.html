@@ -487,7 +487,9 @@
     @CERVICAL_SQUAMOUS_CELL_CARCINOMA@=9655287c-b5d7-4b06-b807-11e849c2ad6b
     @CERVICAL_ADENOCARCINOMA@=30df7ea0-b11f-4e78-9e6a-3aaccd7716a6
     @KAPOSI_SARCOMA@=3cd173f6-26fe-102b-80cb-0017a47871b2
+        /*
     @ANAL_SQUAMOUS_CELL_CARCINOMA@=80a2cc19-f644-4b14-bcb9-ac20c7dcce8e
+        */
     @SQUAMOUS_CELL_CARCINOMA@=5890a4dd-d973-4fdc-837e-17848a0d6bce
     @NASOPHARYNGEAL_CARCINOMA@=d04821ab-471f-422e-a061-c91c0cb019f9
     @MUCOEPIDERMOID_CARCINOMA@=32c9895f-31a9-4ecc-93e2-ecab971cb491
@@ -616,6 +618,7 @@
 
  // Diagnosis workflow.
     @DIAGNOSIS_work_flow@ = 2e602550-4337-4ffa-90a2-7becc3f167b1
+    @Diagnosis_Status@ =c8dea23e-c596-40d0-a4a4-08cb61b82d3b
 
  //Diagnosis states.
     @Breast_Cancer@ = c733a3d0-c89b-4d88-9d89-b590e9175297
@@ -639,8 +642,9 @@
     @Metastatic_cancer@ = cb041132-1c31-4580-aff3-3564e18b985b
     @Cancer_unknown_type@ = 651f49b1-cead-434c-841b-2a4e2533ed3d
     @Not_cancer_no_biopsy@ = 0ec01a69-95d9-4319-8458-c71106893035
-    @Acute_Lymphoblastic_Leukemia@ = b2a69a8a-599f-405f-b11e-5b9f50267921
     @Anal_Squamous_Cell_Carcinoma@ = 507d4f4c-1456-41b2-9ba4-cf03e9b55703
+    @Other_solid_cancer@ = 8c3f2a38-eb43-4b13-87c2-4a85d66cafb1
+
 
 
 </macros>
@@ -914,17 +918,32 @@
 
             <obsgroup groupingConceptId="$@PRE_SURGERY_CONSTRUCT@">
                 <tr>
-                    <td><b>Pathologic Diagnosis</b><br />
-                        <workflowState workflowId="$@DIAGNOSIS_work_flow@"
-                                       stateId="$@Anal_Squamous_Cell_Carcinoma@"
-                                       stateLabel="Anal Squamous Cell Carcinoma"
-                                       type="checkbox" /> <br />
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                        <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /></td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <td>
+                                    <b>Pathologic Diagnosis</b><br />
+                                    <workflowState workflowId="$@DIAGNOSIS_work_flow@"
+                                                   stateIds="$@Anal_Squamous_Cell_Carcinoma@,$@Other_solid_cancer@"
+                                                   type="radio" />
+                                    <!--<obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
+                                         <!--answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />-->
+                                    <!--<workflowState workflowId="$@DIAGNOSIS_work_flow@"-->
+                                                   <!--stateId="$@Other_solid_cancer@"-->
+                                                   <!--type="checkbox" />-->
+
+                                    <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" />
+                                    <br/>
+                                    <b> Diagnosis Status </b><br />
+                                    <workflowState workflowId="$@Diagnosis_Status@" type="radio"/>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
                 <tr>
-                    <td><b>HPV or p16 Status (If available)</b> <obs
+                    <td><b>HPV or p16 Status (If available)</b> <statobs
                             conceptId="$@HPV_STATUS@" answerConceptId="$@POSITIVE@"
                             answerLabel="Positive" /> <obs conceptId="$@HPV_STATUS@"
                                                            answerConceptId="$@NEGATIVE@" answerLabel="Negative" /> <obs
@@ -975,14 +994,29 @@
 
             <obsgroup groupingConceptId="$@POST_SURGERY_CONSTRUCT@">
                 <tr>
-                    <td><b>Pathologic Diagnosis</b><br />
-                        <workflowState workflowId="$@DIAGNOSIS_work_flow@"
-                                       stateId="$@Anal_Squamous_Cell_Carcinoma@"
-                                       stateLabel="Anal Squamous Cell Carcinoma"
-                                       type="checkbox" /><br/>
-                        <obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"
-                             answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                        <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /></td>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <td>
+                                    <b>Pathologic Diagnosis</b><br />
+                                    <workflowState workflowId="$@DIAGNOSIS_work_flow@"
+                                                   stateIds="$@Anal_Squamous_Cell_Carcinoma@,$@Other_solid_cancer@"
+                                                   type="radio" />
+                                    <!--<obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
+                                    <!--answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />-->
+                                    <!--<workflowState workflowId="$@DIAGNOSIS_work_flow@"-->
+                                    <!--stateId="$@Other_solid_cancer@"-->
+                                    <!--type="checkbox" />-->
+
+                                    <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" />
+                                    <br/>
+                                    <b> Diagnosis Status </b><br />
+                                    <workflowState workflowId="$@Diagnosis_Status@" type="radio"/>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
                 </tr>
 
 
