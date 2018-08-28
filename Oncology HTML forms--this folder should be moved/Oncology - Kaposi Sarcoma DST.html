@@ -106,7 +106,7 @@
     @OROPHARYNX@=36a8c818-f224-4b64-9c6d-ed1abc3b7055
     @HYPOPHARYNX@=4c5123f3-2350-46cb-a315-ee2738585018
     @PARANASAL_SINUS@=c160a557-23e6-466a-8f9b-05c17567012f
-    @SALIVARY_GLAND@=48a3f16b-fdb9-410e-b660-e8f809fa42f2
+    @SALIVARY_GLAND@=bddfd085-ec59-4e42-a969-a37d1f89c9ac
     @THYROID@=ffa7d332-730e-4d4a-84b1-f7068326252a
 
 
@@ -299,12 +299,6 @@
 
     @CML@=a21d0f82-a102-4658-9b43-cbc928be413e
 
-    @TUMOR_LOCATION@=327e5bb9-6c8c-47b0-869a-e03817c6236a
-    @STOMACH@=59b921c0-5a42-4a05-b207-1b85d2496458
-    @GE_JUNCTION@=9cd5afc3-f250-4917-b46b-d64368177cba
-    @DISTAL_ESOPHAGUS@=02180b0a-07d4-4bb8-9b64-d73e064a3a6e
-
-
     @PHILADELPHIA_CHROMOSOME@=c8a79d23-9476-41a5-99dc-e80b663eadcb
     @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
 
@@ -492,6 +486,8 @@
     @PAPILLARY_CARCINOMA@=6d274dd4-8455-4f84-aa3b-b157a64e101f
     @ANAPLASTIC_CARCINOMA@=ce3574e5-74a5-4030-98bc-1d347de622ed
     @MEDULLARY_CARCINOMA@=ce3574e5-74a5-4030-98bc-1d347de622ed
+    @ENDEMIC_KS@=eb5c2e23-7257-4bbe-a4f1-5db1d57d0a2f
+
 
     @SITE_OF_BIOPSY@=06afd2f9-dcfb-4810-9c3b-8a8fe1110cfe
     @OTHER_SITE_OF_BIOPSY@=5e1eca70-d380-492a-82c2-fa89c4924b7d
@@ -523,7 +519,6 @@
     @IMMUNE_SYSTEM_PROGNOSIS_FOR_KS@=26ada79f-153a-4067-b4dd-bec6bfc40647
     @I0_KS@=e130bc8b-4b85-4b6c-b8da-81ccb44f2635
     @I1_KS@=24ad21f7-5dac-4ccb-8095-92448278379b
-    @ABDOMINOPERINEAL_RESECTION@=d9b011cd-de8f-4123-920f-5a3ebda6644e
 
 
     @SYSTEMIC_ILLNESS_PROGNOSIS_FOR_KS@=2476256a-2c16-4605-adcb-2ca1d33c299d
@@ -553,10 +548,11 @@
     @RADIATION_OR_CHEMO_STATUS@=ef2f24b6-02a7-495c-a72b-7184ec7aca93
     @INDUCTION_CHEMO_STATUS@=40a0e837-13a5-49f4-bbfe-f6c88d4ccae7
 
-    @CHEMOTHERAPY_TYPE@=a14d9ad6-86e1-4949-be3c-08f9a9ae12a0
+    @CHEMOTHERAPY_TYPE@=17b5c7cc-f180-454a-aa33-f3383d6c5419
     @GLEEVEC@=77941AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     @HYDROXUREA+ALLOPURINOL@=18257b2c-039f-4e70-8b00-f38698e10d7c
     @TAXOL@=1fc083a8-2edc-4b5e-982c-f263720b5857
+    @VINCRISTINE@= bc0918fc-3496-426c-bfd5-ef466e9776db
     @CVP@=83b609ce-add4-449d-83ff-8ee5903e7bb3
     @CHLORAMBUCIL@=6a6323d0-3f8b-472c-985e-4410ccfc9f3a
     @CHLORAMBUCIL_AND_PREDNISONE@=398eb124-f63e-48f1-88c9-5aa603806bb3
@@ -640,7 +636,6 @@
     @Other_solid_cancer@ = 8c3f2a38-eb43-4b13-87c2-4a85d66cafb1
     @T-cell_acute_lymphoblastic_leukemia_(ALL)@ =  e6783e43-a0ee-49c1-a898-ba65ae562c01
     @B-Cell_acute_lymphoblastic_leukemia_(ALL)@ = 1514ee11-b823-48b7-aa36-d5e869e2908c
-    @Other_liquid_cancer@ = 9b9af079-2ad0-4860-9844-48d020912dc2
     @Cervical_squamous_cell_carcinoma@ = 3d262ad1-9357-4d8d-9b5c-5c1ee7a8af31
     @Cervical_adenocarcinoma@ = 9c8f3875-b66d-4cb7-956b-b36b7e43f5ac
     @Chronic_Lymphocytic_Leukemia_Small_Lymphocytic_Lymphoma@ = 8d9cfec4-c4cb-43bd-974c-d9d5c8130c12
@@ -658,9 +653,12 @@
     @Papillary_carcinoma@ = 95db92ff-9fa6-4ede-873b-becc31545786
     @Anaplastic_Carcinoma@ = 0a40e632-adef-43fa-8951-edff18119d7e
     @Medullary_carcinoma@ = afcb02d3-e474-44ee-b841-dc863b8804a3
+    @Classical_Hodgkin_Lymphoma@ = 773a1d5e-783d-4590-acb8-6c10715ce4f1
+    @Nodular_Lymphocyte_Predominant@ = 977bebe9-e6e6-4534-87bd-b707be17003d
+    @Kaposi_Sarcoma@ = 9c9fdd7c-1903-4f90-90f1-50d0c794fe6a
+
 
 </macros>
-
 
 
     <style>
@@ -852,25 +850,25 @@
     </div>
 
 
-    <h2>DST Head and Neck Cancer (v1.0)</h2>
+    <h2>DST Kaposi Sarcoma (v1.0)</h2>
 
 
 
     <section>
         <table class="baseline-aligned">
             <th class="tableHeader">Diagnosis</th>
+            <tr><td><b>BIOPSY</b></td></tr>
             <tr>
-                <td>Pathology Report Date <!-- sometimes called biopsy pathology report -->
+                <td>Pathology Report Date :<!-- sometimes called biopsy pathology report -->
                     <obs conceptId="$@DATE_OF_PATHOLOGY_REPORT@" /> <obs
                             conceptId="$@PATHOLOGY_PERFORMED@" answerConceptId="$@NO@"
                             answerLabel="N/A (No Pathology)" /></td>
             </tr>
             <tr>
 
-                <td>Institution issuing pathology report <obs
+                <td>Institution issuing pathology report:<obs
                         conceptId="$@LOCATION_OF_PATHOLOGY@" answerConceptId="$@BWH@"
-                        answerLabel="BWH" /> <obs conceptId="$@LOCATION_OF_PATHOLOGY@"
-                                                  answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwink" /> <obs
+                        answerLabel="BWH" /> <obs
                         conceptId="$@LOCATION_OF_PATHOLOGY@"
                         answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="BUTARO" /> <obs
                         conceptId="$@LOCATION_OF_PATHOLOGY@" answerConceptId="$@KFH@"
@@ -882,66 +880,30 @@
                         conceptId="$@LOCATION_OF_PATHOLOGY@"
                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> <obs
                         conceptId="$@OTHER_LOCATION_OF_PATHOLOGY@" /><br />
-                    <br /></td>
+                </td>
             </tr>
 
             <tr>
                 <td><b>Site of Biopsy</b>
-
-                    <obs conceptId="$@SITE_OF_BIOPSY@" answerConceptId="$@LYMPH_NODE@"
-                         answerLabel="Lymph Node" />
+                    <obs
+                            conceptId="$@SITE_OF_BIOPSY@" answerConceptId="$@SKIN_LESION@"
+                            answerLabel="Skin Lesion" />
                     <obs conceptId="$@SITE_OF_BIOPSY@"
                          answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
                     <obs conceptId="$@OTHER_SITE_OF_BIOPSY@" /><br />
-                    <br /></td>
+                </td>
             </tr>
 
 
 
-
             <!--<tr>-->
-                <!--<td><b>Pathologic Diagnosis</b><br />-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@SQUAMOUS_CELL_CARCINOMA@"-->
-                            <!--answerLabel="Squamous cell carcinoma" /><i>(oral cavity/lip, pharynx, larynx, sinus)</i>-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@NASOPHARYNGEAL_CARCINOMA@"-->
-                            <!--answerLabel="Nasopharyngeal carcinoma" /><i> (Nonkeratinizing/endemic)</i> <br/>-->
-                    <!--Paranasal sinus/salivary gland:-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@MUCOEPIDERMOID_CARCINOMA@"-->
-                            <!--answerLabel="Mucoepidermoid carcinoma" />-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@ADENOID_CYSTIC_CARCINOMA@"-->
-                            <!--answerLabel="Adenoid cystic carcinoma" />  <br/>-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@ADENOCARCINOMA@" answerLabel="Adenocarcinoma" /><br/>-->
-                    <!--Thyroid:-->
+                <!--<td><b>Pathologic Diagnosis</b><br /> <obs-->
+                        <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
+                        <!--answerConceptId="$@KAPOSI_SARCOMA@" answerLabel="Kaposi Sarcoma" />-->
                     <!--<obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                         <!--answerConceptId="$@FOLLICULAR_CARCINOMA@"-->
-                         <!--answerLabel="Follicular carcinoma" />-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@PAPILLARY_CARCINOMA@"-->
-                            <!--answerLabel="Papillary carcinoma" />-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@ANAPLASTIC_CARCINOMA@"-->
-                            <!--answerLabel="Anaplastic Carcinoma" />-->
-                    <!--<obs-->
-                            <!--conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                            <!--answerConceptId="$@MEDULLARY_CARCINOMA@"-->
-                            <!--answerLabel="Medullary carcinoma" /> <br/>-->
-                    <!--<obs conceptId="$@PATHOLOGOGIC_DIAGNOSIS@"-->
-                         <!--answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" /><br />-->
-
-
+                         <!--answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /><obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" />-->
                 <!--</td>-->
+
             <!--</tr>-->
             <tr>
                 <td>
@@ -950,23 +912,8 @@
                             <td>
                                 <b>Pathologic Diagnosis</b><br />
                                 <workflowState workflowId="$@DIAGNOSIS_work_flow@"
-                                               stateIds="$@SQUAMOUS_CELL_CARCINOMA@,$@Nasopharyngeal_carcinoma@"
-                                               type="radio" /> <br/>
-                                <i> NOTE: Squamous cell carcinoma(oral cavity/lip, pharynx, larynx, sinus) and Nasopharyngeal (Nonkeratinizing/endemic) </i>
-                                <br/>
-                                <u> Paranasal sinus/salivary gland:</u>
-                                <workflowState workflowId="$@DIAGNOSIS_work_flow@"
-                                               stateIds="$@Mucoepidermoid_carcinoma@,$@Adenoid_cystic_carcinoma@,$@ADENOCARCINOMA@"
+                                               stateIds="$@Kaposi_Sarcoma@,$@Other_solid_cancer@"
                                                type="radio" />
-
-
-                                <br/>
-                                <u> Thyroid:</u>
-                                <workflowState workflowId="$@DIAGNOSIS_work_flow@"
-                                               stateIds="$@Follicular_carcinoma@,$@Papillary_carcinoma@,$@Anaplastic_Carcinoma@,
-                                               $@Medullary_carcinoma@,$@Other_solid_cancer@"
-                                               type="radio" />
-
 
                                 <obs conceptId="$@OTHER_PATHOLOGIC_DIAGNOSIS@" />
                                 <br/>
@@ -979,19 +926,6 @@
                 </td>
             </tr>
 
-
-
-
-            <tr>
-                <td><b>HPV or p16 Status (If available)</b> <obs
-                        conceptId="$@HPV_STATUS@" answerConceptId="$@POSITIVE@"
-                        answerLabel="Positive" /> <obs conceptId="$@HPV_STATUS@"
-                                                       answerConceptId="$@NEGATIVE@" answerLabel="Negative" /> <obs
-                        conceptId="$@HPV_STATUS@" answerConceptId="$@UNKNOWN@"
-                        answerLabel="Unknown/Not Available" /></td>
-            </tr>
-
-
         </table>
     </section>
 
@@ -1003,9 +937,11 @@
 
             <tr>
                 <td><b>HIV Status</b><br />
+
                     <obs conceptId="$@RESULT_OF_HIV_TEST@" style="radio" showDate="true"
                          answerConceptIds="$@POSITIVE@, $@NEGATIVE@, $@NO_TEST@"
                          answerLabels="Positive, Negative, Unknown/ Not tested"		/>
+
                 </td>
                 <td><b>If HIV Positive</b><br /> CD4 Count at time of Dx <obs
                         conceptId="$@CD4_COUNT@" /> /mm<sup>3</sup><br /> On ARVs
@@ -1016,22 +952,7 @@
                                                      answerConceptId="$@UNKNOWN@" answerLabel="Unknown" />
                 </td>
             </tr>
-            <tr><td colspan="2"><hr /></td>
-            </tr>
-            <tr>
-                <td><b>Tabaco History</b></td> <td colspan="2"><obs conceptId="$@SMOKING_CANCER_RISK@"
-                                                                    answerConceptId="$@HIGH_RISK@" /> High-risk (&gt;10 pack-years or
-                equivalent) <obs 	conceptId="$@SMOKING_CANCER_RISK@"
-                                    answerConceptId="$@LOW_RISK@"	/> Low-risk (&lt;10 pack-years or equivalent)
-                <obs 	conceptId="$@SMOKING_CANCER_RISK@"
-                        answerConceptId="$@UNKNOWN@"	answerLabel="Unknown" />
-            </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <hr />
-                </td>
-            </tr>
+            <tr><td colspan="2"><hr /></td></tr>
 
 
 
@@ -1039,31 +960,22 @@
                 <td><b>Imaging</b></td>
             </tr>
             <tr>
-                <td colspan="3" width="50%">
-                    <obs conceptId="$@IMAGING_STUDIES@"
-                         answerConceptId="$@ENDOSCOPY_PERFORMED@" answerLabel="Endoscopy"
-                         showDate="true"
-                         dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
-
-                    <obs conceptId="$@IMAGING_STUDIES@" answerConceptId="$@CT_HEAD@"
-                         answerLabel="CT scan of head" showDate="true"
-                         dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
-                    <obs conceptId="$@IMAGING_STUDIES@" answerConceptId="$@CT_NECK@"
-                         answerLabel="CT scan of neck" showDate="true"
-                         dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Study Date:" /><br />
-                    <obs
-                            conceptId="$@IMAGING_STUDIES@" answerConceptId="$@CT_CHEST@"
-                            answerLabel="CT  scan of chest" showDate="true"
-                            dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
-
-                    <obs id="chestXRayObs"
-                         conceptId="$@IMAGING_STUDIES@" answerConceptId="$@X-RAY_CHEST@"
-                         answerLabel="Chest X-ray" showDate="true"
-                         dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
+                <td colspan="3" width="50%"><obs id="chestXRayObs"
+                                                 conceptId="$@IMAGING_STUDIES@" answerConceptId="$@X-RAY_CHEST@"
+                                                 answerLabel="Chest X-ray" showDate="true"
+                                                 dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
                     <obs conceptId="$@IMAGING_STUDIES@"
                          answerConceptId="$@ABDOMINAL_ULTRASOUND@"
                          answerLabel="Abdominal (or liver) ultrasound" showDate="true"
-                         dateLabel="&#160; Study Date:" /><br />
+                         dateLabel="&#160; Study Date:" /><br /> <obs
+                            conceptId="$@IMAGING_STUDIES@" answerConceptId="$@CT_CHEST@"
+                            answerLabel="CT  scan of chest" showDate="true"
+                            dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
+                    <obs conceptId="$@IMAGING_STUDIES@"
+                         answerConceptId="$@CT_ABDOMEN_PELVIS@"
+                         answerLabel="CT scan of Abdomen/pelvis" showDate="true"
+                         dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:" /><br />
+
                     <obs conceptId="$@IMAGING_STUDIES@"
                          answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:"
                          showDate="true"
@@ -1073,9 +985,9 @@
             <tr>
                 <th>Imaging Assessment</th>
                 <td colspan="2"><obs conceptId="$@IMAGING_ASSESSMENT@" rows="4"
-                                     cols="90" /></td>
+                                     cols="90" />
+                </td>
             </tr>
-
 
 
         </table>
@@ -1086,80 +998,56 @@
 
 
             <tr>
-                <td><b> Clinical Staging </b></td>
+                <td><b>ACTG Staging for HIV-related Kaposi Sarcoma</b>
+
+                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@" answerConceptId="$@ENDEMIC_KS@" answerLabel="N/A (Endemic K.S.)"/>
+
+                    <br /><b>Tumor(T):</b><br/>
+                    <obs conceptId="$@KS_TUMOR@" answerConceptId="$@SKIN_INVOLVEMENT@"
+                         answerLabel="Skin Involvement" />
+                    <obs
+                            conceptId="$@KS_TUMOR@" answerConceptId="$@LYMPH_NODE@"
+                            answerLabel="Lymph node involvement" />
+                    <obs
+                            conceptId="$@KS_TUMOR@" answerConceptId="$@EDEMA_ULCER@"
+                            answerLabel="Tumor-associated edema or ulceration" /><br />
+                    <obs
+                            conceptId="$@KS_TUMOR@" answerConceptId="$@MIN_ORAL@"
+                            answerLabel="Minimal oral involvement (non-nodular and confined to palate)" />
+                    <obs conceptId="$@KS_TUMOR@" answerConceptId="$@EXTENSIVE_ORAL@"
+                         answerLabel="Extensive oral involvement" /> <br />
+                    <obs
+                            conceptId="$@KS_TUMOR@" answerConceptId="$@GI_INVOLVED@"
+                            answerLabel="Gastrointestinal involvement" />
+                    <obs
+                            conceptId="$@KS_TUMOR@" answerConceptId="$@OTHER_NON_VISCERAL@"
+                            answerLabel="Other non-nodal visceral involvement" /></td>
             </tr>
 
 
-            <tr>
-                <td><b>Primary Disease Site</b> <br /> <obs
-                        conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                        answerConceptId="$@ORAL_CAVITY@"
-                        answerLabel="Oral Cavity or Lip (includes buccal mucosa, floor of mouth, anterior tongue, alveolar ridge, retromolar trigone, hard palate)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@NASOPHARYNX@" answerLabel="Nasopharynx" />
-                    <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                         answerConceptId="$@OROPHARYNX@"
-                         answerLabel="Oropharynx (includes soft palate, tonsils, base of tongue, pharyngeal wall, vallecula)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@HYPOPHARYNX@"
-                                answerLabel="Hypopharynx (includes pyriform sinus, posterior pharyngeal wall, postcricoid region)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@LARYNX@"
-                                answerLabel="Larynx (includes supraglottis glottis, and sublottis)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@PARANASAL_SINUS@"
-                                answerLabel="Paranasal Sinus (includes maxillary, ethmoid, sphenoid, and frontal sinuses)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@SALIVARY_GLAND@"
-                                answerLabel="Salivary Gland (includes major salivary glands: parotid submandibular, and sublingual; and minor salivary glands)" />
-                    <br /> <obs conceptId="$@HEAD_AND_NECK_CANCER_LOCATION@"
-                                answerConceptId="$@THYROID@" answerLabel="Thyroid" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><hr /></td>
-            </tr>
 
             <tr>
-                <td><b>Staging (current presentation):</b> T<obs
-                        conceptId="$@TUMOR_TNM@" /> N<obs conceptId="$@NODE_TNM@" /> M<obs
-                        conceptId="$@METASTESES_TNM@" />
+                <td><b>Systemic Illness (S):</b> <br />
+                    <obs
+                            conceptId="$@SYSTEMIC_ILLNESS@" />
                 </td>
             </tr>
-
             <tr>
-
-                <td>Stage:<obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                               answerConceptId="$@OVERALL_CANCER_STAGE_ZERO@" answerLabel="0" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_ONE@" answerLabel="I" /> <obs
-                            conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                            answerConceptId="$@OVERALL_CANCER_STAGE_TWO@" answerLabel="II" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_THREE@" answerLabel="III" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_FOUR@" answerLabel="IV" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_FOUR_A@" answerLabel="IVA" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_FOUR_B@" answerLabel="IVB" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@OVERALL_CANCER_STAGE_FOUR_C@" answerLabel="IVC" />
-                    <br/> If TNM staging not possible:<br/>
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@EARLY_STAGE@"
-                         answerLabel="Early Stage (Resectable)" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@LOCALLY_ADVANCED@"
-                         answerLabel="Locally Advanced" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@METASTATIC@" answerLabel="Metastatic (Distant)" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@RECURRENT@" answerLabel="Recurrent" />
-                    <obs conceptId="$@OVERALL_ONCOLOGY_STAGE@"
-                         answerConceptId="$@UNABLE_TO_DETERMINE@"
-                         answerLabel="Unable to determine" />
-                </td>
+                <td><b>ACTG Classification: </b>  Tumor(T) <obs
+                        conceptId="$@TUMOUR_PROGNOSIS_FOR_KS@" answerConceptId="$@KS_T0@"
+                        answerLabel="0 or" /> <obs
+                        conceptId="$@TUMOUR_PROGNOSIS_FOR_KS@" answerConceptId="$@KS_T1@"
+                        answerLabel="1" />  Immune System (I) <obs
+                        conceptId="$@IMMUNE_SYSTEM_PROGNOSIS_FOR_KS@"
+                        answerConceptId="$@I0_KS@" answerLabel="0 or" /> <obs
+                        conceptId="$@IMMUNE_SYSTEM_PROGNOSIS_FOR_KS@"
+                        answerConceptId="$@I1_KS@" answerLabel="1" />  Systemic
+                    Illness (S) <obs conceptId="$@SYSTEMIC_ILLNESS_PROGNOSIS_FOR_KS@"
+                                     answerConceptId="$@KS_S1@" answerLabel="0 or" /> <obs
+                            conceptId="$@SYSTEMIC_ILLNESS_PROGNOSIS_FOR_KS@"
+                            answerConceptId="$@KS_S2@" answerLabel="1" /></td>
             </tr>
+
         </table>
     </section>
 
@@ -1182,64 +1070,33 @@
 
 
             <!--Treatments -->
+
+
             <tr><td colspan="2"><hr /></td></tr>
             <tr>
-                <td>Radiotherapy or Chemo:</td>
+                <td>Chemotherapy:</td>
                 <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@RADIATION_OR_CHEMO_STATUS@"
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@"
                          answerConceptId="$@PLANNED@" answerLabel="Planned" />
-                    <obs conceptId="$@RADIATION_OR_CHEMO_STATUS@"
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@"
                          answerConceptId="$@NOT_PLANNED@" answerLabel="Not planned" />
-                    <obs conceptId="$@RADIATION_OR_CHEMO_STATUS@"
-                         answerConceptId="$@NA@" answerLabel="Not applicable" />
-                </td>
-            </tr>
-
-
-            <tr><td colspan="2"><hr /></td>	</tr>
-
-
-            <tr>
-                <td>Surgery:</td>
-                <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@PLANNED@"
-                         answerLabel="Planned" />
-                    <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@NOT_PLANNED@"
-                         answerLabel="Not planned" />
-                    <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@NA@"
+                    <obs conceptId="$@CHEMOTHERAPY_STATUS@" answerConceptId="$@NA@"
                          answerLabel="Not applicable" />
                     <br />
-                    <obs conceptId="$@SURGERY_TYPE@"
-                         answerConceptId="$@TUMOR_RESECTION@" answerLabel="Tumor resection" />
-                    <obs conceptId="$@SURGERY_TYPE@"
-                         answerConceptId="$@LYMPH_NODE_DISSECTION@"
-                         answerLabel="Lymph node dissection" />
-                    <obs conceptId="$@SURGERY_TYPE@"
-                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
 
-                    <obs conceptId="$@OTHER_SURGERY_TYPE@" />
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@" answerConceptId="$@TAXOL@"
+                         answerLabel="Single agent taxol" />
+
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@" answerConceptId="$@VINCRISTINE@"
+                         answerLabel="Vincristine" />
+
+                    <obs conceptId="$@CHEMOTHERAPY_TYPE@"
+                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
+                    <obs conceptId="$@OTHER_CHEMOTHERAPY@" />
 
                 </td>
             </tr>
-            <tr><td colspan="2"><hr /></td>	</tr>
-            <tr>
-                <td>Induction Chemothearpy:</td>
-                <td class="checkboxGroup" colspan="3">
-                    <obs conceptId="$@INDUCTION_CHEMO_STATUS@"
-                         answerConceptId="$@PLANNED@" answerLabel="Planned" />
-                    <obs conceptId="$@INDUCTION_CHEMO_STATUS@"
-                         answerConceptId="$@NOT_PLANNED@" answerLabel="Not planned" />
-                    <obs conceptId="$@INDUCTION_CHEMO_STATUS@" answerConceptId="$@NA@"
-                         answerLabel="Not applicable" />
-                    <br />
-                    <obs conceptId="$@INDUCTION_CHEMO_TYPE@"
-                         answerConceptId="$@CARBO+TAXOL@" answerLabel="Carbo/Taxol" />
 
-                    <obs conceptId="$@INDUCTION_CHEMO_TYPE@"
-                         answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" />
-                    <obs conceptId="$@OTHER_INDUCTION_CHEMO_TYPE@" />
-                </td>
-            </tr>
             <tr><td colspan="2"><hr /></td></tr>
             <tr>
                 <th>Planned changes to protocol treatment plan:</th>
